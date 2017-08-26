@@ -1,0 +1,8 @@
+/**
+ * Functions
+ */
+
+ @function color-get($theme, $type){
+   @return map-get(map-get($colors, $theme), $type);
+ }
+

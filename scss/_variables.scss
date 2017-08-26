@@ -1,0 +1,104 @@
+
+// grid
+$grid-gutter: 30px;
+$grid-lg-width: 1140px;
+$grid-md-width: 890px;
+$grid-sm-width: 710px;
+$max-cols: 12;
+
+$col-types: "xs", "sm", "md", "lg";
+
+$media-max-xs: 767px;
+$media-min-sm: 768px;
+$media-max-sm: 991px;
+$media-min-md: 992px;
+$media-max-md: 1199px;
+$media-min-lg: 1200px;
+
+
+// colors
+$color-types: "primary", "secondary", "warning", "info", "success", "danger", "light", "dark";
+$colors: (
+	default: (
+		background: #ccc,
+		contrast:   #111
+	),
+	primary: (
+		background: #0373E3,
+		contrast:   #FFF
+	),
+	secondary: (
+		background:  #737373,
+		contrast:    #FFFFFF
+	),
+	warning: (
+		background: #ffc200,
+		contrast:   #222
+	),
+	info: (
+		background: #269db9, //#17a2C3,
+		contrast:   #FFFFFF
+	),
+	success: (
+		background: #199a54,
+		contrast:   #FFFFFF
+	),
+	danger: (
+		background: #9a1919,
+		contrast:   #fff
+	),
+	light: (
+		background: #efefef,
+		contrast:   #111,
+	),
+	dark: (
+		background: #343E40,
+		contrast:   #fff
+	)
+);
+$color-multiplier: 10%;
+
+
+// buttons
+$border-radius: 4px;
+$button-border-radius: $border-radius;
+$button-group-border-radius: $border-radius;
+
+
+
+$button-sizes: "default", "big", "small";
+$buttons: (
+	default-height: 36px,
+	default-padding: 0 16px,
+	default-font-size: 14px,
+	default-min-width: 64px,
+	small-height: 24px,
+	small-padding: 0 12px,
+	small-font-size: 13px,
+	small-min-width: 48px,
+	big-height: 48px,
+	big-padding: 0 24px,
+	big-font-size: 15px,
+	big-min-width: 96px,
+);
+
+// badge
+
+$badge-border-radius: $border-radius;
+$badge-font-size: 100%;
+$badge-font-weight: 700;
+$badge-margin: 4px;
+$badge-padding: 0 4px;
+// typography
+$font-family: "Open Sans",Helvetica,Arial,sans-serif;
+$font-size: 16px;
+$font-weight: 400;
+$font-line-height: 1.2;
+$font-size-small: 75%;
+$font-paragraph-margin: 0 0 0.75rem 0;
+$font-heading-margin: 1.414rem 0 0.5rem 0;
+$font-heading-weight: inherit;
+$font-heading-h1-font-size: 3.157rem;
+$font-heading-h2-font-size: 2.369rem;
+$font-heading-h3-font-size: 1.777rem;
+$font-heading-h4-font-size: 1.333rem;

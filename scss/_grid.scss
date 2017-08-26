@@ -1,0 +1,168 @@
+//
+// STD grid
+//
+
+// Clearfix
+@mixin clearfix() {
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+@mixin container(){
+	display: block;
+	padding-left:  ($grid-gutter / 2);
+	padding-right: ($grid-gutter / 2);
+	box-sizing: border-box;
+	@include clearfix();
+}
+
+@mixin make-row() {
+	margin-left:  ($grid-gutter / -2);
+	margin-right: ($grid-gutter / -2);
+	@include clearfix();
+}
+
+@mixin make-col(){
+	float: left;
+	display: block;
+	position: relative;
+	min-height: 1px;
+	padding-left:  ($grid-gutter / 2);
+	padding-right: ($grid-gutter / 2);
+	box-sizing: border-box;
+}
+
+.std-container{
+	width: 100%;
+	@include container();
+	@include clearfix;
+
+}
+.std-container-fixed{
+	@include container();
+	margin-left: auto;
+	margin-right: auto;
+	@media(min-width: $media-min-lg){
+		width: $grid-lg-width;
+	}
+	@media(min-width: $media-min-md) and (max-width: $media-max-md){
+		width: $grid-md-width;
+	}
+	@media(min-width: $media-min-sm) and (max-width: $media-max-sm){
+		width: $grid-sm-width;
+	}
+}
+.std-row{
+	@include make-row();
+}
+.std-col{
+	@include make-col();
+}
+
+@mixin center-block(){
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+@mixin make-flex(){
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	-ms-flex-flow: row wrap;
+	flex-flow: row wrap;
+}
+@mixin make-grid(){
+	@include make-flex();
+	margin: 0 auto;
+	-webkit-align-items: stretch;
+	-ms-flex-align: stretch;
+	align-items: stretch;
+}
+@mixin make-cell{
+	box-sizing: border-box;
+	position: relative;
+	margin: 0;
+}
+
+
+.std-grid{
+	@include make-grid();
+	@include clearfix;
+	&.std-grid-fixed{
+		@media(min-width: $media-min-lg){
+			width: $grid-lg-width;
+		}
+		@media(min-width: $media-min-md) and (max-width: $media-max-md){
+			width: $grid-md-width;
+		}
+		@media(min-width: $media-min-sm) and (max-width: $media-max-sm){
+			width: $grid-sm-width;
+		}
+	}
+}
+
+.std-cell{
+	@include make-cell();
+	&.std-cell-hidden-xs {
+		@media (max-width: $media-max-xs) {
+			display: none;
+		}
+	}
+
+	&.std-cell-hidden-sm {
+		@media (min-width: $media-min-sm) and (max-width: $media-max-sm) {
+			display: none;
+		}
+	}
+
+	&.std-cell-hidden-md {
+		@media (min-width: $media-min-md) and (max-width: $media-max-md) {
+			display: none;
+		}
+	}
+
+	&.std-cell-hidden-lg {
+		@media (min-width: $media-min-lg) {
+			display: none;
+		}
+	}
+}
+
+
+.std-clearfix, .clear{
+	@include clearfix();
+}
+
+
+
+@mixin  grid-media($type){
+	$col-list: null;
+	@for $i from 1 through $max-cols {
+		.std-#{$type}-#{$i}{
+			width: #{percentage($i / $max-cols)};
+
+		}
+		$col-list: append($col-list, unquote(".std-#{$type}-#{$i}"), comma);
+	}
+}
+
+
+
+@include grid-media("xs");
+@media (min-width: $media-min-sm){
+	@include grid-media("sm");
+}
+@media (min-width: $media-min-md){
+	@include grid-media("md");
+}
+@media (min-width: $media-min-lg){
+	@include grid-media("lg");
+}
+

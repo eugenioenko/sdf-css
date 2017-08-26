@@ -1,0 +1,73 @@
+/**
+* Buttons
+*/
+
+
+.std-btn{
+	background: 0 0;
+	background-color: color-get(default, background);
+	border: none;
+	border-radius: $button-border-radius;
+	color: color-get(default, contrast);
+	position: relative;
+	margin: 0;
+	height: map-get($buttons, default-height);
+	min-width: map-get($buttons, default-min-width);
+	padding: map-get($buttons, default-padding);
+	display: inline-block;
+	font-family: $font-family;
+	font-size: 14px;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 0;
+	overflow: hidden;
+	will-change: color, background-color, box-shadow;
+    box-shadow: 0 0 3px transparent;
+	transition: color 350ms ease-in-out, background-color 350ms ease-in-out, box-shadow 450ms ease-in-out;
+	outline: none;
+	cursor: pointer;
+	text-decoration: none;
+	text-align: center;
+	vertical-align: middle;
+}
+
+// button outline
+.std-btn{
+	&.std-btn-outline{
+		border: 1px solid darken(color-get(default, background), ($color-multiplier * 3));
+		background-color: transparent;
+		color: darken(color-get(default, background), ($color-multiplier * 3));
+	}
+}
+
+// button sizes
+.std-btn{
+	@each $size in $button-sizes{
+		&.std-#{$size}{
+			height: map-get($buttons, unquote("#{$size}-height"));
+			min-width: map-get($buttons, unquote("#{$size}-min-width"));
+			padding: map-get($buttons, unquote("#{$size}-padding"));
+			font-size: map-get($buttons, unquote("#{$size}-font-size"));
+		}
+	}
+}
+
+
+.std-btn-group{
+	@include make-flex();
+	&>.std-btn{
+		border-radius: 0;
+	}
+	&>.std-btn-outline{
+		margin-right: 1px;
+	}
+	&>.std-btn:first-child{
+		border-top-left-radius: $button-group-border-radius;
+		border-bottom-left-radius: $button-group-border-radius;
+	}
+	&>.std-btn:last-child{
+		border-top-right-radius: $button-group-border-radius;
+		border-bottom-right-radius: $button-group-border-radius;
+	}
+	//@include clearfix;
+}

@@ -1,0 +1,21 @@
+/**
+ * Globals
+ */
+html,body{
+	margin: 0;
+	padding: 0;
+	-ms-overflow-style: scrollbar;
+	height: 100%;
+	min-height: 100%;
+}
+
+::-moz-selection {
+    background: #9dd9ff;
+    text-shadow: none
+}
+
+::selection {
+    background: #9dd9ff;
+    text-shadow: none
+}
+

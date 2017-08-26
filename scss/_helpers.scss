@@ -1,0 +1,214 @@
+/**
+ * Helpers
+ */
+
+// block positioning
+.std-center-block{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.std-pull-right{
+	float: right;
+}
+.std-pull-left{
+	float: left;
+}
+// responsive image
+img.std-responsive{
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+// text positioning
+.std-text-center{
+	text-align: center;
+}
+.std-text-right{
+	text-align: right;
+}
+
+// padding spacing
+.std-padding{
+    padding: $grid-gutter/2;
+}
+.std-padding-small{
+    padding: $grid-gutter/3;
+}
+.std-padding-big{
+    padding: $grid-gutter;
+}
+.std-padding-horizontal{
+    padding-left: $grid-gutter/2;
+    padding-right: $grid-gutter/2;
+}
+.std-padding-horizontal-small{
+    padding-left: $grid-gutter/3;
+    padding-right: $grid-gutter/3;
+}
+.std-padding-horizontal-big{
+    padding-left: $grid-gutter;
+    padding-right: $grid-gutter;
+}
+.std-padding-vertical{
+    padding-top: $grid-gutter/2;
+    padding-bottom: $grid-gutter/2;
+}
+.std-padding-vertical-small{
+    padding-top: $grid-gutter/3;
+    padding-bottom: $grid-gutter/3;
+}
+.std-padding-vertical-big{
+    padding-top: $grid-gutter;
+    padding-bottom: $grid-gutter;
+}
+
+// margin spacing
+.std-margin{
+    margin: $grid-gutter/2;
+}
+.std-margin-small{
+    margin: $grid-gutter/3;
+}
+.std-margin-big{
+    margin: $grid-gutter;
+}
+.std-margin-horizontal{
+    margin-left: $grid-gutter/2;
+    margin-right: $grid-gutter/2;
+}
+.std-margin-horizontal-small{
+    margin-left: $grid-gutter/3;
+    margin-right: $grid-gutter/3;
+}
+.std-margin-horizontal-big{
+    margin-left: $grid-gutter;
+    margin-right: $grid-gutter;
+}
+.std-margin-vertical{
+    margin-top: $grid-gutter/2;
+    margin-bottom: $grid-gutter/2;
+}
+.std-margin-vertical-small{
+    margin-top: $grid-gutter/3;
+    margin-bottom: $grid-gutter/3;
+}
+.std-margin-vertical-big{
+    margin-top: $grid-gutter;
+    margin-bottom: $grid-gutter;
+}
+
+
+
+// absolute position block
+.std-absolute{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+// flex positioning
+.std-flex{
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+.std-vertical-stretch{
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+}
+.std-vertical-center{
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.std-vertical-top{
+    -webkit-align-items: flex-start;
+    -ms-flex-align: flex-start;
+    align-items: flex-start;
+}
+.std-vertical-bottom{
+    -webkit-align-items: flex-end;
+    -ms-flex-align: flex-end;
+    align-items: flex-end;
+}
+.std-horizontal-stretch{
+	-webkit-justify-content: stretch;
+	-ms-flex-pack: stretch;
+	justify-content: stretch;
+}
+.std-horizontal-center{
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+.std-horizontal-left{
+    -webkit-justify-content: flex-start;
+	-ms-flex-pack: flex-start;
+	justify-content: flex-start;
+}
+.std-horizontal-right{
+    -webkit-justify-content: flex-end;
+	-ms-flex-pack: flex-end;
+	justify-content: flex-end;
+}
+
+/**
+ * visibility block
+ */
+.std-visible-xs,
+.std-visible-sm,
+.std-visible-md,
+.std-visible-lg{
+	display: none !important;
+}
+
+.std-visible-xs {
+	@media (max-width: $media-max-xs) {
+		display: block!important;
+	}
+}
+
+.std-visible-sm {
+	@media (min-width: $media-min-sm) and (max-width: $media-max-sm) {
+		display: block!important;
+	}
+}
+
+.std-visible-md {
+	@media (min-width: $media-min-md) and (max-width: $media-max-md) {
+		display: block!important;
+	}
+}
+
+.std-visible-lg {
+	@media (min-width: $media-min-lg) {
+		display: block!important;
+	}
+}
+.std-hidden-xs {
+	@media (max-width: $media-max-xs) {
+		display: none!important;
+	}
+}
+
+.std-hidden-sm {
+	@media (min-width: $media-min-sm) and (max-width: $media-max-sm) {
+		display: none!important;
+	}
+}
+
+.std-hidden-md {
+	@media (min-width: $media-min-md) and (max-width: $media-max-md) {
+		display: none!important;
+	}
+}
+
+.std-hidden-lg {
+	@media (min-width: $media-min-lg) {
+		display: none!important;
+	}
+}

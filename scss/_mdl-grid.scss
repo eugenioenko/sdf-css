@@ -1,0 +1,126 @@
+/**
+ * grid
+ */
+
+
+$col-types: "xs", "sm", "md", "lg";
+
+$media-max-xs: 767px;
+$media-min-sm: 768px;
+$media-max-sm: 991px;
+$media-min-md: 992px;
+$media-max-md: 1199px;
+$media-min-lg: 1200px;
+
+
+
+
+// Clearfix
+@mixin clearfix() {
+	&:before,
+	&:after {
+		content: " "; 
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+@mixin center-block(){
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+@mixin make-grid(){
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	-ms-flex-flow: row wrap;
+	flex-flow: row wrap;
+	margin: 0 auto;
+	-webkit-align-items: stretch;
+	-ms-flex-align: stretch;
+	align-items: stretch;
+	padding: ($grid-gutter / 2);
+}
+@mixin make-cell{
+	box-sizing: border-box;
+	position: relative;
+	margin: ($grid-gutter / 2);
+}
+
+
+.std-grid{
+	@include make-grid();
+	@include clearfix;
+	&.std-grid-fixed{
+		@media(min-width: $media-min-lg){
+			width: $grid-lg-width;
+		}
+		@media(min-width: $media-min-md) and (max-width: $media-max-md){
+			width: $grid-md-width;
+		}
+		@media(min-width: $media-min-sm) and (max-width: $media-max-sm){
+			width: $grid-sm-width;
+		}
+	}
+}
+
+.std-cell{
+	@include make-cell();
+	&.std-cell-hidden-xs {
+		@media (max-width: $media-max-xs) {
+			display: none;
+		}
+	}
+
+	&.std-cell-hidden-sm {
+		@media (min-width: $media-min-sm) and (max-width: $media-max-sm) {
+			display: none;
+		}
+	}
+
+	&.std-cell-hidden-md {
+		@media (min-width: $media-min-md) and (max-width: $media-max-md) {
+			display: none;
+		}
+	}
+
+	&.std-cell-hidden-lg {
+		@media (min-width: $media-min-lg) {
+			display: none;
+		}
+	}
+}
+
+
+.std-clearfix, .clear{
+	@include clearfix();
+}
+
+
+
+@mixin  grid-media($type){
+	$col-list: null;
+	@for $i from 1 through $max-cols {
+		.std-#{$type}-#{$i}{
+			width: calc(#{percentage($i / $max-cols)} - #{$grid-gutter});
+
+		}
+		$col-list: append($col-list, unquote(".std-#{$type}-#{$i}"), comma);
+	}
+}
+
+
+
+@include grid-media("xs");
+@media (min-width: $media-min-sm){
+	@include grid-media("sm");
+}
+@media (min-width: $media-min-md){
+	@include grid-media("md");
+}
+@media (min-width: $media-min-lg){
+	@include grid-media("lg");
+}
