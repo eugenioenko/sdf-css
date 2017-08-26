@@ -29,3 +29,5 @@ Temporary Items
 # Ignore docs files
 scss/.sass-cache
 scss/.sass-cache/*
+.sass-cache
+.sass-cache/*
