@@ -6,6 +6,10 @@
     .std-#{$color}{
         background-color: color-get($color, background);
         color: color-get($color, contrast);
+        &.std-hover, &.std-btn:hover, &.std-btn:focus{
+        	background-color: lighten(color-get($color, background), $color-multiplier);
+        	//color: darken(color-get($color, contrast), $color-multiplier);
+        }
     }
     .std-#{$color}-inverse{
         background-color: color-get($color, contrast);
@@ -35,6 +39,11 @@
 				background-color: transparent;
 				border: 1px solid color-get($color, background);
 				color: color-get($color, background);
+				&:hover, &:active{
+					background-color: color-get($color, background);
+					border: 1px solid color-get($color, background);
+					color: color-get($color, contrast);
+				}
 			}
 			&.std-#{$color}-inverse{
 				background-color: transparent;

@@ -7,7 +7,8 @@ $grid-sm-width: 710px;
 $max-cols: 12;
 
 $col-types: "xs", "sm", "md", "lg";
-
+$media-max-df: 549px;
+$media-min-xs: 550px;
 $media-max-xs: 767px;
 $media-min-sm: 768px;
 $media-max-sm: 991px;
@@ -17,26 +18,26 @@ $media-min-lg: 1200px;
 
 
 // colors
-$color-types: "primary", "secondary", "warning", "info", "success", "danger", "light", "dark";
+$color-types: "default", "primary", "secondary", "warning", "info", "success", "danger", "light", "dark";
 $colors: (
 	default: (
-		background: #ccc,
-		contrast:   #111
+		background: #fff,
+		contrast:   #545454
 	),
 	primary: (
-		background: #0373E3,
+		background: #19479a,
 		contrast:   #FFF
 	),
 	secondary: (
-		background:  #737373,
+		background:  #8E9796,
 		contrast:    #FFFFFF
 	),
 	warning: (
-		background: #ffc200,
-		contrast:   #222
+		background: #FC913A,
+		contrast:   #111
 	),
 	info: (
-		background: #269db9, //#17a2C3,
+		background: #4e8598,
 		contrast:   #FFFFFF
 	),
 	success: (
@@ -44,11 +45,11 @@ $colors: (
 		contrast:   #FFFFFF
 	),
 	danger: (
-		background: #9a1919,
+		background: #8E0A13,
 		contrast:   #fff
 	),
 	light: (
-		background: #efefef,
+		background: #f7eddc,
 		contrast:   #111,
 	),
 	dark: (
@@ -91,6 +92,7 @@ $badge-margin: 4px;
 $badge-padding: 0 4px;
 // typography
 $font-family: "Open Sans",Helvetica,Arial,sans-serif;
+$font-color: #545454;
 $font-size: 16px;
 $font-weight: 400;
 $font-line-height: 1.2;
