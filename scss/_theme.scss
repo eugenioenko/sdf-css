@@ -7,13 +7,15 @@
         background-color: color-get($color, background);
         color: color-get($color, contrast);
         &.std-hover, &.std-btn:hover, &.std-btn:focus{
-        	background-color: lighten(color-get($color, background), $color-multiplier);
-        	//color: darken(color-get($color, contrast), $color-multiplier);
+        	background-color: darken(saturate(color-get($color, background), $color-multiplier), $color-multiplier);
         }
     }
     .std-#{$color}-inverse{
         background-color: color-get($color, contrast);
         color: color-get($color, background);
+    }
+    .std-#{$color}-font{
+    	color: color-get($color, font);
     }
 }
 
@@ -22,6 +24,10 @@
 	.std-#{$color}{
 		.std-btn.std-#{$color}{
 			background-color: darken(color-get($color, background), $color-multiplier);
+			 &.std-hover, &.std-btn:hover, &.std-btn:focus{
+        		background-color: color-get($color, contrast);
+        		color: color-get($color, background);
+        	}
 		}
 		.std-btn.std-btn-outline.std-#{$color}{
 			border: 1px solid color-get($color, contrast);

@@ -175,10 +175,15 @@ img.std-responsive{
  * visibility block
  */
 .std-visible-df,
-.std-visible-max-xs,
 .std-visible-xs,
+.std-visible-min-xs,
+.std-visible-max-xs,
 .std-visible-sm,
+.std-visible-min-sm,
+.std-visible-max-sm,
 .std-visible-md,
+.std-visible-min-md,
+.std-visible-max-md,
 .std-visible-lg{
 	display: none !important;
 }
@@ -192,6 +197,11 @@ img.std-responsive{
 		display: block!important;
 	}
 }
+.std-visible-min-xs {
+    @media (min-width: $media-min-xs) {
+        display: block!important;
+    }
+}
 .std-visible-xs {
     @media (min-width: $media-min-xs) and (max-width: $media-max-xs) {
         display: block!important;
@@ -203,19 +213,37 @@ img.std-responsive{
 		display: block!important;
 	}
 }
-
+.std-visible-min-sm {
+    @media (min-width: $media-min-sm) {
+        display: block!important;
+    }
+}
+.std-visible-max-sm {
+    @media (max-width: $media-max-sm) {
+        display: block!important;
+    }
+}
 .std-visible-md {
 	@media (min-width: $media-min-md) and (max-width: $media-max-md) {
 		display: block!important;
 	}
 }
-
+.std-visible-min-md {
+    @media (min-width: $media-min-md) {
+        display: block!important;
+    }
+}
+.std-visible-max-md {
+    @media (max-width: $media-max-md) {
+        display: block!important;
+    }
+}
 .std-visible-lg {
 	@media (min-width: $media-min-lg) {
 		display: block!important;
 	}
 }
-.std-hidden-max-df {
+.std-hidden-df {
     @media (max-width: $media-max-df) {
         display: none!important;
     }
@@ -230,16 +258,40 @@ img.std-responsive{
         display: none!important;
     }
 }
+.std-hidden-max-xs {
+    @media (max-width: $media-max-xs) {
+        display: none!important;
+    }
+}
 .std-hidden-sm {
 	@media (min-width: $media-min-sm) and (max-width: $media-max-sm) {
 		display: none!important;
 	}
 }
-
+.std-hidden-min-sm {
+    @media (min-width: $media-min-sm) {
+        display: none!important;
+    }
+}
+.std-hidden-max-sm {
+    @media (max-width: $media-max-sm) {
+        display: none!important;
+    }
+}
 .std-hidden-md {
 	@media (min-width: $media-min-md) and (max-width: $media-max-md) {
 		display: none!important;
 	}
+}
+.std-hidden-min-md {
+    @media (min-width: $media-min-md) {
+        display: none!important;
+    }
+}
+.std-hidden-max-md {
+    @media (max-width: $media-max-md) {
+        display: none!important;
+    }
 }
 
 .std-hidden-lg {

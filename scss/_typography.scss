@@ -13,10 +13,11 @@ body{
   line-height: $font-line-height;
 }
 
-p {
+.std-paragraph{
 	margin: $font-paragraph-margin;
 	line-height: 1.6;
-	font-size: 18px;
+	font-size: $font-paragraph-size;
+	max-width: $font-paragraph-max-width;
 }
 h1, h2, h3, h4 {
   margin: $font-heading-margin;

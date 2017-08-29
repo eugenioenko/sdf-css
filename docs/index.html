@@ -78,6 +78,10 @@
 		margin-bottom: 15px;
 	}
 	.std-heading-3{ font-weight: 300; }
+	.std-btn-group>.std-btn{
+		margin-top: 2px;
+		margin-bottom: 2px;
+	}
 
 </style>
 
@@ -197,11 +201,11 @@
 			</div>
 		</div>
 		<div class="std-cell std-12 std-padding">
-			<p>By having separated the cell/column size class modifier it's possible to have both grid systems coexist in the same space.<br>
+			<p class="std-paragraph">By having separated the cell/column size class modifier it's possible to have both grid systems coexist in the same space.<br>
 				The only thing you have to remember is to use:<br>
-				<b class="std-primary-inverse">std-grid</b> and <b class="std-primary-inverse">std-cell</b> for <b class="std-primary-inverse">flexbox</b><br>
-				<b class="std-secondary-inverse">std-container</b>, <b class="std-secondary-inverse">std-row</b> and <b class="std-secondary-inverse">std-col</b> for a clearfix  block grid.<br>
-				<b class="std-secondary-inverse">std-col</b> has a grid margin of 15px between each column<br></p>
+				<b class="std-primary-font">std-grid</b> and <b class="std-primary-font">std-cell</b> for <b class="std-primary-font">flexbox</b><br>
+				<b class="std-secondary-font">std-container</b>, <b class="std-secondary-font">std-row</b> and <b class="std-secondary-font">std-col</b> for a clearfix  block grid.<br>
+				<b class="std-secondary-font">std-col</b> has a grid margin of 15px between each column<br></p>
 
 <pre class="code std-light"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"std-grid"</span>&gt;</span>
    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"std-cell std-12 std-xs-6"</span>&gt;</span>
@@ -333,33 +337,184 @@
 		<div class="std-cell std-12 std-padding std-margin-vertical">
 			<h2><span class="std-badge std-badge-left std-info">2</span> Colors</h2>
 			<div class="std-grid std-margin-vertical">
-				<div class="std-cell std-padding std-6 std-sm-6 std-md-4 std-lg-3 std-text-center std-default">default</div>
-				<div class="std-cell std-padding std-6 std-sm-6 std-md-4 std-lg-3 std-text-center std-primary">primary</div>
-				<div class="std-cell std-padding std-6 std-sm-6 std-md-4 std-lg-3 std-text-center std-secondary">secondary</div>
-				<div class="std-cell std-padding std-6 std-sm-6 std-md-4 std-lg-3 std-text-center std-info">info</div>
-				<div class="std-cell std-padding std-6 std-sm-6 std-md-4 std-lg-3 std-text-center std-success">success</div>
-				<div class="std-cell std-padding std-6 std-sm-6 std-md-4 std-lg-3 std-text-center std-warning">warning</div>
-				<div class="std-cell std-padding std-6 std-sm-6 std-md-4 std-lg-3 std-text-center std-danger">danger</div>
-				<div class="std-cell std-padding std-6 std-sm-6 std-md-4 std-lg-3 std-text-center std-dark">dark</div>
-				<div class="std-cell std-padding std-6 std-sm-6 std-md-4 std-lg-3 std-text-center std-light">light</div>
+				<div class="std-cell std-padding std-6 std-xs-4 std-sm-3 std-lg-2 std-text-center std-default">default</div>
+				<div class="std-cell std-padding std-6 std-xs-4 std-sm-3 std-lg-2 std-text-center std-primary">primary</div>
+				<div class="std-cell std-padding std-6 std-xs-4 std-sm-3 std-lg-2 std-text-center std-secondary">secondary</div>
+				<div class="std-cell std-padding std-6 std-xs-4 std-sm-3 std-lg-2 std-text-center std-info">info</div>
+				<div class="std-cell std-padding std-6 std-xs-4 std-sm-3 std-lg-2 std-text-center std-success">success</div>
+				<div class="std-cell std-padding std-6 std-xs-4 std-sm-3 std-lg-2 std-text-center std-warning">warning</div>
+				<div class="std-cell std-padding std-6 std-xs-4 std-sm-3 std-lg-2 std-text-center std-danger">danger</div>
+				<div class="std-cell std-padding std-6 std-xs-4 std-sm-3 std-lg-2 std-text-center std-dark">dark</div>
+				<div class="std-cell std-padding std-6 std-xs-4 std-sm-3 std-lg-2 std-text-center std-light">light</div>
 			</div>
 			<div class="std-grid std-margin-vertical">
-				<div class="std-cell std-padding std-6 std-sm-6 std-md-4 std-lg-3 std-text-center std-default-inverse demo-cell-dark">default inverse</div>
-				<div class="std-cell std-padding std-6 std-sm-6 std-md-4 std-lg-3 std-text-center std-primary-inverse demo-cell-dark">primary inverse</div>
-				<div class="std-cell std-padding std-6 std-sm-6 std-md-4 std-lg-3 std-text-center std-secondary-inverse demo-cell-dark">secondary inverse</div>
-				<div class="std-cell std-padding std-6 std-sm-6 std-md-4 std-lg-3 std-text-center std-info-inverse demo-cell-dark">info inverse</div>
-				<div class="std-cell std-padding std-6 std-sm-6 std-md-4 std-lg-3 std-text-center std-success-inverse demo-cell-dark">success inverse</div>
-				<div class="std-cell std-padding std-6 std-sm-6 std-md-4 std-lg-3 std-text-center std-warning-inverse demo-cell-dark">warning inverse</div>
-				<div class="std-cell std-padding std-6 std-sm-6 std-md-4 std-lg-3 std-text-center std-danger-inverse demo-cell-dark">danger inverse</div>
-				<div class="std-cell std-padding std-6 std-sm-6 std-md-4 std-lg-3 std-text-center std-dark-inverse demo-cell-dark">dark inverse</div>
-				<div class="std-cell std-padding std-6 std-sm-6 std-md-4 std-lg-3 std-text-center std-light-inverse demo-cell-dark">light inverse</div>
+				<div class="std-cell std-padding std-6 std-xs-4 std-sm-3 std-lg-2 std-text-center std-default-inverse demo-cell-dark">default inverse</div>
+				<div class="std-cell std-padding std-6 std-xs-4 std-sm-3 std-lg-2 std-text-center std-primary-inverse demo-cell-dark">primary inverse</div>
+				<div class="std-cell std-padding std-6 std-xs-4 std-sm-3 std-lg-2 std-text-center std-secondary-inverse demo-cell-dark">secondary inverse</div>
+				<div class="std-cell std-padding std-6 std-xs-4 std-sm-3 std-lg-2 std-text-center std-info-inverse demo-cell-dark">info inverse</div>
+				<div class="std-cell std-padding std-6 std-xs-4 std-sm-3 std-lg-2 std-text-center std-success-inverse demo-cell-dark">success inverse</div>
+				<div class="std-cell std-padding std-6 std-xs-4 std-sm-3 std-lg-2 std-text-center std-warning-inverse demo-cell-dark">warning inverse</div>
+				<div class="std-cell std-padding std-6 std-xs-4 std-sm-3 std-lg-2 std-text-center std-danger-inverse demo-cell-dark">danger inverse</div>
+				<div class="std-cell std-padding std-6 std-xs-4 std-sm-3 std-lg-2 std-text-center std-dark-inverse demo-cell-dark">dark inverse</div>
+				<div class="std-cell std-padding std-6 std-xs-4 std-sm-3 std-lg-2 std-text-center std-light-inverse demo-cell-dark">light inverse</div>
+			</div>
+		</div>
+
+		<div class="std-cell std-12 std-margin-vertical">
+			<div class="std-grid">
+				<div class="std-cell std-12 std-padding-horizontal"><h3><span class="std-badge std-badge-left std-info">2.1</span>Font Colors</h3></div>
+				<div class="std-cell std-12 std-sm-6 std-md-4 std-padding-horizontal std-primary-font">
+					<h3>Primary</h3>
+					<p class="std-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem.</p>
+				</div>
+				<div class="std-cell std-12 std-sm-6 std-md-4 std-padding-horizontal std-secondary-font">
+					<h3>Secondary</h3>
+					<p class="std-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem.</p>
+				</div>
+				<div class="std-cell std-12 std-sm-6 std-md-4 std-padding-horizontal std-info-font">
+					<h3>Info</h3>
+					<p class="std-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem.</p>
+				</div>
+				<div class="std-cell std-12 std-sm-6 std-md-4 std-padding-horizontal std-success-font">
+					<h3>Success</h3>
+					<p class="std-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem.</p>
+				</div>
+				<div class="std-cell std-12 std-sm-6 std-md-4 std-padding-horizontal std-warning-font">
+					<h3>Warning</h3>
+					<p class="std-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem.</p>
+				</div>
+				<div class="std-cell std-12 std-sm-6 std-md-4 std-padding-horizontal std-danger-font">
+					<h3>Danger</h3>
+					<p class="std-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem.</p>
+				</div>
+				<div class="std-cell std-12 std-sm-6 std-md-4 std-padding-horizontal std-dark-font">
+					<h3>Dark</h3>
+					<p class="std-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem.</p>
+				</div>
+				<div class="std-cell std-12 std-sm-6 std-md-4 std-padding-horizontal std-dark std-light-font">
+					<h3>Light</h3>
+					<p class="std-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem.</p>
+				</div>
+				<div class="std-cell std-12 std-sm-6 std-md-4 std-padding-horizontal std-default-font">
+					<h3>Default</h3>
+					<p class="std-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem.</p>
+				</div>
+
 			</div>
 		</div>
 
 
-		<div class="std-cell std-12 std-padding std-margin-vertical">
-			<h3><span class="std-badge std-badge-left std-info">2.1</span> Button Colors</h3>
+		<div class="std-cell std-12 std-padding">
+			<h3><span class="std-badge std-badge-left std-info">2.x</span> Button Colors</h3>
 			<div class="std-btn-group std-horizontal-left std-margin-vertical">
+				<button class="std-btn">default</button>
+				<button class="std-btn std-primary">primary</button>
+				<button class="std-btn std-secondary">secondary</button>
+				<button class="std-btn std-info">info</button>
+				<button class="std-btn std-success">success</button>
+				<button class="std-btn std-warning">warning</button>
+				<button class="std-btn std-danger">danger</button>
+				<button class="std-btn std-light">light</button>
+				<button class="std-btn std-dark">dark</button>
+			</div>
+			<p class="std-paragraph">
+				The background color of the buttons is adjusted depending on the color scheme of the parent block. This way you don't have to worry on having a button  invisible on a specific color.
+				<br>Here all the combinations possible. Notice for example that the primary button on a primary color scheme is darker, also the hover transition has been inversed.
+			</p>
+		</div>
+		<div class="std-cell std-12 std-light std-padding">
+			<div class="std-btn-group std-horizontal-left">
+				<button class="std-btn">default</button>
+				<button class="std-btn std-primary">primary</button>
+				<button class="std-btn std-secondary">secondary</button>
+				<button class="std-btn std-info">info</button>
+				<button class="std-btn std-success">success</button>
+				<button class="std-btn std-warning">warning</button>
+				<button class="std-btn std-danger">danger</button>
+				<button class="std-btn std-light">light</button>
+				<button class="std-btn std-dark">dark</button>
+			</div>
+		</div>
+		<div class="std-cell std-12 std-primary std-padding">
+			<div class="std-btn-group std-horizontal-left">
+				<button class="std-btn">default</button>
+				<button class="std-btn std-primary">primary</button>
+				<button class="std-btn std-secondary">secondary</button>
+				<button class="std-btn std-info">info</button>
+				<button class="std-btn std-success">success</button>
+				<button class="std-btn std-warning">warning</button>
+				<button class="std-btn std-danger">danger</button>
+				<button class="std-btn std-light">light</button>
+				<button class="std-btn std-dark">dark</button>
+			</div>
+		</div>
+		<div class="std-cell std-12 std-secondary std-padding">
+			<div class="std-btn-group std-horizontal-left">
+				<button class="std-btn">default</button>
+				<button class="std-btn std-primary">primary</button>
+				<button class="std-btn std-secondary">secondary</button>
+				<button class="std-btn std-info">info</button>
+				<button class="std-btn std-success">success</button>
+				<button class="std-btn std-warning">warning</button>
+				<button class="std-btn std-danger">danger</button>
+				<button class="std-btn std-light">light</button>
+				<button class="std-btn std-dark">dark</button>
+			</div>
+		</div>
+		<div class="std-cell std-12 std-info std-padding">
+			<div class="std-btn-group std-horizontal-left">
+				<button class="std-btn">default</button>
+				<button class="std-btn std-primary">primary</button>
+				<button class="std-btn std-secondary">secondary</button>
+				<button class="std-btn std-info">info</button>
+				<button class="std-btn std-success">success</button>
+				<button class="std-btn std-warning">warning</button>
+				<button class="std-btn std-danger">danger</button>
+				<button class="std-btn std-light">light</button>
+				<button class="std-btn std-dark">dark</button>
+			</div>
+		</div>
+		<div class="std-cell std-12 std-success std-padding">
+			<div class="std-btn-group std-horizontal-left">
+				<button class="std-btn">default</button>
+				<button class="std-btn std-primary">primary</button>
+				<button class="std-btn std-secondary">secondary</button>
+				<button class="std-btn std-info">info</button>
+				<button class="std-btn std-success">success</button>
+				<button class="std-btn std-warning">warning</button>
+				<button class="std-btn std-danger">danger</button>
+				<button class="std-btn std-light">light</button>
+				<button class="std-btn std-dark">dark</button>
+			</div>
+		</div>
+		<div class="std-cell std-12 std-warning std-padding">
+			<div class="std-btn-group std-horizontal-left">
+				<button class="std-btn">default</button>
+				<button class="std-btn std-primary">primary</button>
+				<button class="std-btn std-secondary">secondary</button>
+				<button class="std-btn std-info">info</button>
+				<button class="std-btn std-success">success</button>
+				<button class="std-btn std-warning">warning</button>
+				<button class="std-btn std-danger">danger</button>
+				<button class="std-btn std-light">light</button>
+				<button class="std-btn std-dark">dark</button>
+			</div>
+		</div>
+		<div class="std-cell std-12 std-danger std-padding">
+			<div class="std-btn-group std-horizontal-left">
+				<button class="std-btn">default</button>
+				<button class="std-btn std-primary">primary</button>
+				<button class="std-btn std-secondary">secondary</button>
+				<button class="std-btn std-info">info</button>
+				<button class="std-btn std-success">success</button>
+				<button class="std-btn std-warning">warning</button>
+				<button class="std-btn std-danger">danger</button>
+				<button class="std-btn std-light">light</button>
+				<button class="std-btn std-dark">dark</button>
+			</div>
+		</div>
+		<div class="std-cell std-12 std-dark std-padding">
+			<div class="std-btn-group std-horizontal-left">
 				<button class="std-btn">default</button>
 				<button class="std-btn std-primary">primary</button>
 				<button class="std-btn std-secondary">secondary</button>
@@ -374,8 +529,9 @@
 
 
 		<div class="std-cell std-12 std-padding std-dark std-margin-vertical">
-			<h3><span class="std-badge std-badge-left std-info">2.2</span> Outline Button Colors</h3>
+			<h3><span class="std-badge std-badge-left std-info">2.x</span> Outline Button Colors</h3>
 			<div class="std-btn-group std-horizontal-left std-margin-vertical">
+				<button class="std-btn std-btn-outline std-default">primary</button>
 				<button class="std-btn std-btn-outline std-primary">primary</button>
 				<button class="std-btn std-btn-outline std-secondary">secondary</button>
 				<button class="std-btn std-btn-outline std-info">info</button>
@@ -394,7 +550,67 @@
 			<h2>h2 Lorem ipsum dolor sit amet</h2>
 			<h3>h3 Lorem ipsum dolor sit amet</h3>
 			<h4>h4 Lorem ipsum dolor sit amet</h4>
+			<p class="std-paragraph"><br>Paragraph:<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. </p>
+			<p class="std-paragraph">Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. </p>
 		</div>
+
+
+
+		<div class="std-cell std-12 std-margin-vertical">
+			<div class="std-grid std-horizontal-center">
+				<div class="std-cell std-12 std-padding-horizontal std-margin-vertical-small"><h3><span class="std-badge std-badge-left std-info">3.1</span> Visibility blocks</h3></div>
+				<div class="std-cell std-12 std-text-center std-padding std-primary std-visible-df std-heading-2">visible default</div>
+				<div class="std-cell std-12 std-text-center std-padding std-primary std-visible-xs std-heading-2">visible extra small</div>
+				<div class="std-cell std-12 std-text-center std-padding std-primary std-visible-sm std-heading-2">visible small</div>
+				<div class="std-cell std-12 std-text-center std-padding std-primary std-visible-md std-heading-2">visible medium</div>
+				<div class="std-cell std-12 std-text-center std-padding std-primary std-visible-lg std-heading-2">visible large</div>
+				<div class="std-cell std-6 std-sm-3 std-text-center std-padding std-secondary std-hidden-df std-heading-3">hidden<br>default</div>
+				<div class="std-cell std-6 std-sm-3 std-text-center std-padding std-success std-hidden-xs std-heading-3">hidden<br>extra small</div>
+				<div class="std-cell std-6 std-sm-3 std-text-center std-padding std-warning std-hidden-sm std-heading-3">hidden<br>small</div>
+				<div class="std-cell std-6 std-sm-3 std-text-center std-padding std-danger std-hidden-md std-heading-3">hidden<br>medium</div>
+				<div class="std-cell std-6 std-sm-3 std-text-center std-padding std-info std-hidden-lg std-heading-3">hidden<br>large</div>
+			</div>
+		</div>
+		<div class="std-cell std-12">
+<pre class="code std-light"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"std-grid"</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"std-cell std-12 std-visible-df"</span>&gt;</span>visible default<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"std-cell std-12 std-visible-xs"</span>&gt;</span>visible extra small<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"std-cell std-12 std-visible-sm"</span>&gt;</span>visible small<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"std-cell std-12 std-visible-md"</span>&gt;</span>visible medium<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"std-cell std-12 std-visible-lg"</span>&gt;</span>visible large<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"std-cell std-6 std-sm-3 std-hidden-df"</span>&gt;</span>hidden<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>default<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"std-cell std-6 std-sm-3 std-hidden-xs"</span>&gt;</span>hidden<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>extra small<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"std-cell std-6 std-sm-3 std-hidden-sm"</span>&gt;</span>hidden<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>small<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"std-cell std-6 std-sm-3 std-hidden-md"</span>&gt;</span>hidden<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>medium<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"std-cell std-6 std-sm-3 std-hidden-lg"</span>&gt;</span>hidden<span class="hljs-tag">&lt;<span class="hljs-name">br</span>&gt;</span>large<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+		</div>
+
+		<div class="std-cell std-12 std-margin-vertical">
+			<div class="std-grid">
+				<div class="std-cell std-12 std-padding-horizontal std-margin-vertical-small"><h3><span class="std-badge std-badge-left std-info">3.x</span>Progresive Visibility Blocks</h3></div>
+				<div class="std-cell std-12 std-sm-3 std-lg-4 std-text-center std-padding std-success std-visible-min-xs std-heading-3">visible-min<br>extra small</div>
+				<div class="std-cell std-12 std-sm-3 std-lg-4 std-text-center std-padding std-warning std-visible-min-sm std-heading-3">visible-min<br>small</div>
+				<div class="std-cell std-12 std-sm-3 std-lg-4 std-text-center std-padding std-danger std-visible-min-md std-heading-3">visible-min<br>medium</div>
+				<div class="std-cell std-12 std-sm-3 std-lg-4 std-text-center std-padding std-primary std-visible-max-xs std-heading-3">visible-max<br>extra small</div>
+				<div class="std-cell std-12 std-sm-3 std-lg-4 std-text-center std-padding std-secondary std-visible-max-sm std-heading-3">visible-max<br>small</div>
+				<div class="std-cell std-12 std-sm-3 std-lg-4 std-text-center std-padding std-success std-visible-max-md std-heading-3">visible-max<br>medium</div>
+			</div>
+		</div>
+
+		<div class="std-cell std-12 std-margin-vertical">
+			<div class="std-grid">
+				<div class="std-cell std-12 std-padding-horizontal std-margin-vertical-small"><h3><span class="std-badge std-badge-left std-info">3.x</span>Progresive Visibility Blocks</h3></div>
+				<div class="std-cell std-12 std-text-center std-padding std-success std-hidden-min-xs std-heading-3">hidden-min<br>extra small</div>
+				<div class="std-cell std-12 std-text-center std-padding std-warning std-hidden-min-sm std-heading-3">hidden-min<br>small</div>
+				<div class="std-cell std-12 std-text-center std-padding std-danger std-hidden-min-md std-heading-3">hidden-min<br>medium</div>
+				<div class="std-cell std-12 std-text-center std-padding std-primary std-hidden-max-xs std-heading-3">hidden-max<br>extra small</div>
+				<div class="std-cell std-12 std-text-center std-padding std-secondary std-hidden-max-sm std-heading-3">hidden-max<br>small</div>
+				<div class="std-cell std-12 std-text-center std-padding std-success std-hidden-max-md std-heading-3">hidden-max<br>medium</div>
+			</div>
+		</div>
+
 
 		<div class="std-cell std-12 std-padding">
 			<h2><span class="std-badge std-badge-left std-info">3</span> Cards</h2>
@@ -408,8 +624,8 @@
 						</div>
 						<div class="std-card-body">
 							<div class="std-heading-3">Card Title</div>
-							<p>Cu clita malorum eruditi vel, an eum detraxit platonem, sed eu ridens aliquid.</p>
-							<p>Cu clita malorum eruditi vel, an eum detraxit platonem, sed eu ridens aliquid.</p>
+							<p class="std-paragraph">Cu clita malorum eruditi vel, an eum detraxit platonem, sed eu ridens aliquid.</p>
+							<p class="std-paragraph">Cu clita malorum eruditi vel, an eum detraxit platonem, sed eu ridens aliquid.</p>
 						</div>
 						<div class="std-card-footer">
 							<div class="std-btn-group std-horizontal-right">
@@ -426,9 +642,9 @@
 						<div class="std-card-body">
 							<h3>Lorem ipsum sit amet</h3>
 
-							<p>Illum qualisque corrumpit vel ei, an pro denique definiebas, appareat appetere an nam.</p>
+							<p class="std-paragraph">Illum qualisque corrumpit vel ei, an pro denique definiebas, appareat appetere an nam.</p>
 							<h3>Lorem ipsum sit amet</h3>
-							<p>Cu clita malorum eruditi vel, an eum detraxit platonem, sed eu ridens aliquid.</p>
+							<p class="std-paragraph">Cu clita malorum eruditi vel, an eum detraxit platonem, sed eu ridens aliquid.</p>
 						</div>
 						<div class="std-card-footer std-light">
 							<div class="std-btn-group std-horizontal-left">

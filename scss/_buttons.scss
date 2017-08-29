@@ -30,6 +30,9 @@
 	text-decoration: none;
 	text-align: center;
 	vertical-align: middle;
+	&:hover, &:active{
+		background-color: darken(color-get(default, contrast), $color-multiplier);
+	}
 }
 
 // button outline
