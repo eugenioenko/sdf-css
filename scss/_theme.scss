@@ -3,33 +3,33 @@
  */
 // color themes from $color-types variable
  @each $color in $color-types{
-    .std-#{$color}{
+    .sdf-#{$color}{
         background-color: color-get($color, background);
         color: color-get($color, contrast);
-        &.std-hover, &.std-btn:hover, &.std-btn:focus{
+        &.sdf-hover, &.sdf-btn:hover, &.sdf-btn:focus{
         	background-color: darken(saturate(color-get($color, background), $color-multiplier), $color-multiplier);
         }
     }
-    .std-#{$color}-inverse{
+    .sdf-#{$color}-inverse{
         background-color: color-get($color, contrast);
         color: color-get($color, background);
     }
-    .std-#{$color}-font{
+    .sdf-#{$color}-font{
     	color: color-get($color, font);
     }
 }
 
 //make theme modifier when button is the same as block theme
 @each $color in $color-types{
-	.std-#{$color}{
-		.std-btn.std-#{$color}{
+	.sdf-#{$color}{
+		.sdf-btn.sdf-#{$color}{
 			background-color: darken(color-get($color, background), $color-multiplier);
-			 &.std-hover, &.std-btn:hover, &.std-btn:focus{
+			 &.sdf-hover, &.sdf-btn:hover, &.sdf-btn:focus{
         		background-color: color-get($color, contrast);
         		color: color-get($color, background);
         	}
 		}
-		.std-btn.std-btn-outline.std-#{$color}{
+		.sdf-btn.sdf-btn-outline.sdf-#{$color}{
 			border: 1px solid color-get($color, contrast);
 			color: color-get($color, contrast);
 		}
@@ -38,10 +38,10 @@
 }
 
 // outline buttons
-.std-btn{
-	&.std-btn-outline{
+.sdf-btn{
+	&.sdf-btn-outline{
 		@each $color in $color-types{
-			&.std-#{$color}{
+			&.sdf-#{$color}{
 				background-color: transparent;
 				border: 1px solid color-get($color, background);
 				color: color-get($color, background);
@@ -51,7 +51,7 @@
 					color: color-get($color, contrast);
 				}
 			}
-			&.std-#{$color}-inverse{
+			&.sdf-#{$color}-inverse{
 				background-color: transparent;
 				border: 1px solid color-get($color, contrast);
 				color: color-get($color, contrast);
@@ -60,11 +60,11 @@
 	}
 }
 
-.std-shadow{
+.sdf-shadow{
 	box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
 }
-.std-dark{
-	.std-shadow{
+.sdf-dark{
+	.sdf-shadow{
 		box-shadow: 0 2px 2px 0 rgba(255,255,255,.14), 0 3px 1px -2px rgba(255,255,255,.2), 0 1px 5px 0 rgba(255,255,255,.12);
 	}
 }

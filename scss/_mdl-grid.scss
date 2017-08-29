@@ -51,10 +51,10 @@ $media-min-lg: 1200px;
 }
 
 
-.std-grid{
+.sdf-grid{
 	@include make-grid();
 	@include clearfix;
-	&.std-grid-fixed{
+	&.sdf-grid-fixed{
 		@media(min-width: $media-min-lg){
 			width: $grid-lg-width;
 		}
@@ -67,27 +67,27 @@ $media-min-lg: 1200px;
 	}
 }
 
-.std-cell{
+.sdf-cell{
 	@include make-cell();
-	&.std-cell-hidden-xs {
+	&.sdf-cell-hidden-xs {
 		@media (max-width: $media-max-xs) {
 			display: none;
 		}
 	}
 
-	&.std-cell-hidden-sm {
+	&.sdf-cell-hidden-sm {
 		@media (min-width: $media-min-sm) and (max-width: $media-max-sm) {
 			display: none;
 		}
 	}
 
-	&.std-cell-hidden-md {
+	&.sdf-cell-hidden-md {
 		@media (min-width: $media-min-md) and (max-width: $media-max-md) {
 			display: none;
 		}
 	}
 
-	&.std-cell-hidden-lg {
+	&.sdf-cell-hidden-lg {
 		@media (min-width: $media-min-lg) {
 			display: none;
 		}
@@ -95,7 +95,7 @@ $media-min-lg: 1200px;
 }
 
 
-.std-clearfix, .clear{
+.sdf-clearfix, .clear{
 	@include clearfix();
 }
 
@@ -104,11 +104,11 @@ $media-min-lg: 1200px;
 @mixin  grid-media($type){
 	$col-list: null;
 	@for $i from 1 through $max-cols {
-		.std-#{$type}-#{$i}{
+		.sdf-#{$type}-#{$i}{
 			width: calc(#{percentage($i / $max-cols)} - #{$grid-gutter});
 
 		}
-		$col-list: append($col-list, unquote(".std-#{$type}-#{$i}"), comma);
+		$col-list: append($col-list, unquote(".sdf-#{$type}-#{$i}"), comma);
 	}
 }
 

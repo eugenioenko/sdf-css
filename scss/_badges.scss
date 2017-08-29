@@ -2,7 +2,7 @@
  * Badges
  */
 
-.std-badge{
+.sdf-badge{
 	color: color-get(default, contrast);
 	background-color: color-get(default, background);
 	display: inline-block;
@@ -13,17 +13,17 @@
 	text-align: center;
 	white-space: nowrap;
 	border-radius: $badge-border-radius;
-	&.std-badge-left{
+	&.sdf-badge-left{
 		margin-left: 0;
 		margin-right: $badge-margin;
 	}
 }
-h1 .std-badge{ padding: 0 $font-heading-h1-font-size / 3; margin-left: $font-heading-h1-font-size / 3; }
-h2 .std-badge{ padding: 0 $font-heading-h2-font-size / 3; margin-left: $font-heading-h2-font-size / 3; }
-h3 .std-badge{ padding: 0 $font-heading-h3-font-size / 3; margin-left: $font-heading-h3-font-size / 3; }
-h4 .std-badge{ padding: 0 $font-heading-h4-font-size / 3; margin-left: $font-heading-h4-font-size / 3; }
+h1 .sdf-badge{ padding: 0 $font-heading-h1-font-size / 3; margin-left: $font-heading-h1-font-size / 3; }
+h2 .sdf-badge{ padding: 0 $font-heading-h2-font-size / 3; margin-left: $font-heading-h2-font-size / 3; }
+h3 .sdf-badge{ padding: 0 $font-heading-h3-font-size / 3; margin-left: $font-heading-h3-font-size / 3; }
+h4 .sdf-badge{ padding: 0 $font-heading-h4-font-size / 3; margin-left: $font-heading-h4-font-size / 3; }
 
-h1 .std-badge.std-badge-left{ margin-right: $font-heading-h1-font-size / 3; }
-h2 .std-badge.std-badge-left{ margin-right: $font-heading-h2-font-size / 3; }
-h3 .std-badge.std-badge-left{ margin-right: $font-heading-h3-font-size / 3; }
-h4 .std-badge.std-badge-left{ margin-right: $font-heading-h4-font-size / 3; }
+h1 .sdf-badge.sdf-badge-left{ margin-right: $font-heading-h1-font-size / 3; }
+h2 .sdf-badge.sdf-badge-left{ margin-right: $font-heading-h2-font-size / 3; }
+h3 .sdf-badge.sdf-badge-left{ margin-right: $font-heading-h3-font-size / 3; }
+h4 .sdf-badge.sdf-badge-left{ margin-right: $font-heading-h4-font-size / 3; }

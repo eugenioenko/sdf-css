@@ -13,7 +13,7 @@ body{
   line-height: $font-line-height;
 }
 
-.std-paragraph{
+.sdf-paragraph{
 	margin: $font-paragraph-margin;
 	line-height: 1.6;
 	font-size: $font-paragraph-size;
@@ -23,8 +23,8 @@ h1, h2, h3, h4 {
   margin: $font-heading-margin;
   font-weight: $font-heading-weight;
 }
-h1, .std-heading-1{ font-size: $font-heading-h1-font-size; }
-h2, .std-heading-2{ font-size: $font-heading-h2-font-size; }
-h3, .std-heading-3{ font-size: $font-heading-h3-font-size; }
-h4, .std-heading-4{ font-size: $font-heading-h4-font-size; }
+h1, .sdf-heading-1{ font-size: $font-heading-h1-font-size; }
+h2, .sdf-heading-2{ font-size: $font-heading-h2-font-size; }
+h3, .sdf-heading-3{ font-size: $font-heading-h3-font-size; }
+h4, .sdf-heading-4{ font-size: $font-heading-h4-font-size; }
 small { font-size: $font-size-small; }
