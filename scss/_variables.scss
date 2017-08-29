@@ -22,35 +22,35 @@ $color-types: "default", "primary", "secondary", "warning", "info", "success", "
 $colors: (
 	default: (
 		background: #fff,
-		contrast:   #545454
+		contrast:   #777
 	),
 	primary: (
-		background: #19479a,
+		background: #1f8dd6,
 		contrast:   #FFF
 	),
 	secondary: (
-		background:  #8E9796,
+		background:  #8058a5,
 		contrast:    #FFFFFF
 	),
 	warning: (
-		background: #FC913A,
-		contrast:   #111
+		background: #fad232,
+		contrast:   #fff
 	),
 	info: (
-		background: #4e8598,
+		background: #61a7bf,
 		contrast:   #FFFFFF
 	),
 	success: (
-		background: #199a54,
+		background: #5eb95e,
 		contrast:   #FFFFFF
 	),
 	danger: (
-		background: #8E0A13,
+		background: #dd514c,
 		contrast:   #fff
 	),
 	light: (
-		background: #f7eddc,
-		contrast:   #111,
+		background: #f3f3f3,
+		contrast:   #545454,
 	),
 	dark: (
 		background: #343E40,
@@ -91,8 +91,8 @@ $badge-font-weight: 700;
 $badge-margin: 4px;
 $badge-padding: 0 4px;
 // typography
-$font-family: "Open Sans",Helvetica,Arial,sans-serif;
-$font-color: #545454;
+$font-family: "Roboto",Helvetica,Arial,sans-serif;
+$font-color: #777;
 $font-size: 16px;
 $font-weight: 400;
 $font-line-height: 1.2;

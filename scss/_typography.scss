@@ -1,9 +1,10 @@
 /**
  * Typography
  */
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700');
 html{
   font-size: $font-size;
+  color: $font-color;
 }
 body{
   -webkit-font-smoothing: antialiased;
@@ -12,7 +13,11 @@ body{
   line-height: $font-line-height;
 }
 
-p {margin: $font-paragraph-margin;}
+p {
+	margin: $font-paragraph-margin;
+	line-height: 1.6;
+	font-size: 18px;
+}
 h1, h2, h3, h4 {
   margin: $font-heading-margin;
   font-weight: $font-heading-weight;
