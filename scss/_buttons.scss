@@ -47,7 +47,7 @@
 // button sizes
 .sdf-btn{
 	@each $size in $button-sizes{
-		&.sdf-#{$size}{
+		&.sdf-btn-#{$size}{
 			height: map-get($buttons, unquote("#{$size}-height"));
 			line-height: map-get($buttons, unquote("#{$size}-height"));
 			min-width: map-get($buttons, unquote("#{$size}-min-width"));
