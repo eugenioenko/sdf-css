@@ -35,7 +35,7 @@ var sdf = (function(){
 	}
 
 	function query(selector, limitOne){
-		var limitOne = (typeof limitOne === "boolean") ? limitOne : false;
+
 		var emptyNodeList = function(nodeList){
 			return nodeList.length == 0;
 		};
@@ -44,6 +44,10 @@ var sdf = (function(){
 				return false;
 			}
 			for(var i = 0; i < args.length; ++i){
+				if(arguments[i+1] === "string"){
+					// cast to string
+					args[i] = (args[i]).toString();
+				}
 				if(typeof args[i] !== arguments[i+1]) return false;
 			}
 			return true;
@@ -51,42 +55,32 @@ var sdf = (function(){
 		var emptyArguments = function(args){
 			return args.length == 0;
 		};
-		
 
+		var limitOne = (typeof limitOne === "boolean") ? limitOne : false;
 		var elements =  [];
-		if (typeof selector !== "string"){
-			console.error(selector + " is not a string, 'query' requires a string as selector");
-			selector = null;
-		} else {
+
+		if (typeof selector === "string"){
+			// selector is  a query string
 			if(limitOne){
 				elements.push(document.querySelector(selector));
 			} else {
 				elements = document.querySelectorAll(selector)
 			}
+		} else if(typeof selector === "object"){
+			//selector is an dom object "hopefully"
+			elements.push(selector);
+			selector = false;
+		} else {
+			// selector is not a string nor a dom object
+			console.error(selector + " is not a string, 'query' requires a string as selector");
+			selector = null;
 		}
 
 		return {
 			selector: selector,
 			nodes: elements,
 			length: elements.length,
-			query: function(selector, limitOne){
-				var limitOne = (typeof limitOne === "boolean") ? limitOne : false;
-				if (typeof selector !== "string"){
-					console.error(selector + " is not a string, 'query' requires a string as selector");
-					selector = null;
-					this.nodes = [];
-					return this;
-				}
-				this.selector = selector;
-				if(limitOne){
-					this.nodes = [];
-					this.nodes.push(document.querySelector(selector));
-				} else {
-					this.nodes = document.querySelectorAll(selector)
-				}
-				this.length = this.nodes.length;
-				return this;
-			},
+
 			on: function(event, method){
 				if(emptyNodeList(this.nodes)) {
 					console.error("No elements with selector: " + this.selector + ' for on method');
@@ -107,10 +101,7 @@ var sdf = (function(){
 					console.error("No elements with selector: " + this.selector + ' for each');
 					return this;
 				}
-				if(
-					!validArguments(arguments, "function") || 
-					!emptyArguments(arguments)
-				){
+				if(!validArguments(arguments, "function")){
 					console.error(method + " is not a function, 'each' requires a function as argument");
 					return this;
 				}
@@ -150,6 +141,32 @@ var sdf = (function(){
 				}
 				for (var i = 0; i < this.nodes.length; i++) {
 					this.nodes[i].textContent = string;
+				}
+				return this;
+			},
+			attr: function(attr, value){
+				if(emptyNodeList(this.nodes)) {
+					console.error("No elements with selector: " + this.selector + ' for text');
+					return this;
+				}
+				if(emptyArguments(arguments)){
+					console.error("'attr' requires at least one argument as attribute{string}");
+					return this;
+				}
+				if(arguments.length == 1){
+					if(!validArguments(arguments, "string")){
+						console.error("'attr' takes attribute{string} as argument for getter");
+						return this;
+					}	
+					return this.nodes[0].getAttribute(attr);
+				}
+
+				if(!validArguments(arguments, "string", "string")){
+					console.error("'attr' takes two attribute{string}, value{string} as setter");
+					return this;
+				}	
+				for (var i = 0; i < this.nodes.length; i++) {
+					this.nodes[i].setAttribute(attr, value);
 				}
 				return this;
 			},

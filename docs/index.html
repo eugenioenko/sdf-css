@@ -677,13 +677,13 @@
 		</div>
 
 		<script>
-			sdf.$('#btn_toast_bottom').on('click', function(){
+			sdf.$('#btn_toast_bottom', true).on('click', function(){
 				sdf.toast.show("Hello, World! I'm a toast from the bottom");
 			});
-			sdf.$('#btn_toast_top').on('click', function(){
+			sdf.$('#btn_toast_top', true).on('click', function(){
 				sdf.toast.show("Hello, World! I'm a toast from the top", {position: "top", class: "sdf-secondary"});
 			});
-			sdf.$('#btn_toast_actions').on('click', function(){
+			sdf.$('#btn_toast_actions', true).on('click', function(){
 				var buttons = [
 					{
 						text: 'reject',
