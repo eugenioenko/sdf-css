@@ -231,6 +231,19 @@ function query(selector, limitOne){
 				this.nodes[i].innerHTML = value + this.nodes[i].innerHTML;
 			}
 			return this;
-		}
+		},
+		/**
+		 * Removes each element from the list of dom and itself
+		 * @return {object}        Query object for nesting
+		 */
+		remove: function(){
+			for (var i = 0; i < this.nodes.length; i++) {
+				this.nodes[i].parentNode.removeChild(this.nodes[i]);
+			}
+			this.nodes = [];
+			this.selector = null;
+			this.length = 0;
+			return this;
+		},
 	}
 }
