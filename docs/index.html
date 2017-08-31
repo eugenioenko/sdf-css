@@ -677,35 +677,34 @@
 		</div>
 
 		<script>
-			//demo of styling, the name of the functions could be switched later
-			sdf.gebi('btn_toast_bottom').addEventListener('click', function(){
-				sdf.f('toast', 'show', "Hello, World! I'm a toast from the bottom");
+			sdf.$('#btn_toast_bottom').on('click', function(){
+				sdf.toast.show("Hello, World! I'm a toast from the bottom");
 			});
-			sdf.gebi('btn_toast_top').addEventListener('click', function(){
-				sdf.f('toast', 'show', "Hello, World! I'm a toast from the top", {position: "top", class: "sdf-secondary"});
+			sdf.$('#btn_toast_top').on('click', function(){
+				sdf.toast.show("Hello, World! I'm a toast from the top", {position: "top", class: "sdf-secondary"});
 			});
-			sdf.gebi('btn_toast_actions').addEventListener('click', function(){
+			sdf.$('#btn_toast_actions').on('click', function(){
 				var buttons = [
 					{
 						text: 'reject',
 						class: 'sdf-btn sdf-danger sdf-btn-small',
-						action: function(){ sdf.f('toast', 'show', "<h2>Rejection</h2>", {class: "sdf-danger", position: "top"}); }
+						action: function(){ sdf.toast.show("<h2>Rejection</h2>", {class: "sdf-danger", position: "top"}); }
 					},
 					{
 						text: 'accept',
 						class: 'sdf-btn sdf-info sdf-btn-small',
-						action: function(){ sdf.f('toast', 'show', "<h2>Acceptance</h2>", {class: "sdf-info", position: "top"}); }
+						action: function(){ sdf.toast.show("<h2>Acceptance</h2>", {class: "sdf-info", position: "top"}); }
 					}
 				];
-				sdf.f('toast', 'show', "I'm a toast with action!", {class: "sdf-dark", align: "sdf-text-center", group: "sdf-horizontal-center", duration: 9000, buttons: buttons});
+				sdf.toast.show("I'm a toast with action!", {class: "sdf-dark", align: "sdf-text-center", group: "sdf-horizontal-center", duration: 9000, buttons: buttons});
 			});
 		</script>
 		<div class="sdf-cell sdf-12">
 <pre  class="code sdf-light html"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="undefined">
    // bottom toast
-   sdf.f('toast', 'show', "Hello, World! I'm a toast from the bottom");
+   sdf.toast.show("Hello, World! I'm a toast from the bottom");
    // top toast
-   sdf.f('toast', 'show', "Hello, World! I'm a toast from the top", {position: "top", class: "sdf-secondary"});
+   sdf.toast.show("Hello, World! I'm a toast from the top", {position: "top", class: "sdf-secondary"});
 </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 </code></pre>
 		</div>
@@ -714,6 +713,14 @@
 
 	</div>
 	<br><br>
+
+	<script>
+		/*sdf.$('.selector').on('event', function(){
+
+		});
+		sdf.toast.show()
+		sdf.$('toast', 'show')*/
+	</script>
 </body>
 
 </body>

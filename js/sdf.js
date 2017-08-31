@@ -2,78 +2,81 @@
  * SDF Framework Widged/Gadget strucutre
  */
 
-/**
- * Main controller
- */
 var sdf = (function(){
 
 	'use strict';
 
 	var widgets = [];
-	var elements = [];
-	var gadgetList = [];
-	var gadgets = {};
+	var components = [];
 
 
 	function addWidget(widget){
 		widgets.push(widget);
 	}
 
-	function addGadget(gadget){
-		gadgetList.push(gadget);
+	function addComponent(component){
+		components.push(component);
 	}
 
-	function checkForAnimationLibrary(){
-		/*if(typeof window["TweenLite"] === "undefined"){
-			throw new Error("Tweenlite is required.");
-		}*/
-	}
-	function initialize(){
-		checkForAnimationLibrary();
+	function init(){
 		for(var i = 0; i < widgets.length; ++i){
 			var elems = document.querySelectorAll(widgets[i].selector);
 			for(var j = 0; j < elems.length; ++j){
 				elements.push(new widgets[i].constructor(elems[j]));
 			}
 		}
-		for (var i = 0; i < gadgetList.length; i++) {
-			gadgets[gadgetList[i].name] = new gadgetList[i].constructor();
+		for (var i = 0; i < components.length; i++) {
+			if(typeof window["sdf"] === "undefined"){
+				throw new Error("sdf controller not initialized");
+			}
+			sdf[components[i].name] = new components[i].constructor();
 		}
 
 	}
 
-	function callGadget(gadget, method){
-		gadgets[gadget][method].apply(
-			gadgets[gadget],
-			Array.prototype.slice.call(arguments, 2)
-		);
-	}
-
-	function queryElements(selector){
-		return document.querySelectorAll(selector);
-	}
-
-	function getElementById(id){
-		return document.getElementById(id);
+	function query(selector){
+		var nodes = document.querySelectorAll(selector)
+		return {
+			selector: selector,
+			nodes: nodes,
+			length: nodes.length,
+			on: function(event, method){
+				if(typeof method !== "function"){
+					console.error(method + " is not a function");
+				} else {
+					if(typeof event !== "string"){
+						console.error(event + " is not a string");
+					} else{
+						for (var i = 0; i < nodes.length; i++) {
+							nodes[i].addEventListener(event, method);
+						}
+					}
+				}
+				return this;
+			},
+			each: function(method){
+				if(typeof method !== "function"){
+					console.error(method + " is not a function");
+				} else {
+					for (var i = 0; i < nodes.length; i++) {
+						method.call(nodes[i]);
+					}
+				}
+				return this;
+			}
+		}
 	}
 
 	return {
 		addWidget: addWidget,
-		addGadget: addGadget,
-		f: callGadget,
-		$: queryElements,
-		gebi: getElementById,
-		initialize: initialize
+		addComponent: addComponent,
+		$: query,
+		init: init
 	};
 
 })();
-
-window.sdf = sdf;
-window["sdf"] = sdf;
-
-
 window.addEventListener('load', function() {
-	sdf.initialize();
+	sdf.init();
 
 });
 
@@ -138,7 +141,7 @@ window.addEventListener('load', function() {
 		}
 		var button = document.createElement('button');
 		button.className = config.class;
-		button.appendChild(document.createTextNode(config.text));
+		button.innerHTML = config.text;
 		if(config.action){
 
 		}
@@ -239,7 +242,8 @@ window.addEventListener('load', function() {
 	};
 
 	//register component
-	sdf.addGadget({
+
+	sdf.addComponent({
 		constructor: sdfToast,
 		name: 'toast'
 	});
