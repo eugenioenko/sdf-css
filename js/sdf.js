@@ -121,7 +121,7 @@ window.addEventListener('load', function() {
 			if(!document.querySelector('.sdf-toast-container-' + position)){
 				var container = document.createElement('div');
 				container.className = 'sdf-toast-container-' + position;
-				document.body.append(container);
+				document.body.appendChild(container);
 				this.containers[position] = container;
 			}
 		}
@@ -130,7 +130,7 @@ window.addEventListener('load', function() {
 	sdfToast.prototype.createButton = function(action){
 		var config = {
 			text: 'OK',
-			class: 'sdf-btn sdf-primary sdf-btn-small',
+			class: 'sdf-btn sdf-primary',
 			action: false
 		}
 		if(typeof action !== "undefined"){
@@ -138,7 +138,7 @@ window.addEventListener('load', function() {
 		}
 		var button = document.createElement('button');
 		button.className = config.class;
-		button.append(config.text);
+		button.appendChild(document.createTextNode(config.text));
 		if(config.action){
 
 		}
@@ -157,7 +157,7 @@ window.addEventListener('load', function() {
 		var group = document.createElement('div');
 		group.className = "sdf-alert-footer sdf-btn-group " + config.group;
 		for(var i = 0; i < config.buttons.length; ++i){
-			group.append(this.createButton(config.buttons[i]))
+			group.appendChild(this.createButton(config.buttons[i]))
 		}
 		return group;
 	};
@@ -206,9 +206,9 @@ window.addEventListener('load', function() {
 		toast.setAttribute('id', dom_id);
 		toast.className = "sdf-alert sdf-toast sdf-toast-" + config.position + ' ' + config.class;
 		toast.setAttribute('data-position', config.position);
-		toast.append(this.createBody(message, config.align));
+		toast.appendChild(this.createBody(message, config.align));
 		if(config.buttons.length){
-			toast.append(this.createButtonGroup(config));
+			toast.appendChild(this.createButtonGroup(config));
 		}
 		if(config.position == "top") {
 			toast.style.bottom = "0";
@@ -216,7 +216,7 @@ window.addEventListener('load', function() {
 			toast.style.top = "0";
 		}
 
-		container.append(toast);
+		container.appendChild(toast);
 		this.toasts.push(toast);
 
 		//animation
