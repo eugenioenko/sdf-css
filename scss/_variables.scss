@@ -73,7 +73,7 @@ $colors: (
 
 
 // buttons
-$border-radius: 8px;
+$border-radius: 4px;
 $button-border-radius: $border-radius;
 $button-group-border-radius: $border-radius;
 
@@ -118,3 +118,7 @@ $font-heading-h1-font-size: 3.157rem;
 $font-heading-h2-font-size: 2.369rem;
 $font-heading-h3-font-size: 1.777rem;
 $font-heading-h4-font-size: 1.333rem;
+
+// alerts
+$alert-width: 420px;
+$alert-border-radius: 4px;

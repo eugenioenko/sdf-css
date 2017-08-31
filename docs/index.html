@@ -2,7 +2,8 @@
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="sdf.css">
+	<link rel="stylesheet" href="../css/sdf.css">
+	<script src="../js/sdf.js"></script>
 	<title>Sdf CSS Framework</title>
 	<style>
 		h1, h2, h3{
@@ -634,6 +635,7 @@
 						</div>
 					</div>
 				</div>
+
 				<div class="sdf-cell sdf-12 sdf-sm-6 sdf-padding">
 					<div class="sdf-card sdf-shadow">
 						<div class="sdf-card-row">
@@ -656,6 +658,59 @@
 				</div>
 			</div>
 		</div>
+
+		<div class="sdf-cell sdf-12 sdf-padding">
+			<h2 class="sdf-text-center"><span class="sdf-badge sdf-badge-left sdf-info">5</span>Toasts</h2>
+		</div>
+		<div class="sdf-cell sdf-12 sdf-margin-vertical">
+			<div class="sdf-grid sdf-horizontal-center">
+				<div class="sdf-cell sdf-12 sdf-xs-6 sdf-sm-4 sdf-padding sdf-text-center">
+					<button class="sdf-btn sdf-primary" id="btn_toast_bottom">Toast Bottom</button>
+				</div>
+				<div class="sdf-cell sdf-12 sdf-xs-6 sdf-sm-4 sdf-padding sdf-text-center">
+					<button class="sdf-btn sdf-secondary" id="btn_toast_top">Toast Top</button>
+				</div>
+				<div class="sdf-cell sdf-12 sdf-xs-6 sdf-sm-4 sdf-padding sdf-text-center">
+					<button class="sdf-btn sdf-success" id="btn_toast_actions">Toast Actions</button>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			//demo of styling, the name of the functions could be switched later
+			sdf.gebi('btn_toast_bottom').addEventListener('click', function(){
+				sdf.f('toast', 'show', "Hello, World! I'm a toast from the bottom");
+			});
+			sdf.gebi('btn_toast_top').addEventListener('click', function(){
+				sdf.f('toast', 'show', "Hello, World! I'm a toast from the top", {position: "top", class: "sdf-secondary"});
+			});
+			sdf.gebi('btn_toast_actions').addEventListener('click', function(){
+				var buttons = [
+					{
+						text: 'reject',
+						class: 'sdf-btn sdf-danger sdf-btn-small',
+						action: function(){ sdf.f('toast', 'show', "<h2>Rejection</h2>", {class: "sdf-danger", position: "top"}); }
+					},
+					{
+						text: 'accept',
+						class: 'sdf-btn sdf-info sdf-btn-small',
+						action: function(){ sdf.f('toast', 'show', "<h2>Acceptance</h2>", {class: "sdf-info", position: "top"}); }
+					}
+				];
+				sdf.f('toast', 'show', "I'm a toast with action!", {class: "sdf-dark", align: "sdf-text-center", group: "sdf-horizontal-center", duration: 9000, buttons: buttons});
+			});
+		</script>
+
+<pre  class="code sdf-light html"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="undefined">
+   // bottom toast
+   sdf.f('toast', 'show', "Hello, World! I'm a toast from the bottom");
+   // top toast
+   sdf.f('toast', 'show', "Hello, World! I'm a toast from the top", {position: "top", class: "sdf-secondary"});
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+		<div class="sdf-cell sdf-12" style="padding-top: 300px;">
+		</div>
+
 	</div>
 </body>
 

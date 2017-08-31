@@ -1,3 +1,10 @@
+/**
+ * SDF Framework Widged/Gadget strucutre
+ */
+
+/**
+ * Main controller
+ */
 var sdf = (function(){
 
 	'use strict';
@@ -17,9 +24,9 @@ var sdf = (function(){
 	}
 
 	function checkForAnimationLibrary(){
-		if(typeof window["TweenLite"] === "undefined"){
+		/*if(typeof window["TweenLite"] === "undefined"){
 			throw new Error("Tweenlite is required.");
-		}
+		}*/
 	}
 	function initialize(){
 		checkForAnimationLibrary();
@@ -41,12 +48,21 @@ var sdf = (function(){
 			Array.prototype.slice.call(arguments, 2)
 		);
 	}
+
+	function queryElements(selector){
+		return document.querySelectorAll(selector);
+	}
+
+	function getElementById(id){
+		return document.getElementById(id);
+	}
+
 	return {
 		addWidget: addWidget,
 		addGadget: addGadget,
-		elements: elements,
-		gadgets: gadgets,
-		$: callGadget,
+		f: callGadget,
+		$: queryElements,
+		gebi: getElementById,
 		initialize: initialize
 	};
 
@@ -55,14 +71,14 @@ var sdf = (function(){
 window.sdf = sdf;
 window["sdf"] = sdf;
 
+
 window.addEventListener('load', function() {
-	console.log('log');
 	sdf.initialize();
 
 });
 
 
-
+/*
 (function(){
 	var sdfButton = function(element){
 		this.element = element;
@@ -70,7 +86,6 @@ window.addEventListener('load', function() {
 	};
 
 	sdfButton.prototype.clickEvent_ = function(){
-		console.log('click');
 	};
 
 	sdfButton.prototype.initialize = function(){
@@ -86,22 +101,11 @@ window.addEventListener('load', function() {
 	});
 
 })();
-
-/*
-var buttons = [
-	{
-		text: 'apply',
-		class: 'sdf-btn sdf-primary sdf-btn-small',
-		action: function(){console.log(this)}
-	},
-	{
-		text: 'delete',
-		class: 'sdf-btn sdf-success sdf-btn-small',
-	}
-];
-sdf.$('toast', 'show', "<p>The messages have been updated succesfully</p>", {type: "bottom", duration: 10000000, buttons: buttons});
 */
 
+/**
+ * Toasts
+ */
 (function(){
 	'use strict';
 	var sdfToast = function(){
@@ -143,67 +147,98 @@ sdf.$('toast', 'show', "<p>The messages have been updated succesfully</p>", {typ
 				if(method){
 					method.bind(that)();
 				}
-				that.remove(toast_id);
+				that.hide(toast_id);
 			}
 		})(config.action, this, this.id));
 		return button;
 	};
 
-	sdfToast.prototype.createButtonGroup = function(actions){
+	sdfToast.prototype.createButtonGroup = function(config){
 		var group = document.createElement('div');
-		group.className = "sdf-toast-footer sdf-btn-group";
-		for(var i = 0; i < actions.length; ++i){
-			group.append(this.createButton(actions[i]))
+		group.className = "sdf-alert-footer sdf-btn-group " + config.group;
+		for(var i = 0; i < config.buttons.length; ++i){
+			group.append(this.createButton(config.buttons[i]))
 		}
 		return group;
 	};
 
-	sdfToast.prototype.createBody = function(message){
+	sdfToast.prototype.createBody = function(message, align){
 		var body = document.createElement('div');
-		body.className = "sdf-toast-body";
+		body.className = "sdf-alert-body " + align + ' ';
 		body.innerHTML += message;
 		return body;
 	};
 
-	sdfToast.prototype.remove = function(id){
-		this.toasts[id].remove();
-		this.toasts[id] = {};
+	sdfToast.prototype.hide = function(id){
+		if(this.toasts[id]){
+			var position = this.toasts[id].getAttribute('data-position');
+			if(position == "top") {
+				this.toasts[id].style.bottom = "0";
+			} else{
+				this.toasts[id].style.top = "0";
+			}
+			setTimeout(
+				(function(toasts, id){
+					return function(){
+						toasts[id].remove();
+						toasts[id] = false;
+					}
+				})(this.toasts, id), 1000
+			);
+		}
 	};
 
 	sdfToast.prototype.show = function (message, settings){
 		var config = {
 			class: "sdf-primary",
-			type: "bottom",
+			align: "sdf-text-center",
+			position: "bottom",
+			group: "sdf-horizontal-right",
 			duration: 4000,
 			buttons: []
 		};
 		if(typeof settings !== "undefined"){
 			for(var key in settings) config[key] = settings[key];
 		}
-		var container = this.containers[config.type];
+		var container = this.containers[config.position];
 		var dom_id = 'sdf-toast-' + this.id;
 		var toast = document.createElement('div');
 		toast.setAttribute('id', dom_id);
-		toast.className = "sdf-toast " + config.class;
-		toast.append(this.createBody(message));
+		toast.className = "sdf-alert sdf-toast sdf-toast-" + config.position + ' ' + config.class;
+		toast.setAttribute('data-position', config.position);
+		toast.append(this.createBody(message, config.align));
 		if(config.buttons.length){
-			toast.append(this.createButtonGroup(config.buttons));
+			toast.append(this.createButtonGroup(config));
 		}
+		if(config.position == "top") {
+			toast.style.bottom = "0";
+		} else{
+			toast.style.top = "0";
+		}
+
 		container.append(toast);
 		this.toasts.push(toast);
+
+		//animation
+		if(config.position == "top") {
+			toast.style.bottom = '-' + toast.clientHeight + "px";
+		} else{
+			toast.style.top = '-' + toast.clientHeight + "px";
+		}
+
+	    //destruct afte duration timeout
 		setTimeout(
 			(function(that, toast_id){
 				return function(){
-					that.remove(toast_id);
+					that.hide(toast_id);
 				}
 			})(this, this.id), config.duration
 		);
 
-		//animate here
-		toast.style.top = "-150px";
 		return (this.id++);
 	};
 
+	//register component
 	sdf.addGadget({
 		constructor: sdfToast,
 		name: 'toast'
