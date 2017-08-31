@@ -10,4 +10,4 @@ By having separated the cell/col width class modifier it's possible to have both
 
 
 ## Demo and docs
-[Documentation here](https://eugenioenko.github.io/sdf-css/)
+[Documentation here](https://eugenioenko.github.io/sdf-css/docs/)
