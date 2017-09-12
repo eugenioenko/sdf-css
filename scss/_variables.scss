@@ -76,6 +76,7 @@ $colors: (
 $border-radius: 4px;
 $button-border-radius: $border-radius;
 $button-group-border-radius: $border-radius;
+$tab-group-border-radius: $border-radius;
 
 
 
@@ -94,9 +95,10 @@ $buttons: (
 	big-font-size: 15px,
 	big-min-width: 96px,
 );
-
+// breadcrumbs
+$breadcrumbs-separator: "/";
+$breadcrumbs-item-margin: 0.5rem;
 // badge
-
 $badge-border-radius: $border-radius;
 $badge-font-size: 100%;
 $badge-font-weight: 700;
