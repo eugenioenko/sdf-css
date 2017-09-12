@@ -21,53 +21,53 @@ $media-min-lg: 1200px;
 $color-multiplier: 10%;
 $color-types: "default", "primary", "secondary", "warning", "info", "success", "danger", "light", "dark";
 $colors: (
-	default: (
-		background: #fff,
-		contrast:   #777,
-		font:       #777
-	),
-	primary: (
-		background: #1f8dd6,
-		contrast:   #fff,
-		font:       darken(#1f8dd6, $color-multiplier)
+    default: (
+        background: #fff,
+        contrast:   #777,
+        font:       #777
+    ),
+    primary: (
+        background: #1f8dd6,
+        contrast:   #fff,
+        font:       darken(#1f8dd6, $color-multiplier)
 
-	),
-	secondary: (
-		background:  #8058a5,
-		contrast:    #ffffff,
-		font:       darken( #8058a5, $color-multiplier)
-	),
-	warning: (
-		background: #fad232,
-		contrast:   #fff,
-		font:       darken(#fad232, $color-multiplier)
-	),
-	info: (
-		background: #61a7bf,
-		contrast:   #ffffff,
-		font:       darken(#61a7bf, $color-multiplier)
-	),
-	success: (
-		background: #5eb95e,
-		contrast:   #fff,
-		font:       darken(#5eb95e, $color-multiplier)
-	),
-	danger: (
-		background: #dd514c,
-		contrast:   #fff,
-		font:       darken(#dd514c, $color-multiplier)
+    ),
+    secondary: (
+        background:  #8058a5,
+        contrast:    #ffffff,
+        font:       darken( #8058a5, $color-multiplier)
+    ),
+    warning: (
+        background: #fad232,
+        contrast:   #fff,
+        font:       darken(#fad232, $color-multiplier)
+    ),
+    info: (
+        background: #61a7bf,
+        contrast:   #ffffff,
+        font:       darken(#61a7bf, $color-multiplier)
+    ),
+    success: (
+        background: #5eb95e,
+        contrast:   #fff,
+        font:       darken(#5eb95e, $color-multiplier)
+    ),
+    danger: (
+        background: #dd514c,
+        contrast:   #fff,
+        font:       darken(#dd514c, $color-multiplier)
 
-	),
-	light: (
-		background: #f3f3f3,
-		contrast:   #545454,
-		font:       #f3f3f3
-	),
-	dark: (
-		background: #343E40,
-		contrast:   #fff,
-		font:       #343E40
-	)
+    ),
+    light: (
+        background: #f3f3f3,
+        contrast:   #545454,
+        font:       #f3f3f3
+    ),
+    dark: (
+        background: #343E40,
+        contrast:   #fff,
+        font:       #343E40
+    )
 );
 
 
@@ -82,18 +82,18 @@ $tab-group-border-radius: $border-radius;
 
 $button-sizes: "default", "big", "small";
 $buttons: (
-	default-height: 36px,
-	default-padding: 0 16px,
-	default-font-size: 14px,
-	default-min-width: 64px,
-	small-height: 24px,
-	small-padding: 0 12px,
-	small-font-size: 13px,
-	small-min-width: 48px,
-	big-height: 48px,
-	big-padding: 0 24px,
-	big-font-size: 15px,
-	big-min-width: 96px,
+    default-height: 36px,
+    default-padding: 0 16px,
+    default-font-size: 14px,
+    default-min-width: 64px,
+    small-height: 24px,
+    small-padding: 0 12px,
+    small-font-size: 13px,
+    small-min-width: 48px,
+    big-height: 48px,
+    big-padding: 0 24px,
+    big-font-size: 15px,
+    big-min-width: 96px,
 );
 // breadcrumbs
 $breadcrumbs-separator: "/";

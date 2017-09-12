@@ -1,27 +1,27 @@
 /**
- * Typography
- */
+* Typography
+*/
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700');
 html{
-  font-size: $font-size;
-  color: $font-color;
+    font-size: $font-size;
+    color: $font-color;
 }
 body{
-  -webkit-font-smoothing: antialiased;
-  font-family: $font-family;
-  font-weight: $font-weight;
-  line-height: $font-line-height;
+    -webkit-font-smoothing: antialiased;
+    font-family: $font-family;
+    font-weight: $font-weight;
+    line-height: $font-line-height;
 }
 
 .sdf-paragraph{
-	margin: $font-paragraph-margin;
-	line-height: 1.6;
-	font-size: $font-paragraph-size;
-	max-width: $font-paragraph-max-width;
+    margin: $font-paragraph-margin;
+    line-height: 1.6;
+    font-size: $font-paragraph-size;
+    max-width: $font-paragraph-max-width;
 }
 h1, h2, h3, h4 {
-  margin: $font-heading-margin;
-  font-weight: $font-heading-weight;
+    margin: $font-heading-margin;
+    font-weight: $font-heading-weight;
 }
 h1, .sdf-heading-1{ font-size: $font-heading-h1-font-size; }
 h2, .sdf-heading-2{ font-size: $font-heading-h2-font-size; }
