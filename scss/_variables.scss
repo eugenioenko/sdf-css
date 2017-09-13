@@ -19,6 +19,7 @@ $media-min-lg: 1200px;
 
 // colors
 $color-multiplier: 10%;
+$font-color-multiplier: 0%;
 $color-types: "default", "primary", "secondary", "warning", "info", "success", "danger", "light", "dark";
 $colors: (
     default: (
@@ -29,33 +30,33 @@ $colors: (
     primary: (
         background: #1f8dd6,
         contrast:   #fff,
-        font:       darken(#1f8dd6, $color-multiplier)
+        font:       darken(#1f8dd6, $font-color-multiplier)
 
     ),
     secondary: (
         background:  #8058a5,
         contrast:    #ffffff,
-        font:       darken( #8058a5, $color-multiplier)
+        font:       darken( #8058a5, $font-color-multiplier)
     ),
     warning: (
         background: #fad232,
         contrast:   #fff,
-        font:       darken(#fad232, $color-multiplier)
+        font:       darken(#fad232, $font-color-multiplier)
     ),
     info: (
         background: #61a7bf,
         contrast:   #ffffff,
-        font:       darken(#61a7bf, $color-multiplier)
+        font:       darken(#61a7bf, $font-color-multiplier)
     ),
     success: (
         background: #5eb95e,
         contrast:   #fff,
-        font:       darken(#5eb95e, $color-multiplier)
+        font:       darken(#5eb95e, $font-color-multiplier)
     ),
     danger: (
         background: #dd514c,
         contrast:   #fff,
-        font:       darken(#dd514c, $color-multiplier)
+        font:       darken(#dd514c, $font-color-multiplier)
 
     ),
     light: (
@@ -110,7 +111,7 @@ $font-family: "Roboto",Helvetica,Arial,sans-serif;
 $font-color: #676767;
 $font-size: 16px;
 $font-paragraph-size: 1.125rem;
-$font-weight: 400;
+$font-weight: 300;
 $font-line-height: 1.2;
 $font-size-small: 75%;
 $font-paragraph-margin: 0 0 0.75rem 0;
