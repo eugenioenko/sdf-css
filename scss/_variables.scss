@@ -61,7 +61,7 @@ $colors: (
     light: (
         background: #f3f3f3,
         contrast:   #545454,
-        font:       #f3f3f3
+        font:       #545454
     ),
     dark: (
         background: #343E40,
@@ -77,6 +77,7 @@ $border-radius: 4px;
 $button-border-radius: $border-radius;
 $button-group-border-radius: $border-radius;
 $tab-group-border-radius: $border-radius;
+$input-border-radius: $border-radius;
 
 
 
@@ -124,3 +125,6 @@ $font-heading-h4-font-size: 1.333rem;
 // alerts
 $alert-width: 420px;
 $alert-border-radius: 4px;
+
+// forms
+$form-group-label-margin-bottom: 10px;

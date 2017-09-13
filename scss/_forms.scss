@@ -1,0 +1,77 @@
+/**	
+ * Forms
+ */
+
+.sdf-form-group{
+	label{
+		display: inline-block;
+		font-weight: 300;
+		margin-bottom: $form-group-label-margin-bottom;
+	}
+	&.error{
+		.sdf-input{
+			border-color: color-get(danger, background);	
+		}
+		label{
+			color: color-get(danger, font);
+		}
+	}
+	&.success{
+		.sdf-input{
+			border-color: color-get(success, background);
+		}
+		label{
+			color: color-get(success, font);
+		}
+	}
+}
+.sdf-input{
+	display: block;
+	width: 100%;
+	padding: 0.5rem 1rem;
+	font-size: 1rem;
+	line-height: 1.25;
+	color: color-get(default, contrast);
+	background-color: color-get(default, background);
+	background-image: none;
+	background-clip: padding-box;
+	border: 1px solid  color-get(default, contrast);
+	border-radius: $input-border-radius;
+	will-change: border-color;
+	transition: border-color 350ms ease-in-out;
+	overflow: hidden;
+	&:focus{
+		border-color: color-get(primary, background);
+		outline: 0;
+	}
+	&.error{
+		border-color: color-get(danger, background);
+	}
+	&.success{
+		border-color: color-get(success, background);
+	}
+	&[disabled]{
+		background-color: color-get(default, background);
+	}
+}
+
+
+.sdf-form-horizontal{
+	.sdf-form-group{
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-flex-flow: row nowrap;
+		-ms-flex-flow: row nowrap;
+		flex-flow: row nowrap;
+		-webkit-align-items: center;
+		-ms-flex-align: center;
+		align-items: center;
+		label{
+			width: 200px;
+			margin-bottom: 0;
+			margin-right: $grid-gutter/2;
+			text-align: right;
+		}
+	}	
+}

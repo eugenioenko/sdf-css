@@ -34,6 +34,10 @@
         background-color: darken(color-get(default, contrast), $color-multiplier);
     }
 }
+// disabled
+.sdf-btn[disabled]{
+    opacity: 0.5;
+}
 
 // button outline
 .sdf-btn{
@@ -56,6 +60,7 @@
         }
     }
 }
+
 
 
 .sdf-btn-group{

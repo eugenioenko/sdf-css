@@ -34,8 +34,18 @@
             color: color-get($color, contrast);
         }
     }
-
 }
+// make theme modifier when input is inside color block
+@each $color in $color-types{
+    .sdf-#{$color}{
+        .sdf-input{
+            background-color: color-get($color, background);
+            border-color: color-get($color, contrast);
+            color: color-get($color, font);
+        }
+    }
+}
+
 
 // outline buttons
 .sdf-btn{
