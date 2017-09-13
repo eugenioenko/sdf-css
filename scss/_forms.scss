@@ -1,16 +1,16 @@
-/**	
+/**
  * Forms
  */
 
 .sdf-form-group{
 	label{
 		display: inline-block;
-		font-weight: 300;
+		font-weight: 400;
 		margin-bottom: $form-group-label-margin-bottom;
 	}
 	&.error{
 		.sdf-input{
-			border-color: color-get(danger, background);	
+			border-color: color-get(danger, background);
 		}
 		label{
 			color: color-get(danger, font);
@@ -73,5 +73,5 @@
 			margin-right: $grid-gutter/2;
 			text-align: right;
 		}
-	}	
+	}
 }

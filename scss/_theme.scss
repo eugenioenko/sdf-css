@@ -42,6 +42,9 @@
             background-color: color-get($color, background);
             border-color: color-get($color, contrast);
             color: color-get($color, font);
+            &:focus{
+                border-color: color-get(primary, background);
+            }
         }
     }
 }
