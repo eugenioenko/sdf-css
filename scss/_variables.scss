@@ -83,21 +83,36 @@ $input-border-radius: $border-radius;
 
 
 
-$button-sizes: "default", "big", "small";
+$button-sizes: "normal", "big", "small";
 $buttons: (
-    default-height: 36px,
-    default-padding: 0 16px,
-    default-font-size: 14px,
-    default-min-width: 64px,
-    small-height: 24px,
-    small-padding: 0 12px,
+    normal-height: 36px,
+    normal-padding: 16px,
+    normal-font-size: 14px,
+    normal-min-width: 64px,
+    small-height: 26px,
+    small-padding: 12px,
     small-font-size: 13px,
     small-min-width: 48px,
     big-height: 48px,
-    big-padding: 0 24px,
-    big-font-size: 15px,
-    big-min-width: 96px,
+    big-padding: 24px,
+    big-font-size: 17px,
+    big-min-width: 96px
 );
+$button-font-weight: 400;
+//forms
+$forms-sizes: "normal", "big", "small";
+$forms: (
+    normal-height: 36px,
+    normal-padding: 10px,
+    normal-font-size: 16px,
+    small-height: 26px,
+    small-padding: 8px,
+    small-font-size: 15px,
+    big-height: 48px,
+    big-padding: 12px,
+    big-font-size: 18px
+);
+$forms-font-weight: 400;
 // breadcrumbs
 $breadcrumbs-separator: "/";
 $breadcrumbs-item-margin: 0.5rem;
@@ -131,3 +146,9 @@ $alert-border-radius: 4px;
 // forms
 $form-group-label-margin-bottom: 10px;
 $form-input-addon-padding: 0 10px;
+
+
+// transitions
+$transition-normal:  350ms ease-in-out;
+$transition-short: 250ms ease-in-out;
+$transition-long: 450ms ease-in-out;

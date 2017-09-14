@@ -51,6 +51,19 @@
                     border-color: complement(color-get($color, background));
                 }
             }
+            &.sdf-input-outline-2p:focus,
+            &.sdf-input-outline-3p:focus,
+            &.sdf-input-outline-4p:focus{
+                @if $color == dark {
+                    outline-color: rgba(color-get(primary, background), 0.5);
+                } @else if $color == light {
+                    outline-color: rgba(color-get(primary, background), 0.5);
+                } @else if $color == default {
+                    outline-color: rgba(color-get(primary, background), 0.5);
+                } @else {
+                    outline-color: rgba(complement(color-get($color, background)), 0.5);
+                }   
+            }
         }
         // make theme modifier when input addon is inside color block
         .sdf-input-addon, .sdf-input{

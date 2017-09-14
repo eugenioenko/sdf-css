@@ -5,60 +5,117 @@
 .sdf-form-group{
 	label{
 		display: inline-block;
-		font-weight: 400;
+		font-weight: $font-weight;
 		margin-bottom: $form-group-label-margin-bottom;
 	}
 }
 .sdf-input{
 	display: block;
 	width: 100%;
-	padding: 8px 10px;
-	font-size: 1rem;
-	line-height: 1rem;
+	font-family: $font-family;
+	padding: 0  map-get($forms, normal-padding);
+	font-size: map-get($forms, normal-font-size);
+	line-height: map-get($forms, normal-height) - 2px;
 	color: color-get(default, contrast);
 	background-color: color-get(default, background);
 	background-image: none;
 	background-clip: padding-box;
 	border: 1px solid  rgba(color-get(default, contrast), $border-color-opacity);
 	border-radius: $input-border-radius;
-	will-change: border-color;
-	transition: border-color 350ms ease-in-out;
+	will-change: border-color, outline-color;
+	transition: border-color 350ms ease-in-out, outline-color 250ms ease-in-out;
 	overflow: hidden;
+	outline: 1px solid transparent;
+	margin: 0;
+
 	&:focus{
 		border-color: color-get(primary, background);
-		outline: 0;
+		outline-color: transparent;
+	}
+	&.sdf-input-outline-2p:focus{
+		outline-width: 1px;
+		outline-offset: -2px;
+		outline-color: rgba(color-get(primary, background), 0.5)
+	}
+	&.sdf-input-outline-3p:focus{
+		outline-width: 2px;
+		outline-offset: -3px;
+		outline-color: rgba(color-get(primary, background), 0.5)
+	}
+	&.sdf-input-outline-4p:focus{
+		outline-width: 3px;
+		outline-offset: -4px;
+		outline-color: rgba(color-get(primary, background), 0.5)
 	}
 	&[disabled]{
 		background-color: color-get(default, background);
 	}
 }
+textarea.sdf-input{
+	line-height: 1.2;
+	padding: map-get($forms, normal-padding) map-get($forms, normal-padding);
+	overflow-y: auto;
+}
+select.sdf-input{
+	height: map-get($forms, normal-height);
+}
+.sdf-input{
+	@each $size in $forms-sizes{
+		&.sdf-#{$size}{
+			line-height: (map-get($forms, unquote("#{$size}-height")) - 2px);
+			padding: 0 map-get($forms, unquote("#{$size}-padding"));
+			font-size: map-get($forms, unquote("#{$size}-font-size"));
+		}
+	}
+}
+select.sdf-input{
+	@each $size in $forms-sizes{
+		&.sdf-#{$size}{
+			height: map-get($forms, unquote("#{$size}-height"));
+		}
+	}
+}
+
 .sdf-input-fieldset{
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-flow: column wrap;
-    -ms-flex-flow: column wrap;
-    flex-flow: column wrap;
-   	margin: 0;
-   	padding: 0;
-   	border-radius: $input-border-radius;
-   	&>*{
-   		border-radius: 0;
-   		&:focus{
-   			z-index: 1;
-   		}
-   	}
-   	&>*:first-child{
-   		border-top-left-radius: $input-border-radius;
-   		border-top-right-radius: $input-border-radius;
-   	}
-   	&>*:last-child{
-   		border-bottom-left-radius: $input-border-radius;
-   		border-bottom-right-radius: $input-border-radius;
-   	}
-   	&>*:not(:first-child){
-   		margin-top: -1px;
-   	}
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-flow: column wrap;
+	-ms-flex-flow: column wrap;
+	flex-flow: column wrap;
+	margin: 0;
+	padding: 0;
+	border-radius: $input-border-radius;
+	&>*{
+		border-radius: 0;
+		&:focus{
+			z-index: 1;
+		}
+	}
+	&>*:first-child{
+		border-top-left-radius: $input-border-radius;
+		border-top-right-radius: $input-border-radius;
+	}
+	&>*:last-child{
+		border-bottom-left-radius: $input-border-radius;
+		border-bottom-right-radius: $input-border-radius;
+	}
+	&>*:not(:first-child){
+		margin-top: -1px;
+	}
+}
+.sdf-input-addon{
+	border-left: 1px solid  rgba(color-get(default, contrast), $border-color-opacity);
+	border-top: 1px solid  rgba(color-get(default, contrast), $border-color-opacity);
+	border-bottom: 1px solid  rgba(color-get(default, contrast), $border-color-opacity);
+	height: map-get($buttons, normal-height);
+	line-height: map-get($buttons, normal-height);
+	box-sizing: border-box;
+	padding: $form-input-addon-padding;
+	&.sdf-icon{
+		text-align: center;
+		min-width: map-get($buttons, normal-height);
+	}
 }
 .sdf-input-group{
 	display: -webkit-flex;
@@ -70,15 +127,6 @@
 	-webkit-align-items: center;
 	-ms-flex-align: center;
 	align-items: center;
-	&>.sdf-input-addon{
-		border-left: 1px solid  rgba(color-get(default, contrast), $border-color-opacity);
-		border-top: 1px solid  rgba(color-get(default, contrast), $border-color-opacity);
-		border-bottom: 1px solid  rgba(color-get(default, contrast), $border-color-opacity);
-		height: map-get($buttons, default-height);
-		line-height: map-get($buttons, default-height);
-		box-sizing: border-box;
-		padding: $form-input-addon-padding;
-	}
 	&>*:first-child{
 		border-left: 1px solid  rgba(color-get(default, contrast), $border-color-opacity);
 		border-top: 1px solid  rgba(color-get(default, contrast), $border-color-opacity);
@@ -117,6 +165,47 @@
 		border-right: 0;
 	}
 }
+.sdf-input-fieldset{
+	&>.sdf-input-group:not(:first-child):not(:last-child){
+		&>*{
+			border-radius: 0;
+		}
+	}
+	&>.sdf-input-group:first-child{
+		&>*{
+			border-bottom-right-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+	}
+	&>.sdf-input-group:last-child{
+		&>*{
+			border-top-right-radius: 0;
+			border-top-left-radius: 0;
+		}
+	}
+}
+
+// addon sizes
+.sdf-input-group{
+	@each $size in $button-sizes{
+		&.sdf-#{$size}{
+			&>.sdf-input-addon{
+				height: map-get($buttons, unquote("#{$size}-height"));
+				line-height: map-get($buttons, unquote("#{$size}-height"));
+				font-size: map-get($buttons, unquote("#{$size}-font-size"));
+			}
+			&>.sdf-input{
+				line-height: (map-get($forms, unquote("#{$size}-height")) - 2px);
+				padding: 0 map-get($forms, unquote("#{$size}-padding"));
+				font-size: map-get($forms, unquote("#{$size}-font-size"));  
+			}
+			&>select.sdf-input{
+				height: map-get($forms, unquote("#{$size}-height"));
+			}
+		}
+	}
+}
+
 .sdf-form-horizontal{
 	.sdf-form-group{
 		display: -webkit-flex;
@@ -129,7 +218,7 @@
 		-ms-flex-align: center;
 		align-items: center;
 		label{
-			width: 200px;
+			flex: 1 0 auto;
 			margin-bottom: 0;
 			margin-right: $grid-gutter/2;
 			text-align: right;
