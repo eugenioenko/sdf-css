@@ -20,6 +20,7 @@ $media-min-lg: 1200px;
 // colors
 $color-multiplier: 10%;
 $font-color-multiplier: 0%;
+$border-color-opacity: 0.7;
 $color-types: "default", "primary", "secondary", "warning", "info", "success", "danger", "light", "dark";
 $colors: (
     default: (
@@ -129,3 +130,4 @@ $alert-border-radius: 4px;
 
 // forms
 $form-group-label-margin-bottom: 10px;
+$form-input-addon-padding: 0 10px;

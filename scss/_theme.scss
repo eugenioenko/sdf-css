@@ -7,7 +7,7 @@
         background-color: color-get($color, background);
         color: color-get($color, contrast);
         &.sdf-hover, &.sdf-btn:hover, &.sdf-btn:focus{
-            background-color: darken(saturate(color-get($color, background), $color-multiplier), $color-multiplier);
+            background-color: darken(saturate(color-get($color, background), $color-multiplier*3), $color-multiplier);
         }
     }
     .sdf-#{$color}-inverse{
@@ -19,9 +19,12 @@
     }
 }
 
-//make theme modifier when button is the same as block theme
+.sdf-glow{
+    box-shadow: 0 2px 2px 0 rgba(255,255,255,.15), 0 3px 1px -2px rgba(255,255,255,.2), 0 1px 5px 0 rgba(255,255,255,.1);
+}
 @each $color in $color-types{
     .sdf-#{$color}{
+        //make theme modifier when button is the same as block theme
         .sdf-btn.sdf-#{$color}{
             background-color: darken(color-get($color, background), $color-multiplier);
             &.sdf-hover, &.sdf-btn:hover, &.sdf-btn:focus{
@@ -33,18 +36,29 @@
             border: 1px solid color-get($color, contrast);
             color: color-get($color, contrast);
         }
-    }
-}
-// make theme modifier when input is inside color block
-@each $color in $color-types{
-    .sdf-#{$color}{
+        // make theme modifier when input is inside color block
         .sdf-input{
             background-color: color-get($color, background);
-            border-color: color-get($color, contrast);
-            color: color-get($color, font);
+            color: color-get($color, contrast);
             &:focus{
-                border-color: color-get(primary, background);
+                @if $color == dark {
+                    border-color: color-get(primary, background);
+                } @else if $color == light {
+                    border-color: color-get(primary, background);
+                } @else if $color == default {
+                    border-color: color-get(primary, background);
+                } @else {
+                    border-color: complement(color-get($color, background));
+                }
             }
+        }
+        // make theme modifier when input addon is inside color block
+        .sdf-input-addon, .sdf-input{
+            border-color: rgba(color-get($color, contrast), $border-color-opacity);
+        }
+        // glow color
+        .sdf-glow{
+            box-shadow: 0 2px 2px 0 rgba(color-get($color, contrast),.15), 0 3px 1px -2px rgba(color-get($color, contrast),.2), 0 1px 5px 0 rgba(color-get($color, contrast),.1);
         }
     }
 }
@@ -58,7 +72,7 @@
                 background-color: transparent;
                 border: 1px solid color-get($color, background);
                 color: color-get($color, background);
-                &:hover, &:active{
+                &:hover, &:active, &:focus{
                     background-color: color-get($color, background);
                     border: 1px solid color-get($color, background);
                     color: color-get($color, contrast);
@@ -76,6 +90,7 @@
 .sdf-shadow{
     box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
 }
+
 .sdf-dark{
     .sdf-shadow{
         box-shadow: 0 2px 2px 0 rgba(255,255,255,.14), 0 3px 1px -2px rgba(255,255,255,.2), 0 1px 5px 0 rgba(255,255,255,.12);
