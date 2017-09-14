@@ -15,7 +15,6 @@
 	font-family: $font-family;
 	padding: 0  map-get($forms, normal-padding);
 	font-size: map-get($forms, normal-font-size);
-	line-height: map-get($forms, normal-height) - 2px;
 	color: color-get(default, contrast);
 	background-color: color-get(default, background);
 	background-image: none;
@@ -51,30 +50,34 @@
 		background-color: color-get(default, background);
 	}
 }
-textarea.sdf-input{
-	line-height: 1.2;
-	padding: map-get($forms, normal-padding) map-get($forms, normal-padding);
-	overflow-y: auto;
-}
+input.sdf-input, 
 select.sdf-input{
+	line-height: map-get($forms, normal-height) - 2px;
 	height: map-get($forms, normal-height);
-}
-.sdf-input{
 	@each $size in $forms-sizes{
 		&.sdf-#{$size}{
 			line-height: (map-get($forms, unquote("#{$size}-height")) - 2px);
 			padding: 0 map-get($forms, unquote("#{$size}-padding"));
 			font-size: map-get($forms, unquote("#{$size}-font-size"));
-		}
-	}
-}
-select.sdf-input{
-	@each $size in $forms-sizes{
-		&.sdf-#{$size}{
 			height: map-get($forms, unquote("#{$size}-height"));
 		}
 	}
 }
+textarea.sdf-input{
+	line-height: 1.2;
+	padding: map-get($forms, normal-padding) map-get($forms, normal-padding);
+	min-height: map-get($forms, normal-height) * 2;
+	overflow-y: auto;
+	@each $size in $forms-sizes{
+		&.sdf-#{$size}{
+			padding: map-get($forms, unquote("#{$size}-padding")) map-get($forms, unquote("#{$size}-padding"));
+			font-size: map-get($forms, unquote("#{$size}-font-size"));
+		}
+	}
+}
+
+
+
 
 .sdf-input-fieldset{
 	display: -webkit-flex;
@@ -194,13 +197,15 @@ select.sdf-input{
 				line-height: map-get($buttons, unquote("#{$size}-height"));
 				font-size: map-get($buttons, unquote("#{$size}-font-size"));
 			}
-			&>.sdf-input{
+			&>textarea.sdf-input{
+				font-size: map-get($forms, unquote("#{$size}-font-size"));  
+			}
+			&>input.sdf-input,
+			&>select.sdf-input{
+				height: map-get($forms, unquote("#{$size}-height"));
 				line-height: (map-get($forms, unquote("#{$size}-height")) - 2px);
 				padding: 0 map-get($forms, unquote("#{$size}-padding"));
 				font-size: map-get($forms, unquote("#{$size}-font-size"));  
-			}
-			&>select.sdf-input{
-				height: map-get($forms, unquote("#{$size}-height"));
 			}
 		}
 	}
