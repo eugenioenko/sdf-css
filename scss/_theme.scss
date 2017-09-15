@@ -40,28 +40,33 @@
         .sdf-input{
             background-color: color-get($color, background);
             color: color-get($color, contrast);
+            @include input-placeholder(color-get($color, contrast));
             &:focus{
-                @if $color == dark {
-                    border-color: color-get(primary, background);
-                } @else if $color == light {
-                    border-color: color-get(primary, background);
-                } @else if $color == default {
+                @if $color == dark or $color == light or $color == default {
                     border-color: color-get(primary, background);
                 } @else {
                     border-color: complement(color-get($color, background));
                 }
             }
-            &.sdf-input-outline-2p:focus,
-            &.sdf-input-outline-3p:focus,
-            &.sdf-input-outline-4p:focus{
-                @if $color == dark {
-                    outline-color: rgba(color-get(primary, background), 0.5);
-                } @else if $color == light {
-                    outline-color: rgba(color-get(primary, background), 0.5);
-                } @else if $color == default {
-                    outline-color: rgba(color-get(primary, background), 0.5);
+            &.sdf-input-outline-2x:focus{
+                @if $color == dark or $color == light or $color == default {
+                    box-shadow: 0 0 0 1px rgba(color-get(primary, background), 0.5);
                 } @else {
-                    outline-color: rgba(complement(color-get($color, background)), 0.5);
+                    box-shadow: 0 0 0 1px rgba(complement(color-get($color, background)), 0.5)
+                }   
+            }
+            &.sdf-input-outline-3x:focus{
+                @if $color == dark or $color == light or $color == default {
+                    box-shadow: 0 0 0 2px rgba(color-get(primary, background), 0.5);
+                } @else {
+                    box-shadow: 0 0 0 2px rgba(complement(color-get($color, background)), 0.5)
+                }   
+            }
+            &.sdf-input-outline-4x:focus{
+                @if $color == dark or $color == light or $color == default {
+                    box-shadow: 0 0 0 3px rgba(color-get(primary, background), 0.5);
+                } @else {
+                    box-shadow: 0 0 0 3px rgba(complement(color-get($color, background)), 0.5)
                 }   
             }
         }

@@ -1,8 +1,25 @@
 /**
- * Functions
- */
+* Functions
+*/
 
- @function color-get($theme, $type){
-   @return map-get(map-get($colors, $theme), $type);
- }
-
+@function color-get($theme, $type){
+    @return map-get(map-get($colors, $theme), $type);
+}
+@mixin input-placeholder($color){
+    &::-webkit-input-placeholder {
+        color:  rgba($color, $forms-placeholder-color-opacity);
+        font-weight: $forms-placeholder-font-weight;
+    }
+    &:-moz-placeholder {
+        color:  rgba($color, $forms-placeholder-color-opacity);
+        font-weight: $forms-placeholder-font-weight;
+    }
+    &::-moz-placeholder {
+        color:  rgba($color, $forms-placeholder-color-opacity);
+        font-weight: $forms-placeholder-font-weight;
+    }
+    &:-ms-input-placeholder {
+        color:  rgba($color, $forms-placeholder-color-opacity);
+        font-weight: $forms-placeholder-font-weight;
+    }
+}
