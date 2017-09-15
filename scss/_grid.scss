@@ -47,6 +47,7 @@
 
 .sdf-grid{
     @include make-grid();
+    margin: 0;
 
 }
 .sdf-grid-fixed{

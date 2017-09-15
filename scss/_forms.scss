@@ -3,6 +3,9 @@
  */
 
 .sdf-form-group{
+	margin-bottom: $grid-gutter/2;
+	box-sizing: border-box;
+	position: relative;
 	label{
 		display: inline-block;
 		font-weight: $font-weight;
