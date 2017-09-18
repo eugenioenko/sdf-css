@@ -1,12 +1,15 @@
 /**
  * Globals
  */
-html,body{
-    margin: 0;
-    padding: 0;
-    -ms-overflow-style: scrollbar;
+html{
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    line-height: $font-line-height;
 }
-
+body{
+	-ms-overflow-style: scrollbar;
+	margin: 0;
+}
 ::-moz-selection {
     background: #9dd9ff;
     text-shadow: none
