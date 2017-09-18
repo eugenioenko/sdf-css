@@ -2,7 +2,7 @@
 (in progress)
 
 ## Design Principle
-The idea of this framework is to create the minimal set of classes names which sould style contextually the maximum amount of elements posible.
+The idea of this framework is to create the minimal set of classes names which sould style contextually the maximum amount of elements.
 
 ## Theme Colors
 The framework implements a set of theme color modifiers which regardless of their combination should present all the elements cohesively and clean.
