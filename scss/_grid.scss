@@ -139,12 +139,12 @@
 @mixin  grid-media($type){
     @for $i from 1 through $max-cols {
         .sdf-#{$type}-#{$i}{
-            //width: #{percentage($i / $max-cols)};
+            width: #{percentage($i / $max-cols)};
             //width: calc(100% / #{ $max-cols / $i });
-            width: calc(100% / (#{$max-cols} / #{$i}));
+            //width: calc(100% / (#{$max-cols} / #{$i}));
         }
         .sdf-offset-#{$type}-#{$i}{
-            margin-left: calc(100% / (#{$max-cols} / #{$i}));
+            margin-left: #{percentage($i / $max-cols)};
         }
     }
 }
@@ -152,10 +152,10 @@
 
 @for $i from 1 through $max-cols {
     .sdf-#{$i}{
-        width: calc(100% / (#{$max-cols} / #{$i}));
+        width: #{percentage($i / $max-cols)};
     }
     .sdf-offset-#{$i}{
-        margin-left: calc(100% / (#{$max-cols} / #{$i}));
+        margin-left: #{percentage($i / $max-cols)};
     }
 }
 
