@@ -1,0 +1,2 @@
+1)Focus style on buttons
+2)Auto size columns on specific media queries (sdf-xs-auto, sdf-sm-auto, sdf-md-auto, sdf-lg-auto)
