@@ -3,15 +3,15 @@
  */
 
 // block positioning
-.sdf-center-block{
+.sdf-block-center{
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
-.sdf-pull-right{
+.sdf-float-right{
     float: right;
 }
-.sdf-pull-left{
+.sdf-float-left{
     float: left;
 }
 // responsive image
@@ -27,38 +27,41 @@ img.sdf-responsive{
 .sdf-text-right{
     text-align: right;
 }
+.sdf-text-left{
+    text-align: left;
+}
 
 // padding spacing
-.sdf-padding{
+.sdf-pad{
     padding: $grid-gutter/2;
 }
-.sdf-padding-small{
+.sdf-pad-small{
     padding: $grid-gutter/3;
 }
-.sdf-padding-big{
+.sdf-pad-big{
     padding: $grid-gutter;
 }
-.sdf-padding-horizontal{
+.sdf-pad-horizontal{
     padding-left: $grid-gutter/2;
     padding-right: $grid-gutter/2;
 }
-.sdf-padding-horizontal-small{
+.sdf-pad-horizontal-small{
     padding-left: $grid-gutter/3;
     padding-right: $grid-gutter/3;
 }
-.sdf-padding-horizontal-big{
+.sdf-pad-horizontal-big{
     padding-left: $grid-gutter;
     padding-right: $grid-gutter;
 }
-.sdf-padding-vertical{
+.sdf-pad-vertical{
     padding-top: $grid-gutter/2;
     padding-bottom: $grid-gutter/2;
 }
-.sdf-padding-vertical-small{
+.sdf-pad-vertical-small{
     padding-top: $grid-gutter/3;
     padding-bottom: $grid-gutter/3;
 }
-.sdf-padding-vertical-big{
+.sdf-pad-vertical-big{
     padding-top: $grid-gutter;
     padding-bottom: $grid-gutter;
 }
@@ -108,7 +111,9 @@ img.sdf-responsive{
     top: 0;
     bottom: 0;
 }
+.sdf-auto{
 
+}
 // flex positioning
 .sdf-flex{
     display: -webkit-flex;

@@ -4,20 +4,30 @@
 
 .sdf-form-group{
 	margin-bottom: $grid-gutter/2;
-	box-sizing: border-box;
-	position: relative;
 	label{
 		display: inline-block;
-		font-weight: $font-weight;
+		font-weight: $forms-font-weight;
 		margin-bottom: $form-group-label-margin-bottom;
+	}
+	&.sdf-auto{
+		flex: 1 1 140px;
 	}
 }
 .sdf-form{
+	margin-bottom: 0;
 	&>.sdf-form-group:last-child{
 		margin-bottom: 0;
 	}
 	&>.sdf-form-group:first-child{
 		margin-top: 0;
+	}
+}
+.sdf-form.sdf-gutter{
+	padding-left: $grid-gutter/4;
+	padding-right: $grid-gutter/4;
+	&>.sdf-form-group.sdf-cell{
+		padding-left: $grid-gutter/4;
+		padding-right: $grid-gutter/4;
 	}
 }
 .sdf-input{
@@ -56,7 +66,7 @@
 	}
 	@include input-placeholder(color-get(default, contrast));
 }
-input.sdf-input, 
+input.sdf-input,
 select.sdf-input{
 	line-height: map-get($forms, normal-height) - 2px;
 	height: map-get($forms, normal-height);
@@ -209,14 +219,14 @@ textarea.sdf-input{
 				font-size: map-get($buttons, unquote("#{$size}-font-size"));
 			}
 			&>textarea.sdf-input{
-				font-size: map-get($forms, unquote("#{$size}-font-size"));  
+				font-size: map-get($forms, unquote("#{$size}-font-size"));
 			}
 			&>input.sdf-input,
 			&>select.sdf-input{
 				height: map-get($forms, unquote("#{$size}-height"));
 				line-height: (map-get($forms, unquote("#{$size}-height")) - 2px);
 				padding: 0 map-get($forms, unquote("#{$size}-padding"));
-				font-size: map-get($forms, unquote("#{$size}-font-size"));  
+				font-size: map-get($forms, unquote("#{$size}-font-size"));
 			}
 		}
 	}

@@ -41,14 +41,12 @@
 @mixin make-cell{
     box-sizing: border-box;
     position: relative;
-    margin: 0;
 }
 
 
 .sdf-grid{
     @include make-grid();
     margin: 0;
-
 }
 .sdf-grid-fixed{
     @include make-grid();
@@ -62,6 +60,21 @@
     @media(min-width: $media-min-sm) and (max-width: $media-max-sm){
         max-width: $grid-sm-width;
     }
+}
+.sdf-grid, .sdf-grid-fixed{
+    &.sdf-gutter>.sdf-cell{
+        padding-left: $grid-gutter/2;
+        padding-right: $grid-gutter/2;
+    }
+    &.sdf-gutter-small>.sdf-cell{
+        padding-left: $grid-gutter/4;
+        padding-right: $grid-gutter/4;
+    }
+    &.sdf-gutter-big>.sdf-cell{
+        padding-left: $grid-gutter;
+        padding-right: $grid-gutter;
+    }
+
 }
 .sdf-cell{
     @include make-cell();
@@ -126,10 +139,11 @@
 @mixin  grid-media($type){
     @for $i from 1 through $max-cols {
         .sdf-#{$type}-#{$i}{
-            width: #{percentage($i / $max-cols)};
+            //width: #{percentage($i / $max-cols)};
+            width: calc(100% / #{ $max-cols / $i });
         }
         .sdf-offset-#{$type}-#{$i}{
-            margin-left: #{percentage($i / $max-cols)};
+            margin-left: calc(100% / #{ $max-cols / $i })
         }
     }
 }
@@ -137,10 +151,11 @@
 
 @for $i from 1 through $max-cols {
     .sdf-#{$i}{
-        width: #{percentage($i / $max-cols)};
+        //width: #{percentage($i / $max-cols)};
+        width: calc(100% / #{ $max-cols / $i });
     }
     .sdf-offset-#{$i}{
-        margin-left: #{percentage($i / $max-cols)};
+        margin-left: calc(100% / #{ $max-cols / $i })
     }
 }
 

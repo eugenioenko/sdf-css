@@ -1,9 +1,10 @@
-
-// grid
-$grid-gutter: 30px;
-$grid-lg-width: 1140px;
-$grid-md-width: 890px;
-$grid-sm-width: 710px;
+/**
+ * Grid
+ */
+$grid-gutter: 32px;
+$grid-lg-width: 1152.1px;
+$grid-md-width: 948.1px;
+$grid-sm-width: 756.1px;
 $max-cols: 12;
 
 $col-types: "xs", "sm", "md", "lg";
@@ -86,13 +87,13 @@ $input-border-radius: $border-radius;
 $button-sizes: "normal", "big", "small";
 $buttons: (
     normal-height: 36px,
-    normal-padding: 16px,
+    normal-padding: 18px,
     normal-font-size: 14px,
     normal-min-width: 64px,
     small-height: 26px,
-    small-padding: 12px,
+    small-padding: 13px,
     small-font-size: 13px,
-    small-min-width: 48px,
+    small-min-width: 52px,
     big-height: 48px,
     big-padding: 24px,
     big-font-size: 17px,
