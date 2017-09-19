@@ -44,11 +44,11 @@
 }
 
 
-.sdf-grid{
+#{$sdf}-grid{
     @include make-grid();
     margin: 0;
 }
-.sdf-grid-fixed{
+#{$sdf}-grid-fixed{
     @include make-grid();
     margin: 0 auto;
     @media(min-width: $media-min-lg){
@@ -61,27 +61,27 @@
         max-width: $grid-sm-width;
     }
 }
-.sdf-grid, .sdf-grid-fixed{
-    &.sdf-gutter>.sdf-cell{
+#{$sdf}-grid, #{$sdf}-grid-fixed{
+    &#{$sdf}-gutter>#{$sdf}-cell{
         padding-left: $grid-gutter/2;
         padding-right: $grid-gutter/2;
     }
-    &.sdf-gutter-small>.sdf-cell{
+    &#{$sdf}-gutter-small>#{$sdf}-cell{
         padding-left: $grid-gutter/4;
         padding-right: $grid-gutter/4;
     }
-    &.sdf-gutter-big>.sdf-cell{
+    &#{$sdf}-gutter-big>#{$sdf}-cell{
         padding-left: $grid-gutter;
         padding-right: $grid-gutter;
     }
 
 }
-.sdf-cell{
+#{$sdf}-cell{
     @include make-cell();
 }
 
 
-.sdf-clearfix{
+#{$sdf}-clearfix{
     @include clearfix();
 }
 
@@ -110,11 +110,11 @@
     box-sizing: border-box;
 }
 
-.sdf-container{
+#{$sdf}-container{
     width: 100%;
     @include container();
 }
-.sdf-container-fixed{
+#{$sdf}-container-fixed{
     @include container();
     margin-left: auto;
     margin-right: auto;
@@ -128,22 +128,20 @@
         width: $grid-sm-width;
     }
 }
-.sdf-row{
+#{$sdf}-row{
     @include make-row();
 }
-.sdf-col{
+#{$sdf}-col{
     @include make-col();
 }
 
 
 @mixin  grid-media($type){
     @for $i from 1 through $max-cols {
-        .sdf-#{$type}-#{$i}{
+        #{$sdf}-#{$type}-#{$i}{
             width: #{percentage($i / $max-cols)};
-            //width: calc(100% / #{ $max-cols / $i });
-            //width: calc(100% / (#{$max-cols} / #{$i}));
         }
-        .sdf-offset-#{$type}-#{$i}{
+        #{$sdf}-offset-#{$type}-#{$i}{
             margin-left: #{percentage($i / $max-cols)};
         }
     }
@@ -151,10 +149,10 @@
 
 
 @for $i from 1 through $max-cols {
-    .sdf-#{$i}{
+    #{$sdf}-#{$i}{
         width: #{percentage($i / $max-cols)};
     }
-    .sdf-offset-#{$i}{
+    #{$sdf}-offset-#{$i}{
         margin-left: #{percentage($i / $max-cols)};
     }
 }

@@ -1,14 +1,14 @@
 /**
 * Alerts and Toasts
 */
-.sdf-toast-container-bottom{
+#{$sdf}-toast-container-bottom{
 	position: fixed;
 	left: 0;
 	right: 0;
 	bottom: 0;
 	height: 0;
 }
-.sdf-toast-container-top{
+#{$sdf}-toast-container-top{
 	position: fixed;
 	left: 0;
 	right: 0;
@@ -16,7 +16,7 @@
 	height: 0;
 }
 
-.sdf-alert{
+#{$sdf}-alert{
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;
@@ -38,17 +38,17 @@
 		margin-left: 0;
 		max-width: 100%;
 	}
-	.sdf-alert-header, .sdf-alert-footer, .sdf-alert-body, .sdf-alert-footer{
+	#{$sdf}-alert-header, #{$sdf}-alert-footer, #{$sdf}-alert-body, #{$sdf}-alert-footer{
 		width: 100%;
 		box-sizing: border-box;
 	}
-	.sdf-alert-header{
+	#{$sdf}-alert-header{
 		font-size: $font-heading-h4-font-size;
 	}
-	.sdf-alert-footer{
+	#{$sdf}-alert-footer{
 		padding-top: $grid-gutter/2;
 	}
-	&>div.sdf-alert-body{
+	&>div#{$sdf}-alert-body{
 		&>*:first-child{
 			margin-top: 0;
 		}
@@ -58,13 +58,13 @@
 	}
 }
 
-.sdf-toast-top{
+#{$sdf}-toast-top{
 	will-change: bottom;
 	transition: bottom 550ms ease-in-out;
 	border-top-left-radius: 0;
 	border-top-right-radius: 0;
 }
-.sdf-toast-bottom{
+#{$sdf}-toast-bottom{
 	will-change: top;
 	transition: top 550ms ease-in-out;
 	border-bottom-left-radius: 0;
