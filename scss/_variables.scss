@@ -3,11 +3,12 @@ $sdf: "sdf";
 /**
  * Grid
  */
-$grid-gutter: 32px;
+$grid-cols: 12;          // default cols count
+$grid-gutter: 32px;     // default spacing between cells/cols
 $grid-lg-width: 1152px;
 $grid-md-width: 948px;
 $grid-sm-width: 756px;
-$max-cols: 12;
+
 
 $col-types: "xs", "sm", "md", "lg";
 $media-max-df: 549px;
@@ -19,6 +20,29 @@ $media-min-md: 992px;
 $media-max-md: 1199px;
 $media-min-lg: 1200px;
 
+$grid : (
+   (
+        cols: $grid-cols,
+        media: $media-min-xs,
+        prefix: "xs",
+        width: null
+    ),(
+        cols: $grid-cols,
+        media: $media-min-sm,
+        prefix: "sm",
+        width: $grid-sm-width
+    ),(
+        cols: $grid-cols,
+        media: $media-min-md,
+        prefix: "md",
+        width: $grid-md-width
+    ),(
+        cols: $grid-cols,
+        media: $media-min-lg,
+        prefix: "lg",
+        width: $grid-lg-width
+    )
+);
 
 // colors
 $color-multiplier: 10%;
@@ -35,7 +59,6 @@ $colors: (
         background: #1f8dd6,
         contrast:   #fff,
         font:       darken(#1f8dd6, $font-color-multiplier)
-
     ),
     secondary: (
         background:  #8058a5,
@@ -61,7 +84,6 @@ $colors: (
         background: #dd514c,
         contrast:   #fff,
         font:       darken(#dd514c, $font-color-multiplier)
-
     ),
     light: (
         background: #f3f3f3,

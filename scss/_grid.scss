@@ -1,8 +1,7 @@
-//
-// sdf grid
-//
+/** 
+ * SDF grid
+ */
 
-// Clearfix
 @mixin clearfix() {
     &:before,
     &:after {
@@ -51,14 +50,13 @@
 .#{$sdf}-grid-fixed{
     @include make-grid();
     margin: 0 auto;
-    @media(min-width: $media-min-lg){
-        max-width: $grid-lg-width;
-    }
-    @media(min-width: $media-min-md) and (max-width: $media-max-md){
-        max-width: $grid-md-width;
-    }
-    @media(min-width: $media-min-sm) and (max-width: $media-max-sm){
-        max-width: $grid-sm-width;
+    // generating fixed grid sizes
+    @each $breakpoint in $grid{
+        @if map-get($breakpoint, width) != null {
+            @media (min-width: map-get($breakpoint, width)){
+                width: map-get($breakpoint, width);
+            }    
+        }    
     }
 }
 .#{$sdf}-grid, .#{$sdf}-grid-fixed{
@@ -118,14 +116,12 @@
     @include container();
     margin-left: auto;
     margin-right: auto;
-    @media(min-width: $media-min-lg){
-        width: $grid-lg-width;
-    }
-    @media(min-width: $media-min-md) and (max-width: $media-max-md){
-        width: $grid-md-width;
-    }
-    @media(min-width: $media-min-sm) and (max-width: $media-max-sm){
-        width: $grid-sm-width;
+    @each $breakpoint in $grid{
+        @if map-get($breakpoint, width) != null {
+            @media (min-width: map-get($breakpoint, width)){
+                width: map-get($breakpoint, width);
+            }    
+        }    
     }
 }
 .#{$sdf}-row{
@@ -135,40 +131,31 @@
     @include make-col();
 }
 
-
-@mixin  grid-media($type){
-    @for $i from 1 through $max-cols {
-        .#{$sdf}-#{$type}-#{$i}{
-            width: #{percentage($i / $max-cols)};
+@mixin  grid-media($type, $cols-count){
+    @for $i from 1 through $cols-count {
+        @if $type != null {
+            .#{$sdf}-#{$type}-#{$i}{
+                width: #{percentage($i / $cols-count)};
+            }
+            .#{$sdf}-offset-#{$type}-#{$i}{
+                margin-left: #{percentage($i / $cols-count)};
+            }
+        } @else {
+            .#{$sdf}-#{$i}{
+                width: #{percentage($i / $cols-count)};
+            }
+            .#{$sdf}-offset-#{$i}{
+                margin-left: #{percentage($i / $cols-count)};
+            } 
         }
-        .#{$sdf}-offset-#{$type}-#{$i}{
-            margin-left: #{percentage($i / $max-cols)};
-        }
     }
 }
 
-
-@for $i from 1 through $max-cols {
-    .#{$sdf}-#{$i}{
-        width: #{percentage($i / $max-cols)};
-    }
-    .#{$sdf}-offset-#{$i}{
-        margin-left: #{percentage($i / $max-cols)};
-    }
+// generates default cell sizes;
+@include grid-media(null, $grid-cols);
+// generates all the cell sizes for each breakpoint (except default)
+@each $breakpoint in $grid{
+    @media (min-width: map-get($breakpoint, media)){
+        @include grid-media(map-get($breakpoint, prefix), map-get($breakpoint, cols));
+    }   
 }
-
-
-@media (min-width: $media-min-xs){
-    @include grid-media("xs");
-}
-
-@media (min-width: $media-min-sm){
-    @include grid-media("sm");
-}
-@media (min-width: $media-min-md){
-    @include grid-media("md");
-}
-@media (min-width: $media-min-lg){
-    @include grid-media("lg");
-}
-
