@@ -3,7 +3,7 @@
 */
 
 
-#{$sdf}-btn{
+.#{$sdf}-btn{
     background: 0 0;
     background-color: color-get(default, contrast);
     border: none;
@@ -36,13 +36,13 @@
     }
 }
 // disabled
-#{$sdf}-btn[disabled]{
+.#{$sdf}-btn[disabled]{
     opacity: 0.5;
 }
 
 // button outline
-#{$sdf}-btn{
-    &#{$sdf}-btn-outline{
+.#{$sdf}-btn{
+    &.#{$sdf}-btn-outline{
         border: 1px solid darken(color-get(default, background), ($color-multiplier * 3));
         background-color: transparent;
         color: darken(color-get(default, background), ($color-multiplier * 3));
@@ -50,9 +50,9 @@
 }
 
 // button sizes
-#{$sdf}-btn{
+.#{$sdf}-btn{
     @each $size in $button-sizes{
-        &#{$sdf}-btn-#{$size}{
+        &.#{$sdf}-btn-#{$size}{
             height: map-get($buttons, unquote("#{$size}-height"));
             line-height: map-get($buttons, unquote("#{$size}-height"));
             min-width: map-get($buttons, unquote("#{$size}-min-width"));
@@ -64,19 +64,19 @@
 
 
 
-#{$sdf}-btn-group{
+.#{$sdf}-btn-group{
     @include make-flex();
-    &>#{$sdf}-btn{
+    &>.#{$sdf}-btn{
         border-radius: 0;
     }
-    &>#{$sdf}-btn-outline{
+    &>.#{$sdf}-btn-outline{
         margin-right: 1px;
     }
-    &>#{$sdf}-btn:first-child{
+    &>.#{$sdf}-btn:first-child{
         border-top-left-radius: $button-group-border-radius;
         border-bottom-left-radius: $button-group-border-radius;
     }
-    &>#{$sdf}-btn:last-child{
+    &>.#{$sdf}-btn:last-child{
         border-top-right-radius: $button-group-border-radius;
         border-bottom-right-radius: $button-group-border-radius;
     }
