@@ -24,7 +24,7 @@
     overflow: hidden;
     will-change: color, background-color, box-shadow;
     box-shadow: 0 0 3px transparent;
-    transition: color 350ms ease-in-out, background-color 350ms ease-in-out, box-shadow 450ms ease-in-out;
+    transition: color $transition-normal, background-color $transition-normal, box-shadow $transition-long;
     outline: none;
     cursor: pointer;
     text-decoration: none;

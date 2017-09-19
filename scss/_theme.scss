@@ -6,8 +6,17 @@
     .#{$sdf}-#{$color}{
         background-color: color-get($color, background);
         color: color-get($color, contrast);
-        &.#{$sdf}-hover, &.#{$sdf}-btn:hover, &.#{$sdf}-btn:focus{
+        &.#{$sdf}-hover,
+        &.#{$sdf}-btn:hover,
+        &.#{$sdf}-btn:focus{
             background-color: darken(saturate(color-get($color, background), $color-multiplier*3), $color-multiplier);
+        }
+        .#{$sdf}-list-item{
+            background-color: color-get($color, background);
+            color: color-get($color, contrast);  
+            &:hover{
+                background-color: darken(color-get($color, background), $color-multiplier);  
+            } 
         }
     }
     .#{$sdf}-#{$color}-inverse{

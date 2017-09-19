@@ -1,0 +1,94 @@
+/**
+ * Lists
+ */
+
+
+// form group
+.#{$sdf}-list{
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    border-radius: $list-menu-border-radius;
+    min-width: 200px;
+    &.#{$sdf}-border{
+        border: 1px solid color-get(default, background);
+    }
+    &.#{$sdf}-single-line{
+         &>.#{$sdf}-list-item{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+    &>.#{$sdf}-list-item{
+        background-color: color-get(default, contrast);
+        color: color-get(default, background);
+        padding: $grid-gutter / 2;
+        display: block;
+        border-bottom: 1px solid rgba(color-get(default, background), 0.7);
+        cursor: pointer;
+        will-change: background-color;
+        transition: background-color $transition-normal;
+        &:hover{
+            background-color: darken(color-get(default, contrast), $color-multiplier);
+        }
+        &:first-child{
+            border-top-left-radius: $list-menu-border-radius;
+            border-top-right-radius: $list-menu-border-radius;
+        }
+        &:last-child{
+            border-bottom: 1px solid transparent;
+            border-bottom-left-radius: $list-menu-border-radius;
+            border-bottom-right-radius: $list-menu-border-radius;
+        }
+    }
+}
+// sizes
+.#{$sdf}-list.#{$sdf}-small>.#{$sdf}-list-item{
+    padding: $grid-gutter / 4;
+}
+.#{$sdf}-list.#{$sdf}-normal>.#{$sdf}-list-item{
+    padding: $grid-gutter / 2;
+}
+.#{$sdf}-list.#{$sdf}-big>.#{$sdf}-list-item{
+    padding: $grid-gutter;
+}
+
+// addons
+.#{$sdf}-list-addon{
+    box-sizing: border-box;
+    &.#{$sdf}-icon{
+        height: map-get($buttons, normal-height);
+        line-height: map-get($buttons, normal-height);
+        text-align: center;
+        min-width: map-get($buttons, normal-height);
+    }
+}
+.#{$sdf}-list-group{
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row nowrap;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    -webkit-align-items: baseline;
+    -ms-flex-align: baseline;
+    align-items: baseline;
+}
+.#{$sdf}-list-text{
+    padding: 0 $grid-gutter/2;
+}
+
+// addon sizes
+.#{$sdf}-list-group{
+    @each $size in $button-sizes{
+        &.#{$sdf}-#{$size}{
+            &>.#{$sdf}-list-addon{
+                height: map-get($buttons, unquote("#{$size}-height"));
+                line-height: map-get($buttons, unquote("#{$size}-height"));
+                font-size: map-get($buttons, unquote("#{$size}-font-size"));
+            }
+        }
+    }
+}
