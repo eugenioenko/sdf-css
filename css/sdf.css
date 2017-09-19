@@ -1754,6 +1754,18 @@ textarea.sdf-input.sdf-small {
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
 }
+.sdf-list.sdf-square {
+  border-radius: 0;
+}
+.sdf-list.sdf-square > .sdf-list-item:first-child {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.sdf-list.sdf-square > .sdf-list-item:last-child {
+  border-bottom: 1px solid transparent;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
 
 .sdf-list.sdf-small > .sdf-list-item {
   padding: 8px;
