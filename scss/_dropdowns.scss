@@ -1,0 +1,17 @@
+/**
+ * Dropdowns
+ */
+.#{$sdf}-dropdown{
+	position: relative;
+}
+[#{$sdf}-dropdown-menu]{
+	display: none;
+	position: absolute;
+	z-index: $dropdown-z-index;
+	&.active{
+		display: block;
+	}
+}
+[#{$sdf}-dropdown-menu="top"]{
+	top: calc(100% + #{$grid-gutter/4});
+}

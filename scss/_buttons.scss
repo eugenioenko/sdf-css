@@ -1,8 +1,6 @@
 /**
 * Buttons
 */
-
-
 .#{$sdf}-btn{
     background: 0 0;
     background-color: color-get(default, contrast);
@@ -31,11 +29,11 @@
     text-align: center;
     vertical-align: middle;
     -webkit-appearance: button;
-    &:hover, &:active{
-        background-color: darken(color-get(default, contrast), $color-multiplier);
+    &:hover, &:active, &:focus{
+        background-color: color-get(default, font);
     }
 }
-// disabled
+// button disabled
 .#{$sdf}-btn[disabled]{
     opacity: 0.5;
 }
@@ -43,9 +41,13 @@
 // button outline
 .#{$sdf}-btn{
     &.#{$sdf}-btn-outline{
-        border: 1px solid darken(color-get(default, background), ($color-multiplier * 3));
+        border: 1px solid color-get(default, font);
         background-color: transparent;
-        color: darken(color-get(default, background), ($color-multiplier * 3));
+        color: color-get(default, font);
+        &:hover, &:active{
+            background-color: color-get(default, font);
+            color: color-get(default, background);
+        }
     }
 }
 

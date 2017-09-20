@@ -10,10 +10,6 @@
     padding: 0;
     list-style-type: none;
     border-radius: $list-menu-border-radius;
-    min-width: 200px;
-    &.#{$sdf}-border{
-        border: 1px solid color-get(default, background);
-    }
     &.#{$sdf}-single-line{
          &>.#{$sdf}-list-item{
             overflow: hidden;
@@ -22,16 +18,17 @@
         }
     }
     &>.#{$sdf}-list-item{
-        background-color: color-get(default, contrast);
-        color: color-get(default, background);
-        padding: $grid-gutter / 2;
+        background-color: color-get(default, background);
+        color: color-get(default, font);
+        padding: ($grid-gutter / 2);
         display: block;
-        border-bottom: 1px solid rgba(color-get(default, background), 0.7);
+        border-bottom: 1px solid rgba(color-get(default, contrast), $border-opacity);
         cursor: pointer;
-        will-change: background-color;
-        transition: background-color $transition-normal;
+        will-change: background-color, color;
+        transition: color $transition-normal, background-color $transition-normal;
         &:hover{
-            background-color: darken(color-get(default, contrast), $color-multiplier);
+            background-color: color-get(default, font);
+            color: color-get(default, background);
         }
         &:first-child{
             border-top-left-radius: $list-menu-border-radius;

@@ -9,6 +9,7 @@ var sdf = (function(){
     var widgets = [];
     var gadgets = [];
     var components = [];
+    var elements = [];
 
 
     function addWidget(widget){
@@ -48,6 +49,7 @@ var sdf = (function(){
         addWidget: addWidget,
         addGadget: addGadget,
         addComponent: addComponent,
+        elements: elements,
         init: init
     };
 
@@ -738,27 +740,32 @@ window.addEventListener('load', function() {
 
 })();
 
-/*
+
 (function(){
-    var sdfButton = function(element){
+    var sdfDropdown = function(element){
         this.element = element;
         this.initialize();
     };
 
-    sdfButton.prototype.clickEvent_ = function(){
+    sdfDropdown.prototype.clickEvent_ = function(){
+        console.log('dropdown');
     };
 
-    sdfButton.prototype.initialize = function(){
-        this.clickEvent = this.clickEvent_.bind(this);
-        this.element.addEventListener('click', this.clickEvent);
-
+    sdfDropdown.prototype.initialize = function(){
+        var targetId = this.element.getAttribute('sdf-dropdown-target');
+        this.target = document.getElementById(targetId);
+        if(this.target){
+            this.clickEvent = this.clickEvent_.bind(this);
+            this.element.addEventListener('click', this.clickEvent);
+        } else {
+            console.warn("sdfDropdown Warning: can't find dropdown menu with id=" + '"' + targetId + '"');
+        }
     };
 
 
     sdf.addWidget({
-        constructor: sdfButton,
-        selector: 'button'
+        constructor: sdfDropdown,
+        selector: '[sdf-dropdown-target]'
     });
 
 })();
-*/

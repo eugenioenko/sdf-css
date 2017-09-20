@@ -4,7 +4,7 @@
  * @package SDF
  * @author  eugenioenko
  * @license http://opensource.org/licenses/MIT  MIT License
- * @link    https://github.com/eugenioenko/sdf-query
+ * @link    https://github.com/eugenioenko/sdf-css
  * @since   Version 1.0.0
  */
 

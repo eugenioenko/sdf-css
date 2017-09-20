@@ -3,8 +3,8 @@
  */
 
 .#{$sdf}-badge{
-    color: color-get(default, contrast);
-    background-color: color-get(default, background);
+    color: color-get(default, background);
+    background-color: color-get(default, contrast);
     display: inline-block;
     padding: $badge-padding;
     margin-left: $badge-margin;

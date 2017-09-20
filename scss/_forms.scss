@@ -9,7 +9,7 @@
     font-family: $font-family;
     padding: 0  map-get($forms, normal-padding);
     font-size: map-get($forms, normal-font-size);
-    color: color-get(default, contrast);
+    color: color-get(default, font);
     background-color: color-get(default, background);
     background-image: none;
     background-clip: padding-box;
@@ -24,15 +24,6 @@
         border-color: color-get(primary, background);
         box-shadow: none;
         outline: none;
-    }
-    &.#{$sdf}-input-outline-2x:focus{
-        box-shadow: 0 0 0 1px rgba(color-get(primary, background), 0.5)
-    }
-    &.#{$sdf}-input-outline-3x:focus{
-        box-shadow: 0 0 0 2px rgba(color-get(primary, background), 0.5)
-    }
-    &.#{$sdf}-input-outline-4x:focus{
-        box-shadow: 0 0 0 3px rgba(color-get(primary, background), 0.5)
     }
     &[disabled]{
         background-color: color-get(default, background);
@@ -80,7 +71,9 @@ textarea.#{$sdf}-input{
         display: inline-block;
         font-weight: $forms-font-weight;
     }
-    label + .#{$sdf}-input{
+    label + .#{$sdf}-input,
+    label + .#{$sdf}-input-group,
+    label + .#{$sdf}-fieldset{
         margin-top: map-get($forms, normal-padding);
         @each $size in $forms-sizes{
             &.#{$sdf}-#{$size}{
@@ -109,7 +102,7 @@ textarea.#{$sdf}-input{
 
 
 // form input fieldset
-.#{$sdf}-input-fieldset{
+.#{$sdf}-fieldset{
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
@@ -203,7 +196,7 @@ textarea.#{$sdf}-input{
         border-right: 0;
     }
 }
-.#{$sdf}-input-fieldset{
+.#{$sdf}-fieldset{
     &>.#{$sdf}-input-group:not(:first-child):not(:last-child){
         &>*{
             border-radius: 0;

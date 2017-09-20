@@ -52,8 +52,8 @@ $color-types: "default", "primary", "secondary", "warning", "info", "success", "
 $colors: (
     default: (
         background: #fff,
-        contrast:   #777,
-        font:       #777
+        contrast:   #6c6d6f,
+        font:       #3c3d3f
     ),
     primary: (
         background: #1f8dd6,
@@ -152,7 +152,7 @@ $badge-margin: 4px;
 $badge-padding: 0 4px;
 // typography
 $font-family: "Roboto", Helvetica, Arial, sans-serif;
-$font-color: #676767;
+$font-color: #3c3d3f;
 $font-size: 16px;
 $font-paragraph-size: 1.125rem;
 $font-weight: 300;
@@ -180,3 +180,10 @@ $form-input-addon-padding: 0 10px;
 $transition-normal:  350ms ease-in-out;
 $transition-short: 250ms ease-in-out;
 $transition-long: 450ms ease-in-out;
+
+// borders
+$border-opacity: 0.5;
+
+// dropdowns
+$dropdown-margin: $grid-gutter / 4;
+$dropdown-z-index: 100;
