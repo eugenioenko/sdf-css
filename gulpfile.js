@@ -25,6 +25,7 @@ gulp.task('combine', function() {
       './js/src/sdf-toasts.js',
       './js/src/sdf-dropdown.js',
       './js/src/sdf-dropdown-toggle.js',
+      './js/src/sdf-menu.js',
       './js/src/sdf-license.js'
     ])
   .pipe(concat({ path: 'sdf.js'}))
@@ -37,4 +38,4 @@ gulp.task('compress', function () {
     .pipe(gulp.dest('js/dist'));
 });
 
-gulp.watch('js/src/*.js', ['lint', 'combine', 'compress']);
+gulp.watch('js/src/*.js', ['lint', 'combine']);
