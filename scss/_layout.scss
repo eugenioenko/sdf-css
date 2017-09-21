@@ -1,7 +1,8 @@
 /**
  * Side Menu
  */
-.sdf-layout-wrapper{
+
+.sdf-layout-wrapper, .sdf-wrapper{
     position: relative;
     width: 100%;
     overflow-x: hidden;
@@ -18,8 +19,8 @@
     box-sizing: border-box;
 }
 .sdf-layout-content{
-    padding-top: 40px;
-    min-height: 100%;
+    margin-top: 40px;
+    min-height: calc(100% - 40px);
     box-sizing: border-box;
     position: relative;
     -webkit-transform: translate3d(0, 0, 0);
@@ -48,7 +49,7 @@
     }
     box-sizing: border-box;
 }
-.sdf-menu-toggle{
+.sdf-layout-menu-toggle{
     font-size: 1.5rem;
     cursor: pointer;
 }

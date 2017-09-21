@@ -1,0 +1,28 @@
+/**
+ * Side Menu
+ */
+
+[sdf-menu]{
+    position: absolute;
+    width: $sidemenu-width;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box;
+    z-index: 10;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    will-change: transform, -webkit-transform;
+    transition: transform $transition-normal, -webkit-transform $transition-normal;
+    visibility: hidden;
+    &[aria-hidden="true"]{
+        -webkit-transform: translate3d(-$sidemenu-width, 0, 0);
+        transform: translate3d(-$sidemenu-width, 0, 0);
+    }
+    &[aria-hidden="false"]{
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}

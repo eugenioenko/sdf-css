@@ -5,7 +5,8 @@
         this.initialize();
     };
 
-    sdfDropdownToggle.prototype.clickEvent_ = function(){
+    sdfDropdownToggle.prototype.clickEvent_ = function(e){
+        e.stopPropagation();
         if(this.element.getAttribute('aria-expanded') == 'false'){
             sdf.dropdown.show(this.target);
         } else {

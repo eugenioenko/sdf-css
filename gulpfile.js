@@ -26,6 +26,7 @@ gulp.task('combine', function() {
       './js/src/sdf-dropdown.js',
       './js/src/sdf-dropdown-toggle.js',
       './js/src/sdf-menu.js',
+      './js/src/sdf-layout-menu.js',
       './js/src/sdf-license.js'
     ])
   .pipe(concat({ path: 'sdf.js'}))
