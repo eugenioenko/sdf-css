@@ -1,4 +1,4 @@
-/** 
+/**
  * SDF grid
  */
 
@@ -43,11 +43,11 @@
 }
 
 
-.#{$sdf}-grid{
+.sdf-grid{
     @include make-grid();
     margin: 0;
 }
-.#{$sdf}-grid-fixed{
+.sdf-grid-fixed{
     @include make-grid();
     margin: 0 auto;
     // generating fixed grid sizes
@@ -55,31 +55,31 @@
         @if map-get($breakpoint, width) != null {
             @media (min-width: map-get($breakpoint, width)){
                 width: map-get($breakpoint, width);
-            }    
-        }    
+            }
+        }
     }
 }
-.#{$sdf}-grid, .#{$sdf}-grid-fixed{
-    &.#{$sdf}-gutter>.#{$sdf}-cell{
+.sdf-grid, .sdf-grid-fixed{
+    &.sdf-gutter>.sdf-cell{
         padding-left: $grid-gutter/2;
         padding-right: $grid-gutter/2;
     }
-    &.#{$sdf}-gutter-small>.#{$sdf}-cell{
+    &.sdf-gutter-small>.sdf-cell{
         padding-left: $grid-gutter/4;
         padding-right: $grid-gutter/4;
     }
-    &.#{$sdf}-gutter-big>.#{$sdf}-cell{
+    &.sdf-gutter-big>.sdf-cell{
         padding-left: $grid-gutter;
         padding-right: $grid-gutter;
     }
 
 }
-.#{$sdf}-cell{
+.sdf-cell{
     @include make-cell();
 }
 
 
-.#{$sdf}-clearfix{
+.sdf-clearfix{
     @include clearfix();
 }
 
@@ -108,11 +108,11 @@
     box-sizing: border-box;
 }
 
-.#{$sdf}-container{
+.sdf-container{
     width: 100%;
     @include container();
 }
-.#{$sdf}-container-fixed{
+.sdf-container-fixed{
     @include container();
     margin-left: auto;
     margin-right: auto;
@@ -120,33 +120,33 @@
         @if map-get($breakpoint, width) != null {
             @media (min-width: map-get($breakpoint, width)){
                 width: map-get($breakpoint, width);
-            }    
-        }    
+            }
+        }
     }
 }
-.#{$sdf}-row{
+.sdf-row{
     @include make-row();
 }
-.#{$sdf}-col{
+.sdf-col{
     @include make-col();
 }
 
 @mixin  grid-media($type, $cols-count){
     @for $i from 1 through $cols-count {
         @if $type != null {
-            .#{$sdf}-#{$type}-#{$i}{
+            .sdf-#{$type}-#{$i}{
                 width: #{percentage($i / $cols-count)};
             }
-            .#{$sdf}-offset-#{$type}-#{$i}{
+            .sdf-offset-#{$type}-#{$i}{
                 margin-left: #{percentage($i / $cols-count)};
             }
         } @else {
-            .#{$sdf}-#{$i}{
+            .sdf-#{$i}{
                 width: #{percentage($i / $cols-count)};
             }
-            .#{$sdf}-offset-#{$i}{
+            .sdf-offset-#{$i}{
                 margin-left: #{percentage($i / $cols-count)};
-            } 
+            }
         }
     }
 }
@@ -157,5 +157,5 @@
 @each $breakpoint in $grid{
     @media (min-width: map-get($breakpoint, media)){
         @include grid-media(map-get($breakpoint, prefix), map-get($breakpoint, cols));
-    }   
+    }
 }

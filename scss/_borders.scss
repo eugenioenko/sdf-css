@@ -1,25 +1,25 @@
 /**
  * Borders
  */
-.#{$sdf}-border{
+.sdf-border{
     border: 1px solid rgba(color-get(default, contrast), $border-opacity);
 }
-.#{$sdf}-glow{
+.sdf-glow{
     box-shadow: 0 2px 2px 0 rgba(255,255,255,.15), 0 3px 1px -2px rgba(255,255,255,.2), 0 1px 5px 0 rgba(255,255,255,.1);
 }
 
-.#{$sdf}-shadow{
+.sdf-shadow{
     box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
 }
 
 
 // focus
-.#{$sdf}-focus-outline-2x:focus{
+.sdf-focus-outline-2x:focus{
     box-shadow: 0 0 0 1px rgba(color-get(primary, background), 0.5)
 }
-.#{$sdf}-focus-outline-3x:focus{
+.sdf-focus-outline-3x:focus{
     box-shadow: 0 0 0 2px rgba(color-get(primary, background), 0.5)
 }
-.#{$sdf}-focus-outline-4x:focus{
+.sdf-focus-outline-4x:focus{
     box-shadow: 0 0 0 3px rgba(color-get(primary, background), 0.5)
 }

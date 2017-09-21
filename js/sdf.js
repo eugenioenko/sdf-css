@@ -1,5 +1,11 @@
 /**
- * SDF Framework Widged/Gadget strucutre
+ * SDF Query Plugin/Widget Controller
+ * Simple utility for loading widgets and gadgets
+ * @package SDF
+ * @author  eugenioenko
+ * @license http://opensource.org/licenses/MIT  MIT License
+ * @link    https://github.com/eugenioenko/sdf-css
+ * @since   Version 1.0.0
  */
 
 var sdf = (function(){
@@ -25,6 +31,9 @@ var sdf = (function(){
     }
 
     function init(){
+        if(typeof window.sdf === "undefined"){
+            throw new Error("sdf controller not initialized");
+        }
         for(var i = 0; i < widgets.length; ++i){
             var elems = document.querySelectorAll(widgets[i].selector);
             for(var j = 0; j < elems.length; ++j){
@@ -32,15 +41,9 @@ var sdf = (function(){
             }
         }
         for (i = 0; i < components.length; i++) {
-            if(typeof window["sdf"] === "undefined"){
-                throw new Error("sdf controller not initialized");
-            }
             sdf[components[i].name] = components[i].constructor;
         }
         for (i = 0; i < gadgets.length; i++) {
-            if(typeof window["sdf"] === "undefined"){
-                throw new Error("sdf controller not initialized");
-            }
             sdf[gadgets[i].name] = new gadgets[i].constructor();
         }
     }
@@ -49,6 +52,7 @@ var sdf = (function(){
         addWidget: addWidget,
         addGadget: addGadget,
         addComponent: addComponent,
+        gadgets: gadgets,
         elements: elements,
         init: init
     };
@@ -86,18 +90,16 @@ window.addEventListener('load', function() {
 })();
 */
 
-
-
 /**
  * SDF Query
  * Simple utility for selecting and modifying DOM elements used by SDF CSS Framework
- *
  * @package SDF
  * @author  eugenioenko
  * @license http://opensource.org/licenses/MIT  MIT License
- * @link    https://github.com/eugenioenko/sdf-query
+ * @link    https://github.com/eugenioenko/sdf-css
  * @since   Version 1.0.0
  */
+
 (function(){
 
 /**
@@ -107,8 +109,8 @@ window.addEventListener('load', function() {
  * lets you modify their attributes, classes, values, styles and  add event handlers.
  *
  * @param  {string|object} selector A string which is gonna be used to query elements or a Node element
- * @param {boolean|optional}        single If set to True, will limit the result of the query
- * to a single element by using querySelector instead of querySelectorAll.
+ * @param {number|optional}        length If set to a number, will limit the result of the query
+ * to the amount. If set to one, element will be selected by using querySelector instead of querySelectorAll.
  * @example
  * // adds an event handler for a button of id #button_id
  * sdf.$('#button_id', true).on('click', function(){});
@@ -129,7 +131,7 @@ window.addEventListener('load', function() {
  * @return {object} Which contains the methods for dom manipulation.
  *
  */
-    function sdfQuery(selector, single){
+    function sdfQuery(selector, length){
 
         var emptyNodeList = function(nodeList){
             return nodeList.length == 0;
@@ -163,14 +165,17 @@ window.addEventListener('load', function() {
             return classes;
         };
 
-        single = (typeof single === "boolean") ? single : false;
+        length = (typeof length === "undefined") ? -1 : length;
         var elements =  [];
         if (arguments.length) {
             if (typeof selector === "string"){
-                if(single){
+                if(length == 1){
                     elements.push(document.querySelector(selector));
                 } else {
                     elements = document.querySelectorAll(selector);
+                    if(length != -1){
+                        elements.length = length;
+                    }
                 }
             } else if(typeof selector === "object" && selector instanceof Node){
                 elements.push(selector);
@@ -345,6 +350,7 @@ window.addEventListener('load', function() {
          * @return {mixed}        Query object for nesting or value if getter
          */
             css: function(style, value){
+                var i = 0;
                 if(emptyNodeList(this.nodes)) {
                     console.error("No elements with selector: " + this.selector + ' for text');
                     return this;
@@ -358,10 +364,13 @@ window.addEventListener('load', function() {
                         // getter
                          return this.nodes[0].style[style];
                     } else if(validArguments(arguments, "object")){
+                        value = style;
                         // setter with object param
-                        for(var key in value){
-                            if(!value.hasOwnProperty(key)) continue;
-                            this.nodes[i].style[key] = value[key];
+                        for (i = 0; i < this.nodes.length; ++i) {
+                            for(var key in value){
+                                if(!value.hasOwnProperty(key)) continue;
+                                this.nodes[i].style[key] = value[key];
+                            }
                         }
                         return this;
                     } else {
@@ -370,7 +379,7 @@ window.addEventListener('load', function() {
                     }
                 }
                 if(validArguments(arguments, "string", "str|obj")){
-                    for (var i = 0; i < this.nodes.length; ++i) {
+                    for (i = 0; i < this.nodes.length; ++i) {
                         this.nodes[i].style[style] = value;
                     }
                 } else {
@@ -454,7 +463,9 @@ window.addEventListener('load', function() {
                 }
                 return this.nodes[0];
             },
-            first: function(){ return this.element() },
+            first: function(){
+                return this.element();
+            },
 
         /**
          * Appends a string or Node to an element
@@ -585,7 +596,7 @@ window.addEventListener('load', function() {
                 return this;
             }
         };
-    };
+    }
 
     sdf.addComponent({
         constructor: sdfQuery,
@@ -593,10 +604,16 @@ window.addEventListener('load', function() {
     });
 
 })();
-
 /**
- * Toasts
+ * SDF Toasts
+ * Toast Gadget for SDF
+ * @package SDF
+ * @author  eugenioenko
+ * @license http://opensource.org/licenses/MIT  MIT License
+ * @link    https://github.com/eugenioenko/sdf-css
+ * @since   Version 1.0.0
  */
+
 (function(){
     'use strict';
     var sdfToast = function(){
@@ -623,7 +640,7 @@ window.addEventListener('load', function() {
             text: 'OK',
             class: 'sdf-btn sdf-primary',
             action: false
-        }
+        };
         if(typeof action !== "undefined"){
             for(var key in action) config[key] = action[key];
         }
@@ -639,7 +656,7 @@ window.addEventListener('load', function() {
                     method.bind(that)();
                 }
                 that.hide(toast_id);
-            }
+            };
         })(config.action, this, this.id));
         return button;
 
@@ -649,7 +666,7 @@ window.addEventListener('load', function() {
         var group = document.createElement('div');
         group.className = "sdf-alert-footer sdf-btn-group " + config.group;
         for(var i = 0; i < config.buttons.length; ++i){
-            group.appendChild(this.createButton(config.buttons[i]))
+            group.appendChild(this.createButton(config.buttons[i]));
         }
         return group;
     };
@@ -674,9 +691,8 @@ window.addEventListener('load', function() {
                     return function(){
                         toasts[id].remove();
                         toasts[id] = false;
-                    }
-                })(this.toasts, id), 1000
-            );
+                    };
+                })(this.toasts, id),1000);
         }
     };
 
@@ -724,9 +740,8 @@ window.addEventListener('load', function() {
             (function(that, toast_id){
                 return function(){
                     that.hide(toast_id);
-                }
-            })(this, this.id), config.duration
-        );
+                };
+            })(this, this.id), config.duration);
 
         return (this.id++);
     };
@@ -739,33 +754,151 @@ window.addEventListener('load', function() {
     });
 
 })();
+/**
+ * SDF Toasts
+ * Toast Gadget for SDF
+ * @package SDF
+ * @author  eugenioenko
+ * @license http://opensource.org/licenses/MIT  MIT License
+ * @link    https://github.com/eugenioenko/sdf-css
+ * @since   Version 1.0.0
+ */
+ (function(){
+    'use strict';
 
+    var sdfDropdown = function(){
+        this.dropdowns = {};
+        this.selector = '[sdf-dropdown-menu]';
+        this.init();
+    };
 
-(function(){
-    var sdfDropdown = function(element){
+    sdfDropdown.prototype.hide = function(id){
+        var popup = this.dropdowns[id];
+        if(popup){
+            popup.open = false;
+            popup.element.style.display = 'none';
+            popup.element.setAttribute('aria-hidden', 'true');
+            if(popup.toggle){
+                popup.toggle.setAttribute('aria-expanded', 'false');
+            }
+        }
+    };
+    sdfDropdown.prototype.hideAll = function(){
+        for (var id in this.dropdowns){
+            if (this.dropdowns.hasOwnProperty(id) && this.dropdowns[id].open == true) {
+                this.hide(id);
+            }
+        }
+    };
+
+    sdfDropdown.prototype.show = function (id){
+        var popup = this.dropdowns[id];
+        if(popup){
+            popup.open = true;
+            popup.element.style.display = 'block';
+            popup.element.setAttribute('aria-hidden', 'false');
+            if(popup.toggle){
+                popup.toggle.setAttribute('aria-expanded', 'true');
+            }
+        }
+
+    };
+    var clickEventGenerator = function(that, id){
+        return function(){
+            that.hide(id);
+        };
+    };
+    sdfDropdown.prototype.init = function(){
+        var elements = document.querySelectorAll(this.selector);
+        for (var i = elements.length - 1; i >= 0; i--) {
+            var element = elements[i];
+            // gets or creates an id for the dropdown
+            var id = element.getAttribute('id');
+            if(!id){
+                id = "sdf-dropdown-" + i;
+                element.setAttribute('id', id);
+            }
+            // gets or sets initial state for dropdown: closed or opened
+            element.setAttribute('aria-hidden', 'true');
+            var toggle = document.querySelector('[sdf-dropdown-toggle="' + id + '"]');
+            if(toggle){
+                toggle.setAttribute('aria-expanded', 'false');
+            }
+            // sets position of dropdown to top-left if no option set
+            var position = element.getAttribute('sdf-dropdown-menu');
+            if(!position){
+                element.setAttribute('sdf-dropdown-menu', 'top-left');
+            }
+            // puts the current dropdown into the list
+            this.dropdowns[id] = {
+                element: element,
+                toggle: toggle,
+                open: false
+            };
+            element.addEventListener('click', clickEventGenerator(this, id));
+        }
+    };
+
+    //register component
+    sdf.addGadget({
+        constructor: sdfDropdown,
+        name: 'dropdown'
+    });
+
+})();
+ (function(){
+    var sdfDropdownToggle = function(element){
         this.element = element;
+        this.target = element.getAttribute('sdf-dropdown-toggle');
         this.initialize();
     };
 
-    sdfDropdown.prototype.clickEvent_ = function(){
-        console.log('dropdown');
+    sdfDropdownToggle.prototype.clickEvent_ = function(){
+        if(this.element.getAttribute('aria-expanded') == 'false'){
+            sdf.dropdown.show(this.target);
+        } else {
+            sdf.dropdown.hide(this.target);
+        }
     };
 
-    sdfDropdown.prototype.initialize = function(){
-        var targetId = this.element.getAttribute('sdf-dropdown-target');
-        this.target = document.getElementById(targetId);
-        if(this.target){
+    sdfDropdownToggle.prototype.initialize = function(){
+        var target = document.getElementById(this.target);
+        if(target){
+            this.element.setAttribute('aria-haspopup', 'true');
             this.clickEvent = this.clickEvent_.bind(this);
             this.element.addEventListener('click', this.clickEvent);
-        } else {
-            console.warn("sdfDropdown Warning: can't find dropdown menu with id=" + '"' + targetId + '"');
         }
     };
 
 
     sdf.addWidget({
-        constructor: sdfDropdown,
-        selector: '[sdf-dropdown-target]'
+        constructor: sdfDropdownToggle,
+        selector: '[sdf-dropdown-toggle]'
     });
 
 })();
+
+
+/*
+ *
+ * This content is released under the MIT License (MIT)
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
+ *
+ */

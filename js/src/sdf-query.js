@@ -17,8 +17,8 @@
  * lets you modify their attributes, classes, values, styles and  add event handlers.
  *
  * @param  {string|object} selector A string which is gonna be used to query elements or a Node element
- * @param {boolean|optional}        single If set to True, will limit the result of the query
- * to a single element by using querySelector instead of querySelectorAll.
+ * @param {number|optional}        length If set to a number, will limit the result of the query
+ * to the amount. If set to one, element will be selected by using querySelector instead of querySelectorAll.
  * @example
  * // adds an event handler for a button of id #button_id
  * sdf.$('#button_id', true).on('click', function(){});
@@ -39,7 +39,7 @@
  * @return {object} Which contains the methods for dom manipulation.
  *
  */
-    function sdfQuery(selector, single){
+    function sdfQuery(selector, length){
 
         var emptyNodeList = function(nodeList){
             return nodeList.length == 0;
@@ -73,14 +73,17 @@
             return classes;
         };
 
-        single = (typeof single === "boolean") ? single : false;
+        length = (typeof length === "undefined") ? -1 : length;
         var elements =  [];
         if (arguments.length) {
             if (typeof selector === "string"){
-                if(single){
+                if(length == 1){
                     elements.push(document.querySelector(selector));
                 } else {
                     elements = document.querySelectorAll(selector);
+                    if(length != -1){
+                        elements.length = length;
+                    }
                 }
             } else if(typeof selector === "object" && selector instanceof Node){
                 elements.push(selector);
@@ -255,6 +258,7 @@
          * @return {mixed}        Query object for nesting or value if getter
          */
             css: function(style, value){
+                var i = 0;
                 if(emptyNodeList(this.nodes)) {
                     console.error("No elements with selector: " + this.selector + ' for text');
                     return this;
@@ -268,10 +272,13 @@
                         // getter
                          return this.nodes[0].style[style];
                     } else if(validArguments(arguments, "object")){
+                        value = style;
                         // setter with object param
-                        for(var key in value){
-                            if(!value.hasOwnProperty(key)) continue;
-                            this.nodes[i].style[key] = value[key];
+                        for (i = 0; i < this.nodes.length; ++i) {
+                            for(var key in value){
+                                if(!value.hasOwnProperty(key)) continue;
+                                this.nodes[i].style[key] = value[key];
+                            }
                         }
                         return this;
                     } else {
@@ -280,7 +287,7 @@
                     }
                 }
                 if(validArguments(arguments, "string", "str|obj")){
-                    for (var i = 0; i < this.nodes.length; ++i) {
+                    for (i = 0; i < this.nodes.length; ++i) {
                         this.nodes[i].style[style] = value;
                     }
                 } else {
@@ -364,7 +371,9 @@
                 }
                 return this.nodes[0];
             },
-            first: function(){ return this.element() },
+            first: function(){
+                return this.element();
+            },
 
         /**
          * Appends a string or Node to an element
@@ -495,7 +504,7 @@
                 return this;
             }
         };
-    };
+    }
 
     sdf.addComponent({
         constructor: sdfQuery,
@@ -503,30 +512,3 @@
     });
 
 })();
- /**
- * This content is released under the MIT License (MIT)
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- *
- * @package SDF
- * @author  eugenioenko
- * @license http://opensource.org/licenses/MIT  MIT License
- * @link    https://github.com/eugenioenko/sdf-query
- * @since   Version 1.0.0
- */

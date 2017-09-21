@@ -1,17 +1,28 @@
 /**
  * Dropdowns
  */
-.#{$sdf}-dropdown{
+.sdf-dropdown{
 	position: relative;
 }
 [#{$sdf}-dropdown-menu]{
 	display: none;
 	position: absolute;
+	min-width: 180px;
 	z-index: $dropdown-z-index;
-	&.active{
-		display: block;
-	}
 }
-[#{$sdf}-dropdown-menu="top"]{
+[#{$sdf}-dropdown-menu="top-left"]{
 	top: calc(100% + #{$grid-gutter/4});
+	left: 0;
+}
+[#{$sdf}-dropdown-menu="top-right"]{
+	top: calc(100% + #{$grid-gutter/4});
+	right: 0;
+}
+[#{$sdf}-dropdown-menu="bottom-left"]{
+	bottom: calc(100% + #{$grid-gutter/4});
+	left: 0;
+}
+[#{$sdf}-dropdown-menu="bottom-right"]{
+	bottom: calc(100% + #{$grid-gutter/4});
+	right: 0;
 }

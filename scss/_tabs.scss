@@ -1,11 +1,11 @@
 /**
  * Tabs
  */
-.#{$sdf}-tabs-view{
+.sdf-tabs-view{
     overflow-x: auto;
     overflow-y: hidden;
 }
-.#{$sdf}-tabs{
+.sdf-tabs{
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
@@ -19,7 +19,7 @@
     background-color: inherit;
     color: inherit;
 
-    .#{$sdf}-tab-item{
+    .sdf-tab-item{
         position: relative;
         padding: 10px 15px;
         border-top-left-radius: $tab-group-border-radius;

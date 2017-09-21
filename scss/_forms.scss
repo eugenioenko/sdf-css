@@ -3,7 +3,7 @@
  */
 
 // input, select, textarea
-.#{$sdf}-input{
+.sdf-input{
     display: block;
     width: 100%;
     font-family: $font-family;
@@ -13,7 +13,7 @@
     background-color: color-get(default, background);
     background-image: none;
     background-clip: padding-box;
-    border: 1px solid  rgba(color-get(default, contrast), $border-color-opacity);
+    border: 1px solid  rgba(color-get(default, contrast), $input-border-opacity);
     border-radius: $input-border-radius;
     will-change: border-color, outline-color;
     transition: border-color 350ms ease-in-out, box-shadow 250ms ease-in-out;
@@ -30,12 +30,12 @@
     }
     @include input-placeholder(color-get(default, contrast));
 }
-input.#{$sdf}-input,
-select.#{$sdf}-input{
+input.sdf-input,
+select.sdf-input{
     line-height: map-get($forms, normal-height) - 2px;
     height: map-get($forms, normal-height);
     @each $size in $forms-sizes{
-        &.#{$sdf}-#{$size}{
+        &.sdf-#{$size}{
             line-height: (map-get($forms, unquote("#{$size}-height")) - 2px);
             padding: 0 map-get($forms, unquote("#{$size}-padding"));
             font-size: map-get($forms, unquote("#{$size}-font-size"));
@@ -43,13 +43,13 @@ select.#{$sdf}-input{
         }
     }
 }
-textarea.#{$sdf}-input{
+textarea.sdf-input{
     line-height: 1.2;
     padding: map-get($forms, normal-padding) map-get($forms, normal-padding);
     min-height: map-get($forms, normal-height) * 2;
     overflow-y: auto;
     @each $size in $forms-sizes{
-        &.#{$sdf}-#{$size}{
+        &.sdf-#{$size}{
             padding: map-get($forms, unquote("#{$size}-padding")) map-get($forms, unquote("#{$size}-padding"));
             font-size: map-get($forms, unquote("#{$size}-font-size"));
         }
@@ -57,9 +57,9 @@ textarea.#{$sdf}-input{
 }
 
 // form group
-.#{$sdf}-form-group{
+.sdf-form-group{
     margin-bottom: $grid-gutter/2;
-    &.#{$sdf}-auto{
+    &.sdf-auto{
         @media (min-width: $media-min-xs){
             flex: 1 1 140px;
         }
@@ -71,30 +71,30 @@ textarea.#{$sdf}-input{
         display: inline-block;
         font-weight: $forms-font-weight;
     }
-    label + .#{$sdf}-input,
-    label + .#{$sdf}-input-group,
-    label + .#{$sdf}-fieldset{
+    label + .sdf-input,
+    label + .sdf-input-group,
+    label + .sdf-fieldset{
         margin-top: map-get($forms, normal-padding);
         @each $size in $forms-sizes{
-            &.#{$sdf}-#{$size}{
+            &.sdf-#{$size}{
                 margin-top: map-get($forms, unquote("#{$size}-padding"));
             }
         }
     }
 }
-.#{$sdf}-form{
+.sdf-form{
     margin-bottom: 0;
-    &>.#{$sdf}-form-group:last-child{
+    &>.sdf-form-group:last-child{
         margin-bottom: 0;
     }
-    &>.#{$sdf}-form-group:first-child{
+    &>.sdf-form-group:first-child{
         margin-top: 0;
     }
 }
-.#{$sdf}-form.#{$sdf}-gutter{
+.sdf-form.sdf-gutter{
     padding-left: $grid-gutter/4;
     padding-right: $grid-gutter/4;
-    &>.#{$sdf}-form-group.#{$sdf}-cell{
+    &>.sdf-form-group.sdf-cell{
         padding-left: $grid-gutter/4;
         padding-right: $grid-gutter/4;
     }
@@ -102,7 +102,7 @@ textarea.#{$sdf}-input{
 
 
 // form input fieldset
-.#{$sdf}-fieldset{
+.sdf-fieldset{
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
@@ -130,20 +130,20 @@ textarea.#{$sdf}-input{
         margin-top: -1px;
     }
 }
-.#{$sdf}-input-addon{
-    border-left: 1px solid  rgba(color-get(default, contrast), $border-color-opacity);
-    border-top: 1px solid  rgba(color-get(default, contrast), $border-color-opacity);
-    border-bottom: 1px solid  rgba(color-get(default, contrast), $border-color-opacity);
+.sdf-input-addon{
+    border-left: 1px solid  rgba(color-get(default, contrast), $input-border-opacity);
+    border-top: 1px solid  rgba(color-get(default, contrast), $input-border-opacity);
+    border-bottom: 1px solid  rgba(color-get(default, contrast), $input-border-opacity);
     height: map-get($buttons, normal-height);
     line-height: map-get($buttons, normal-height);
     box-sizing: border-box;
     padding: $form-input-addon-padding;
-    &.#{$sdf}-icon{
+    &.sdf-icon{
         text-align: center;
         min-width: map-get($buttons, normal-height);
     }
 }
-.#{$sdf}-input-group{
+.sdf-input-group{
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
@@ -153,62 +153,62 @@ textarea.#{$sdf}-input{
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
-    &>.#{$sdf}-input{
+    &>.sdf-input{
         &:focus{
             z-index: 1;
         }
     }
     &>*:first-child{
-        border-left: 1px solid  rgba(color-get(default, contrast), $border-color-opacity);
-        border-top: 1px solid  rgba(color-get(default, contrast), $border-color-opacity);
-        border-bottom: 1px solid  rgba(color-get(default, contrast), $border-color-opacity);
+        border-left: 1px solid  rgba(color-get(default, contrast), $input-border-opacity);
+        border-top: 1px solid  rgba(color-get(default, contrast), $input-border-opacity);
+        border-bottom: 1px solid  rgba(color-get(default, contrast), $input-border-opacity);
         border-top-left-radius: $input-border-radius;
         border-bottom-left-radius: $input-border-radius;
     }
     &>*:last-child{
-        border-right: 1px solid  rgba(color-get(default, contrast), $border-color-opacity);
-        border-top: 1px solid  rgba(color-get(default, contrast), $border-color-opacity);
-        border-bottom: 1px solid  rgba(color-get(default, contrast), $border-color-opacity);
+        border-right: 1px solid  rgba(color-get(default, contrast), $input-border-opacity);
+        border-top: 1px solid  rgba(color-get(default, contrast), $input-border-opacity);
+        border-bottom: 1px solid  rgba(color-get(default, contrast), $input-border-opacity);
         border-top-right-radius: $input-border-radius;
         border-bottom-right-radius: $input-border-radius;
     }
-    &>.#{$sdf}-input-addon:last-child{
+    &>.sdf-input-addon:last-child{
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
     }
-    &>.#{$sdf}-input-addon:first-child{
+    &>.sdf-input-addon:first-child{
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
     }
-    &>.#{$sdf}-input:not(:first-child){
+    &>.sdf-input:not(:first-child){
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
     }
-    &>.#{$sdf}-input:not(:last-child){
+    &>.sdf-input:not(:last-child){
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
     }
-    &>.#{$sdf}-input+.#{$sdf}-input-addon:not(:first-child){
+    &>.sdf-input+.sdf-input-addon:not(:first-child){
         border-left: 0;
     }
 
-    &>.#{$sdf}-input-addon:not(:last-child){
+    &>.sdf-input-addon:not(:last-child){
         border-right: 0;
     }
 }
-.#{$sdf}-fieldset{
-    &>.#{$sdf}-input-group:not(:first-child):not(:last-child){
+.sdf-fieldset{
+    &>.sdf-input-group:not(:first-child):not(:last-child){
         &>*{
             border-radius: 0;
         }
     }
-    &>.#{$sdf}-input-group:first-child{
+    &>.sdf-input-group:first-child{
         &>*{
             border-bottom-right-radius: 0;
             border-bottom-left-radius: 0;
         }
     }
-    &>.#{$sdf}-input-group:last-child{
+    &>.sdf-input-group:last-child{
         &>*{
             border-top-right-radius: 0;
             border-top-left-radius: 0;
@@ -217,19 +217,19 @@ textarea.#{$sdf}-input{
 }
 
 // addon sizes
-.#{$sdf}-input-group{
+.sdf-input-group{
     @each $size in $button-sizes{
-        &.#{$sdf}-#{$size}{
-            &>.#{$sdf}-input-addon{
+        &.sdf-#{$size}{
+            &>.sdf-input-addon{
                 height: map-get($buttons, unquote("#{$size}-height"));
                 line-height: map-get($buttons, unquote("#{$size}-height"));
                 font-size: map-get($buttons, unquote("#{$size}-font-size"));
             }
-            &>textarea.#{$sdf}-input{
+            &>textarea.sdf-input{
                 font-size: map-get($forms, unquote("#{$size}-font-size"));
             }
-            &>input.#{$sdf}-input,
-            &>select.#{$sdf}-input{
+            &>input.sdf-input,
+            &>select.sdf-input{
                 height: map-get($forms, unquote("#{$size}-height"));
                 line-height: (map-get($forms, unquote("#{$size}-height")) - 2px);
                 padding: 0 map-get($forms, unquote("#{$size}-padding"));
@@ -239,8 +239,8 @@ textarea.#{$sdf}-input{
     }
 }
 
-.#{$sdf}-form-horizontal{
-    .#{$sdf}-form-group{
+.sdf-form-horizontal{
+    .sdf-form-group{
         display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;

@@ -1,0 +1,34 @@
+{
+  "name": "sdf-js",
+  "version": "1.0.0",
+  "description": "Javascript framework used by SDF ",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eugenioenko/sdf-css.git"
+  },
+  "keywords": [
+    "javascript",
+    "sdf",
+    "css",
+    "framework"
+  ],
+  "author": "eugenioenko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eugenioenko/sdf-css/issues"
+  },
+  "homepage": "https://github.com/eugenioenko/sdf-css#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-jshint": "^2.0.4",
+    "gulp-uglify": "^3.0.0",
+    "jshint": "^2.9.5",
+    "jshint-stylish": "^2.2.1"
+  },
+  "dependencies": {}
+}

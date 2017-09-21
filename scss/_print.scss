@@ -58,41 +58,41 @@
 @media print{
     // color themes from $color-types variable
      @each $color in $color-types{
-        .#{$sdf}-#{$color}{
+        .sdf-#{$color}{
             background-color: print-get($color, background);
             color: print-get($color, contrast);
-            &.#{$sdf}-hover, &.#{$sdf}-btn:hover, &.#{$sdf}-btn:focus{
+            &.sdf-hover, &.sdf-btn:hover, &.sdf-btn:focus{
                 background-color: darken(saturate(print-get($color, background), $color-multiplier*3), $color-multiplier);
             }
         }
-        .#{$sdf}-#{$color}-inverse{
+        .sdf-#{$color}-inverse{
             background-color: print-get($color, contrast);
             color: print-get($color, background);
         }
-        .#{$sdf}-#{$color}-font{
+        .sdf-#{$color}-font{
             color: print-get($color, font);
         }
     }
 
-    .#{$sdf}-glow{
+    .sdf-glow{
         box-shadow: 0 2px 2px 0 rgba(255,255,255,.15), 0 3px 1px -2px rgba(255,255,255,.2), 0 1px 5px 0 rgba(255,255,255,.1);
     }
     @each $color in $color-types{
-        .#{$sdf}-#{$color}{
+        .sdf-#{$color}{
             //make theme modifier when button is the same as block theme
-            .#{$sdf}-btn.#{$sdf}-#{$color}{
+            .sdf-btn.sdf-#{$color}{
                 background-color: darken(print-get($color, background), $color-multiplier);
-                &.#{$sdf}-hover, &.#{$sdf}-btn:hover, &.#{$sdf}-btn:focus{
+                &.sdf-hover, &.sdf-btn:hover, &.sdf-btn:focus{
                     background-color: print-get($color, contrast);
                     color: print-get($color, background);
                 }
             }
-            .#{$sdf}-btn.#{$sdf}-btn-outline.#{$sdf}-#{$color}{
+            .sdf-btn.sdf-btn-outline.sdf-#{$color}{
                 border: 1px solid print-get($color, contrast);
                 color: print-get($color, contrast);
             }
             // make theme modifier when input is inside color block
-            .#{$sdf}-input{
+            .sdf-input{
                 background-color: print-get($color, background);
                 color: print-get($color, contrast);
                 &:focus{
@@ -106,9 +106,9 @@
                         border-color: complement(print-get($color, background));
                     }
                 }
-                &.#{$sdf}-input-outline-2p:focus,
-                &.#{$sdf}-input-outline-3p:focus,
-                &.#{$sdf}-input-outline-4p:focus{
+                &.sdf-input-outline-2p:focus,
+                &.sdf-input-outline-3p:focus,
+                &.sdf-input-outline-4p:focus{
                     @if $color == dark {
                         outline-color: rgba(print-get(primary, background), 0.5);
                     } @else if $color == light {
@@ -117,15 +117,15 @@
                         outline-color: rgba(print-get(primary, background), 0.5);
                     } @else {
                         outline-color: rgba(complement(print-get($color, background)), 0.5);
-                    }   
+                    }
                 }
             }
             // make theme modifier when input addon is inside color block
-            .#{$sdf}-input-addon, .#{$sdf}-input{
-                border-color: rgba(print-get($color, contrast), $border-color-opacity);
+            .sdf-input-addon, .sdf-input{
+                border-color: rgba(print-get($color, contrast), $input-border-opacity);
             }
             // glow color
-            .#{$sdf}-glow{
+            .sdf-glow{
                 box-shadow: 0 2px 2px 0 rgba(print-get($color, contrast),.15), 0 3px 1px -2px rgba(print-get($color, contrast),.2), 0 1px 5px 0 rgba(print-get($color, contrast),.1);
             }
         }
@@ -133,10 +133,10 @@
 
 
     // outline buttons
-    .#{$sdf}-btn{
-        &.#{$sdf}-btn-outline{
+    .sdf-btn{
+        &.sdf-btn-outline{
             @each $color in $color-types{
-                &.#{$sdf}-#{$color}{
+                &.sdf-#{$color}{
                     background-color: transparent;
                     border: 1px solid print-get($color, background);
                     color: print-get($color, background);
@@ -146,7 +146,7 @@
                         color: print-get($color, contrast);
                     }
                 }
-                &.#{$sdf}-#{$color}-inverse{
+                &.sdf-#{$color}-inverse{
                     background-color: transparent;
                     border: 1px solid print-get($color, contrast);
                     color: print-get($color, contrast);
@@ -155,12 +155,12 @@
         }
     }
 
-    .#{$sdf}-shadow{
+    .sdf-shadow{
         box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
     }
 
-    .#{$sdf}-dark{
-        .#{$sdf}-shadow{
+    .sdf-dark{
+        .sdf-shadow{
             box-shadow: 0 2px 2px 0 rgba(255,255,255,.14), 0 3px 1px -2px rgba(255,255,255,.2), 0 1px 5px 0 rgba(255,255,255,.12);
         }
     }

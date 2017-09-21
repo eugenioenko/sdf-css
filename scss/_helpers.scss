@@ -3,100 +3,100 @@
  */
 
 // block positioning
-.#{$sdf}-block-center{
+.sdf-block-center{
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
-.#{$sdf}-float-right{
+.sdf-float-right{
     float: right;
 }
-.#{$sdf}-float-left{
+.sdf-float-left{
     float: left;
 }
 // responsive image
-img.#{$sdf}-responsive{
+img.sdf-responsive{
     display: block;
     max-width: 100%;
     height: auto;
 }
 // text positioning
-.#{$sdf}-text-center{
+.sdf-text-center{
     text-align: center;
 }
-.#{$sdf}-text-right{
+.sdf-text-right{
     text-align: right;
 }
-.#{$sdf}-text-left{
+.sdf-text-left{
     text-align: left;
 }
 
 // padding spacing
-.#{$sdf}-pad{
+.sdf-pad{
     padding: $grid-gutter/2;
 }
-.#{$sdf}-pad-small{
+.sdf-pad-small{
     padding: $grid-gutter/3;
 }
-.#{$sdf}-pad-big{
+.sdf-pad-big{
     padding: $grid-gutter;
 }
-.#{$sdf}-pad-horizontal{
+.sdf-pad-horizontal{
     padding-left: $grid-gutter/2;
     padding-right: $grid-gutter/2;
 }
-.#{$sdf}-pad-horizontal-small{
+.sdf-pad-horizontal-small{
     padding-left: $grid-gutter/3;
     padding-right: $grid-gutter/3;
 }
-.#{$sdf}-pad-horizontal-big{
+.sdf-pad-horizontal-big{
     padding-left: $grid-gutter;
     padding-right: $grid-gutter;
 }
-.#{$sdf}-pad-vertical{
+.sdf-pad-vertical{
     padding-top: $grid-gutter/2;
     padding-bottom: $grid-gutter/2;
 }
-.#{$sdf}-pad-vertical-small{
+.sdf-pad-vertical-small{
     padding-top: $grid-gutter/3;
     padding-bottom: $grid-gutter/3;
 }
-.#{$sdf}-pad-vertical-big{
+.sdf-pad-vertical-big{
     padding-top: $grid-gutter;
     padding-bottom: $grid-gutter;
 }
 
 // margin spacing
-.#{$sdf}-margin{
+.sdf-margin{
     margin: $grid-gutter/2;
 }
-.#{$sdf}-margin-small{
+.sdf-margin-small{
     margin: $grid-gutter/3;
 }
-.#{$sdf}-margin-big{
+.sdf-margin-big{
     margin: $grid-gutter;
 }
-.#{$sdf}-margin-horizontal{
+.sdf-margin-horizontal{
     margin-left: $grid-gutter/2;
     margin-right: $grid-gutter/2;
 }
-.#{$sdf}-margin-horizontal-small{
+.sdf-margin-horizontal-small{
     margin-left: $grid-gutter/3;
     margin-right: $grid-gutter/3;
 }
-.#{$sdf}-margin-horizontal-big{
+.sdf-margin-horizontal-big{
     margin-left: $grid-gutter;
     margin-right: $grid-gutter;
 }
-.#{$sdf}-margin-vertical{
+.sdf-margin-vertical{
     margin-top: $grid-gutter/2;
     margin-bottom: $grid-gutter/2;
 }
-.#{$sdf}-margin-vertical-small{
+.sdf-margin-vertical-small{
     margin-top: $grid-gutter/3;
     margin-bottom: $grid-gutter/3;
 }
-.#{$sdf}-margin-vertical-big{
+.sdf-margin-vertical-big{
     margin-top: $grid-gutter;
     margin-bottom: $grid-gutter;
 }
@@ -104,73 +104,73 @@ img.#{$sdf}-responsive{
 
 
 // absolute position block
-.#{$sdf}-absolute{
+.sdf-absolute{
     position: absolute;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
 }
-.#{$sdf}-auto{
+.sdf-auto{
 
 }
 // flex positioning
-.#{$sdf}-flex{
+.sdf-flex{
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
 }
-.#{$sdf}-vertical-stretch{
+.sdf-vertical-stretch{
     -webkit-align-items: stretch;
     -ms-flex-align: stretch;
     align-items: stretch;
 }
-.#{$sdf}-vertical-center{
+.sdf-vertical-center{
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
 }
-.#{$sdf}-vertical-top{
+.sdf-vertical-top{
     -webkit-align-items: flex-start;
     -ms-flex-align: flex-start;
     align-items: flex-start;
 }
-.#{$sdf}-vertical-bottom{
+.sdf-vertical-bottom{
     -webkit-align-items: flex-end;
     -ms-flex-align: flex-end;
     align-items: flex-end;
 }
-.#{$sdf}-horizontal-stretch{
+.sdf-horizontal-stretch{
     -webkit-justify-content: stretch;
     -ms-flex-pack: stretch;
     justify-content: stretch;
 }
-.#{$sdf}-horizontal-center{
+.sdf-horizontal-center{
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
 }
-.#{$sdf}-horizontal-left{
+.sdf-horizontal-left{
     -webkit-justify-content: flex-start;
     -ms-flex-pack: flex-start;
     justify-content: flex-start;
 }
-.#{$sdf}-horizontal-right{
+.sdf-horizontal-right{
     -webkit-justify-content: flex-end;
     -ms-flex-pack: flex-end;
     justify-content: flex-end;
 }
-.#{$sdf}-content-center{
+.sdf-content-center{
    -ms-flex-line-pack: center;
     -webkit-align-content: center;
     align-content: center;
 }
-.#{$sdf}-content-start{
+.sdf-content-start{
     -ms-flex-line-pack: flex-start;
     -webkit-align-content: flex-start;
     align-content: flex-start;
 }
-.#{$sdf}-content-end{
+.sdf-content-end{
     -ms-flex-line-pack: flex-end;
     -webkit-align-content: flex-end;
     align-content: flex-end;
@@ -179,127 +179,127 @@ img.#{$sdf}-responsive{
 /**
  * visibility block
  */
-.#{$sdf}-visible-df,
-.#{$sdf}-visible-xs,
-.#{$sdf}-visible-min-xs,
-.#{$sdf}-visible-max-xs,
-.#{$sdf}-visible-sm,
-.#{$sdf}-visible-min-sm,
-.#{$sdf}-visible-max-sm,
-.#{$sdf}-visible-md,
-.#{$sdf}-visible-min-md,
-.#{$sdf}-visible-max-md,
-.#{$sdf}-visible-lg{
+.sdf-visible-df,
+.sdf-visible-xs,
+.sdf-visible-min-xs,
+.sdf-visible-max-xs,
+.sdf-visible-sm,
+.sdf-visible-min-sm,
+.sdf-visible-max-sm,
+.sdf-visible-md,
+.sdf-visible-min-md,
+.sdf-visible-max-md,
+.sdf-visible-lg{
     display: none !important;
 }
-.#{$sdf}-visible-df {
+.sdf-visible-df {
     @media (max-width: $media-max-df) {
         display: block!important;
     }
 }
-.#{$sdf}-visible-max-xs {
+.sdf-visible-max-xs {
     @media (max-width: $media-max-xs) {
         display: block!important;
     }
 }
-.#{$sdf}-visible-min-xs {
+.sdf-visible-min-xs {
     @media (min-width: $media-min-xs) {
         display: block!important;
     }
 }
-.#{$sdf}-visible-xs {
+.sdf-visible-xs {
     @media (min-width: $media-min-xs) and (max-width: $media-max-xs) {
         display: block!important;
     }
 }
 
-.#{$sdf}-visible-sm {
+.sdf-visible-sm {
     @media (min-width: $media-min-sm) and (max-width: $media-max-sm) {
         display: block!important;
     }
 }
-.#{$sdf}-visible-min-sm {
+.sdf-visible-min-sm {
     @media (min-width: $media-min-sm) {
         display: block!important;
     }
 }
-.#{$sdf}-visible-max-sm {
+.sdf-visible-max-sm {
     @media (max-width: $media-max-sm) {
         display: block!important;
     }
 }
-.#{$sdf}-visible-md {
+.sdf-visible-md {
     @media (min-width: $media-min-md) and (max-width: $media-max-md) {
         display: block!important;
     }
 }
-.#{$sdf}-visible-min-md {
+.sdf-visible-min-md {
     @media (min-width: $media-min-md) {
         display: block!important;
     }
 }
-.#{$sdf}-visible-max-md {
+.sdf-visible-max-md {
     @media (max-width: $media-max-md) {
         display: block!important;
     }
 }
-.#{$sdf}-visible-lg {
+.sdf-visible-lg {
     @media (min-width: $media-min-lg) {
         display: block!important;
     }
 }
-.#{$sdf}-hidden-df {
+.sdf-hidden-df {
     @media (max-width: $media-max-df) {
         display: none!important;
     }
 }
-.#{$sdf}-hidden-max-xs {
+.sdf-hidden-max-xs {
     @media (max-width: $media-max-xs) {
         display: none!important;
     }
 }
-.#{$sdf}-hidden-xs {
+.sdf-hidden-xs {
     @media (min-width: $media-min-xs) and (max-width: $media-max-xs) {
         display: none!important;
     }
 }
-.#{$sdf}-hidden-max-xs {
+.sdf-hidden-max-xs {
     @media (max-width: $media-max-xs) {
         display: none!important;
     }
 }
-.#{$sdf}-hidden-sm {
+.sdf-hidden-sm {
     @media (min-width: $media-min-sm) and (max-width: $media-max-sm) {
         display: none!important;
     }
 }
-.#{$sdf}-hidden-min-sm {
+.sdf-hidden-min-sm {
     @media (min-width: $media-min-sm) {
         display: none!important;
     }
 }
-.#{$sdf}-hidden-max-sm {
+.sdf-hidden-max-sm {
     @media (max-width: $media-max-sm) {
         display: none!important;
     }
 }
-.#{$sdf}-hidden-md {
+.sdf-hidden-md {
     @media (min-width: $media-min-md) and (max-width: $media-max-md) {
         display: none!important;
     }
 }
-.#{$sdf}-hidden-min-md {
+.sdf-hidden-min-md {
     @media (min-width: $media-min-md) {
         display: none!important;
     }
 }
-.#{$sdf}-hidden-max-md {
+.sdf-hidden-max-md {
     @media (max-width: $media-max-md) {
         display: none!important;
     }
 }
 
-.#{$sdf}-hidden-lg {
+.sdf-hidden-lg {
     @media (min-width: $media-min-lg) {
         display: none!important;
     }
