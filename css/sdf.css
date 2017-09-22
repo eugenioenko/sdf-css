@@ -3140,8 +3140,6 @@ h4 .sdf-badge.sdf-badge-left {
   will-change: transform, -webkit-transform;
   transition: transform 350ms ease-in-out, -webkit-transform 350ms ease-in-out;
   visibility: hidden;
-  background-color: #fff;
-  color: #3c3d3f;
 }
 
 [sdf-menu="left"], [sdf-menu="right"] {
