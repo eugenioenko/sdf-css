@@ -26,7 +26,7 @@
                 (function(element){
                     return function(){
                         element.style.display = 'none';
-                        popup.element.setAttribute('sdf-transitioning', 'false');
+                        element.setAttribute('sdf-transitioning', 'false');
                     };
                 })(popup.element), 500);
             if(popup.toggle){
@@ -55,7 +55,7 @@
             setTimeout(
                 (function(element){
                     return function(){
-                        popup.element.setAttribute('sdf-transitioning', 'false');
+                        element.setAttribute('sdf-transitioning', 'false');
                         element.setAttribute('aria-hidden', 'false');
                     };
                 })(popup.element), 10);
