@@ -2,10 +2,15 @@
  * Side Menu
  */
 
-.sdf-layout-wrapper, .sdf-wrapper{
+.sdf-layout-wrapper{
     position: relative;
     width: 100%;
     overflow-x: hidden;
+}
+.sdf-wrapper{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
 }
 
 .sdf-layout-menu{
