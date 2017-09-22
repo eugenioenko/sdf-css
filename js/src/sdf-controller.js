@@ -52,8 +52,6 @@ var sdf = (function(){
         addWidget: addWidget,
         addGadget: addGadget,
         addComponent: addComponent,
-        gadgets: gadgets,
-        elements: elements,
         init: init
     };
 

@@ -63,7 +63,7 @@
 
 .sdf-list-horizontal{
     @include sdf-flex();
-    @include sdf-flex-flow-row-nowrap();
+    @include sdf-flex-flow-row-wrap();
     @include sdf-vertical-stretch();
     margin: 0;
     padding: 0;
