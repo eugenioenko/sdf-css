@@ -10,7 +10,7 @@
  (function(){
     'use strict';
 
-    var sdfLayoutMenu = function(){ 
+    var sdfLayoutMenu = function(){
         this.elements = {};
         this.selector = '.sdf-wrapper';
         this.activated = false;
@@ -18,17 +18,21 @@
         this.initialize();
     };
     sdfLayoutMenu.prototype.hide = function(){
-        this.elements.navbar.setAttribute('sdf-state', 'content');
-        this.elements.content.setAttribute('sdf-state', 'content');  
-        this.elements.menu.setAttribute('aria-hidden', 'true');
-        this.open = false;
+        if(this.activated){
+            this.elements.navbar.setAttribute('sdf-state', 'content');
+            this.elements.content.setAttribute('sdf-state', 'content');
+            this.elements.menu.setAttribute('aria-hidden', 'true');
+            this.open = false;
+        }
     };
 
     sdfLayoutMenu.prototype.show = function (){
-        this.elements.navbar.setAttribute('sdf-state', 'menu');
-        this.elements.content.setAttribute('sdf-state', 'menu');
-        this.elements.menu.setAttribute('aria-hidden', 'false');
-        this.open = true;
+        if(this.activated){
+            this.elements.navbar.setAttribute('sdf-state', 'menu');
+            this.elements.content.setAttribute('sdf-state', 'menu');
+            this.elements.menu.setAttribute('aria-hidden', 'false');
+            this.open = true;
+        }
     };
 
     sdfLayoutMenu.prototype.initialize = function(){
@@ -43,7 +47,7 @@
             if(menu && content){
                 var hidden = menu.getAttribute('aria-hidden');
                 if(hidden != 'false'){
-                    menu.setAttribute('aria-hidden', 'true'); 
+                    menu.setAttribute('aria-hidden', 'true');
                 }
                 var position = menu.getAttribute('sdf-position');
                 if(!position){
@@ -56,14 +60,14 @@
                     menu: menu,
                     content: content,
                     navbar: navbar
-                };  
-                this.activated = true;  
+                };
+                this.activated = true;
             }
         }
         document.body.addEventListener('click', (function(mainmenu){
             return function(){
                 mainmenu.hide();
-            }
+            };
         })(this));
     };
 

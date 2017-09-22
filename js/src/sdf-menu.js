@@ -33,7 +33,7 @@
                 this.hide(key);
             }
         }
-    }
+    };
 
     sdfMenu.prototype.show = function (id){
         this.menus[id].style.visibility = 'visible';
@@ -55,15 +55,15 @@
                 menu.setAttribute('id', id);
             }
             this.menus[id] = menu;
-            
+
         }
         document.body.addEventListener('click', (function(menu){
             return function(){
                 menu.hideAll();
-            }
+            };
         })(this));
     };
-    
+
 
     //register component
     sdf.addGadget({
