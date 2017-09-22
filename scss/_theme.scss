@@ -11,7 +11,7 @@
         &.sdf-btn:focus{
             background-color: darken(saturate(color-get($color, background), $color-multiplier*3), $color-multiplier);
         }
-        &.sdf-list, &.sdf-list-horizontal{
+        .sdf-list, .sdf-list-horizontal, &.sdf-list, &.sdf-list-horizontal{
             &>.sdf-list-item{
                 background-color: color-get($color, background);
                 color: color-get($color, contrast);
