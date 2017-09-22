@@ -13,35 +13,12 @@
     }
 }
 
-
-@mixin make-flex(){
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-flow: row wrap;
-    -ms-flex-flow: row wrap;
-    flex-flow: row wrap;
-}
-@mixin make-flex-col(){
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-flow: column wrap;
-    -ms-flex-flow: column wrap;
-    flex-flow: column wrap;
-}
 @mixin make-grid(){
-    @include make-flex();
-    -webkit-align-items: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
+    @include sdf-flex();
+    @include sdf-flex-flow-row-wrap();
+    @include sdf-vertical-stretch();
     box-sizing: border-box;
 }
-@mixin make-cell{
-    box-sizing: border-box;
-    position: relative;
-}
-
 
 .sdf-grid{
     @include make-grid();
@@ -75,14 +52,12 @@
 
 }
 .sdf-cell{
-    @include make-cell();
+    box-sizing: border-box;
+    position: relative;
 }
-
-
 .sdf-clearfix{
     @include clearfix();
 }
-
 
 @mixin container(){
     display: block;

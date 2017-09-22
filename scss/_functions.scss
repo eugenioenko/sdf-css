@@ -40,6 +40,16 @@
     -ms-flex-flow: row wrap;
     flex-flow: row wrap;
 }
+@mixin sdf-flex-flow-column-wrap{
+    -webkit-flex-flow: column wrap;
+    -ms-flex-flow: column wrap;
+    flex-flow: column wrap;
+}
+@mixin sdf-flex-direction-column(){
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column; 
+    flex-direction: column;
+}
 @mixin sdf-vertical-stretch(){
     -webkit-align-items: stretch;
     -ms-flex-align: stretch;

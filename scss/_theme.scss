@@ -11,12 +11,14 @@
         &.sdf-btn:focus{
             background-color: darken(saturate(color-get($color, background), $color-multiplier*3), $color-multiplier);
         }
-        &.sdf-list>.sdf-list-item{
-            background-color: color-get($color, background);
-            color: color-get($color, contrast);
-            border-color: rgba(color-get($color, contrast), $border-opacity);
-            &:hover{
-                background-color: darken(color-get($color, background), $color-multiplier*2);
+        &.sdf-list, &.sdf-list-horizontal{
+            &>.sdf-list-item{
+                background-color: color-get($color, background);
+                color: color-get($color, contrast);
+                border-color: rgba(color-get($color, contrast), $border-opacity);
+                &:hover{
+                    background-color: darken(color-get($color, background), $color-multiplier*2);
+                }
             }
         }
         .sdf-border{

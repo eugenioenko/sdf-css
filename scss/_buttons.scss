@@ -67,7 +67,8 @@
 
 
 .sdf-btn-group{
-    @include make-flex();
+    @include sdf-flex();
+    @include sdf-flex-flow-row-wrap();
     &>.sdf-btn{
         border-radius: 0;
     }

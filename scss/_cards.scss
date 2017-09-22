@@ -3,12 +3,8 @@
  */
 
 .sdf-card{
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
+   @include sdf-flex();
+   @include sdf-flex-direction-column();
     overflow: hidden;
     width: 100%;
     position: relative;

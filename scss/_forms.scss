@@ -103,12 +103,8 @@ textarea.sdf-input{
 
 // form input fieldset
 .sdf-fieldset{
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-flow: column wrap;
-    -ms-flex-flow: column wrap;
-    flex-flow: column wrap;
+    @include sdf-flex();
+    @include sdf-flex-flow-column-wrap();
     margin: 0;
     padding: 0;
     border-radius: $input-border-radius;
@@ -144,15 +140,9 @@ textarea.sdf-input{
     }
 }
 .sdf-input-group{
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-flow: row nowrap;
-    -ms-flex-flow: row nowrap;
-    flex-flow: row nowrap;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
+    @include sdf-flex();
+    @include sdf-flex-flow-row-nowrap();
+    @include sdf-vertical-center();
     &>.sdf-input{
         &:focus{
             z-index: 1;
@@ -241,15 +231,9 @@ textarea.sdf-input{
 
 .sdf-form-horizontal{
     .sdf-form-group{
-        display: -webkit-flex;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-flex-flow: row nowrap;
-        -ms-flex-flow: row nowrap;
-        flex-flow: row nowrap;
-        -webkit-align-items: center;
-        -ms-flex-align: center;
-        align-items: center;
+        @include sdf-flex();
+        @include sdf-flex-flow-row-nowrap();
+        @include sdf-vertical-center();
         label{
             flex: 1 0 auto;
             margin-bottom: 0;
