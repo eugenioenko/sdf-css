@@ -774,29 +774,47 @@ window.addEventListener('load', function() {
 
     sdfDropdown.prototype.hide = function(id){
         var popup = this.dropdowns[id];
-        if(popup){
+        if(popup && popup.element.getAttribute('sdf-transitioning') == 'false'){
             popup.open = false;
-            popup.element.style.display = 'none';
+            popup.element.setAttribute('sdf-transitioning', 'true');
             popup.element.setAttribute('aria-hidden', 'true');
+            setTimeout(
+                (function(element){
+                    return function(){
+                        element.style.display = 'none';
+                        popup.element.setAttribute('sdf-transitioning', 'false');
+                    };
+                })(popup.element), 500);
             if(popup.toggle){
                 popup.toggle.setAttribute('aria-expanded', 'false');
             }
         }
     };
     sdfDropdown.prototype.hideAll = function(){
-        for (var id in this.dropdowns){
-            if (this.dropdowns.hasOwnProperty(id) && this.dropdowns[id].open == true) {
+        for(var id in this.dropdowns){
+            if(
+                this.dropdowns.hasOwnProperty(id) && 
+                this.dropdowns[id].open == true
+            ){
                 this.hide(id);
             }
         }
     };
 
     sdfDropdown.prototype.show = function (id){
+        this.hideAll();
         var popup = this.dropdowns[id];
-        if(popup){
+        if(popup && popup.element.getAttribute('sdf-transitioning') == 'false'){
             popup.open = true;
+            popup.element.setAttribute('sdf-transitioning', 'true');
             popup.element.style.display = 'block';
-            popup.element.setAttribute('aria-hidden', 'false');
+            setTimeout(
+                (function(element){
+                    return function(){
+                        popup.element.setAttribute('sdf-transitioning', 'false');
+                        element.setAttribute('aria-hidden', 'false');
+                    };
+                })(popup.element), 10);
             if(popup.toggle){
                 popup.toggle.setAttribute('aria-expanded', 'true');
             }
@@ -820,6 +838,7 @@ window.addEventListener('load', function() {
             }
             // gets or sets initial state for dropdown: closed or opened
             element.setAttribute('aria-hidden', 'true');
+            element.setAttribute('sdf-transitioning', 'false');
             var toggle = document.querySelector('[sdf-dropdown-toggle="' + id + '"]');
             if(toggle){
                 toggle.setAttribute('aria-expanded', 'false');
@@ -836,6 +855,11 @@ window.addEventListener('load', function() {
                 open: false
             };
             element.addEventListener('click', clickEventGenerator(this, id));
+            document.body.addEventListener('click', (function(dropdown){
+                return function(){
+                    dropdown.hideAll();
+                };
+            })(this));
         }
     };
 
@@ -846,6 +870,7 @@ window.addEventListener('load', function() {
     });
 
 })();
+
  (function(){
     var sdfDropdownToggle = function(element){
         this.element = element;
@@ -897,14 +922,17 @@ window.addEventListener('load', function() {
     };
 
     sdfMenu.prototype.hide = function(id){
-        this.menus[id].setAttribute('aria-hidden', 'true');
-        setTimeout(
-            (function(element){
-                return function(){
-                    element.style.visibility = 'hidden';
-
-                };
-            })(this.menus[id]),1000);
+        if(this.menus[id] && this.menus[id].getAttribute('sdf-transitioning') == 'false'){
+            this.menus[id].setAttribute('aria-hidden', 'true');
+            this.menus[id].setAttribute('sdf-transitioning', 'true'); 
+            setTimeout(
+                (function(element){
+                    return function(){
+                        element.style.visibility = 'hidden';
+                        element.setAttribute('sdf-transitioning', 'false');
+                    };
+                })(this.menus[id]), 500);
+        }
     };
     sdfMenu.prototype.hideAll = function(){
         for(var key in this.menus){
@@ -916,14 +944,24 @@ window.addEventListener('load', function() {
     };
 
     sdfMenu.prototype.show = function (id){
-        this.menus[id].style.visibility = 'visible';
-        this.menus[id].setAttribute('aria-hidden', 'false');
+        if(this.menus[id] && this.menus[id].getAttribute('sdf-transitioning') == 'false'){
+            this.menus[id].style.visibility = 'visible';
+            this.menus[id].setAttribute('aria-hidden', 'false');  
+            this.menus[id].setAttribute('sdf-transitioning', 'true'); 
+            setTimeout(
+                (function(element){
+                    return function(){
+                        element.setAttribute('sdf-transitioning', 'false');
+                    };
+                })(this.menus[id]), 500); 
+        } 
     };
 
     sdfMenu.prototype.initialize = function(){
         var menus = document.querySelectorAll(this.selector);
         for (var i = menus.length - 1; i >= 0; i--) {
             var menu = menus[i];
+            menu.setAttribute('sdf-transitioning', 'false');
             menu.setAttribute('aria-hidden', 'true');
             var position = menu.getAttribute('sdf-menu');
             if(!position){

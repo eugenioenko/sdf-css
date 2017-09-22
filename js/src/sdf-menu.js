@@ -17,14 +17,17 @@
     };
 
     sdfMenu.prototype.hide = function(id){
-        this.menus[id].setAttribute('aria-hidden', 'true');
-        setTimeout(
-            (function(element){
-                return function(){
-                    element.style.visibility = 'hidden';
-
-                };
-            })(this.menus[id]),1000);
+        if(this.menus[id] && this.menus[id].getAttribute('sdf-transitioning') == 'false'){
+            this.menus[id].setAttribute('aria-hidden', 'true');
+            this.menus[id].setAttribute('sdf-transitioning', 'true'); 
+            setTimeout(
+                (function(element){
+                    return function(){
+                        element.style.visibility = 'hidden';
+                        element.setAttribute('sdf-transitioning', 'false');
+                    };
+                })(this.menus[id]), 500);
+        }
     };
     sdfMenu.prototype.hideAll = function(){
         for(var key in this.menus){
@@ -36,14 +39,24 @@
     };
 
     sdfMenu.prototype.show = function (id){
-        this.menus[id].style.visibility = 'visible';
-        this.menus[id].setAttribute('aria-hidden', 'false');
+        if(this.menus[id] && this.menus[id].getAttribute('sdf-transitioning') == 'false'){
+            this.menus[id].style.visibility = 'visible';
+            this.menus[id].setAttribute('aria-hidden', 'false');  
+            this.menus[id].setAttribute('sdf-transitioning', 'true'); 
+            setTimeout(
+                (function(element){
+                    return function(){
+                        element.setAttribute('sdf-transitioning', 'false');
+                    };
+                })(this.menus[id]), 500); 
+        } 
     };
 
     sdfMenu.prototype.initialize = function(){
         var menus = document.querySelectorAll(this.selector);
         for (var i = menus.length - 1; i >= 0; i--) {
             var menu = menus[i];
+            menu.setAttribute('sdf-transitioning', 'false');
             menu.setAttribute('aria-hidden', 'true');
             var position = menu.getAttribute('sdf-menu');
             if(!position){

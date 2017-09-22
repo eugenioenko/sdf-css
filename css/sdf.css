@@ -2899,14 +2899,14 @@ h4 .sdf-badge.sdf-badge-left {
 
 .sdf-toast-top {
   will-change: bottom;
-  transition: bottom 550ms ease-in-out;
+  transition: bottom 350ms ease-in-out;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
 
 .sdf-toast-bottom {
   will-change: top;
-  transition: top 550ms ease-in-out;
+  transition: top 350ms ease-in-out;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
@@ -2923,6 +2923,8 @@ h4 .sdf-badge.sdf-badge-left {
   position: absolute;
   min-width: 180px;
   z-index: 100;
+  will-change: transform, -webkit-transform;
+  transition: transform 350ms ease-in-out, -webkit-transform 350ms ease-in-out;
 }
 
 [sdf-dropdown-menu="top-left"] {
@@ -2935,6 +2937,22 @@ h4 .sdf-badge.sdf-badge-left {
   right: 0;
 }
 
+[sdf-dropdown-menu="top-right"],
+[sdf-dropdown-menu="top-left"] {
+  -webkit-transform-origin: center top;
+  transform-origin: center top;
+}
+[sdf-dropdown-menu="top-right"][aria-hidden="true"],
+[sdf-dropdown-menu="top-left"][aria-hidden="true"] {
+  -webkit-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+}
+[sdf-dropdown-menu="top-right"][aria-hidden="false"],
+[sdf-dropdown-menu="top-left"][aria-hidden="false"] {
+  -webkit-transform: rotateX(0);
+  transform: rotateX(0);
+}
+
 [sdf-dropdown-menu="bottom-left"] {
   bottom: calc(100% + 8px);
   left: 0;
@@ -2943,6 +2961,22 @@ h4 .sdf-badge.sdf-badge-left {
 [sdf-dropdown-menu="bottom-right"] {
   bottom: calc(100% + 8px);
   right: 0;
+}
+
+[sdf-dropdown-menu="bottom-right"],
+[sdf-dropdown-menu="bottom-left"] {
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
+[sdf-dropdown-menu="bottom-right"][aria-hidden="true"],
+[sdf-dropdown-menu="bottom-left"][aria-hidden="true"] {
+  -webkit-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+}
+[sdf-dropdown-menu="bottom-right"][aria-hidden="false"],
+[sdf-dropdown-menu="bottom-left"][aria-hidden="false"] {
+  -webkit-transform: rotateX(0);
+  transform: rotateX(0);
 }
 
 /**
@@ -3096,7 +3130,7 @@ h4 .sdf-badge.sdf-badge-left {
     color: #000;
   }
   .sdf-default.sdf-hover, .sdf-default.sdf-btn:hover, .sdf-default.sdf-btn:focus {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: transparent;
   }
 
   .sdf-default-inverse {
@@ -3113,7 +3147,7 @@ h4 .sdf-badge.sdf-badge-left {
     color: #000;
   }
   .sdf-primary.sdf-hover, .sdf-primary.sdf-btn:hover, .sdf-primary.sdf-btn:focus {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: transparent;
   }
 
   .sdf-primary-inverse {
@@ -3130,7 +3164,7 @@ h4 .sdf-badge.sdf-badge-left {
     color: #000;
   }
   .sdf-secondary.sdf-hover, .sdf-secondary.sdf-btn:hover, .sdf-secondary.sdf-btn:focus {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: transparent;
   }
 
   .sdf-secondary-inverse {
@@ -3147,7 +3181,7 @@ h4 .sdf-badge.sdf-badge-left {
     color: #000;
   }
   .sdf-warning.sdf-hover, .sdf-warning.sdf-btn:hover, .sdf-warning.sdf-btn:focus {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: transparent;
   }
 
   .sdf-warning-inverse {
@@ -3164,7 +3198,7 @@ h4 .sdf-badge.sdf-badge-left {
     color: #000;
   }
   .sdf-info.sdf-hover, .sdf-info.sdf-btn:hover, .sdf-info.sdf-btn:focus {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: transparent;
   }
 
   .sdf-info-inverse {
@@ -3181,7 +3215,7 @@ h4 .sdf-badge.sdf-badge-left {
     color: #000;
   }
   .sdf-success.sdf-hover, .sdf-success.sdf-btn:hover, .sdf-success.sdf-btn:focus {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: transparent;
   }
 
   .sdf-success-inverse {
@@ -3198,7 +3232,7 @@ h4 .sdf-badge.sdf-badge-left {
     color: #000;
   }
   .sdf-danger.sdf-hover, .sdf-danger.sdf-btn:hover, .sdf-danger.sdf-btn:focus {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: transparent;
   }
 
   .sdf-danger-inverse {
@@ -3215,7 +3249,7 @@ h4 .sdf-badge.sdf-badge-left {
     color: #000;
   }
   .sdf-light.sdf-hover, .sdf-light.sdf-btn:hover, .sdf-light.sdf-btn:focus {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: transparent;
   }
 
   .sdf-light-inverse {
@@ -3232,7 +3266,7 @@ h4 .sdf-badge.sdf-badge-left {
     color: #000;
   }
   .sdf-dark.sdf-hover, .sdf-dark.sdf-btn:hover, .sdf-dark.sdf-btn:focus {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: transparent;
   }
 
   .sdf-dark-inverse {
@@ -3249,7 +3283,7 @@ h4 .sdf-badge.sdf-badge-left {
   }
 
   .sdf-default .sdf-btn.sdf-default {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: transparent;
   }
   .sdf-default .sdf-btn.sdf-default.sdf-hover, .sdf-default .sdf-btn.sdf-default.sdf-btn:hover, .sdf-default .sdf-btn.sdf-default.sdf-btn:focus {
     background-color: #000;
@@ -3277,7 +3311,7 @@ h4 .sdf-badge.sdf-badge-left {
   }
 
   .sdf-primary .sdf-btn.sdf-primary {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: transparent;
   }
   .sdf-primary .sdf-btn.sdf-primary.sdf-hover, .sdf-primary .sdf-btn.sdf-primary.sdf-btn:hover, .sdf-primary .sdf-btn.sdf-primary.sdf-btn:focus {
     background-color: #000;
@@ -3292,7 +3326,7 @@ h4 .sdf-badge.sdf-badge-left {
     color: #000;
   }
   .sdf-primary .sdf-input:focus {
-    border-color: rgba(0, 0, 0, 0);
+    border-color: transparent;
   }
   .sdf-primary .sdf-input.sdf-input-outline-2p:focus, .sdf-primary .sdf-input.sdf-input-outline-3p:focus, .sdf-primary .sdf-input.sdf-input-outline-4p:focus {
     outline-color: rgba(0, 0, 0, 0.5);
@@ -3305,7 +3339,7 @@ h4 .sdf-badge.sdf-badge-left {
   }
 
   .sdf-secondary .sdf-btn.sdf-secondary {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: transparent;
   }
   .sdf-secondary .sdf-btn.sdf-secondary.sdf-hover, .sdf-secondary .sdf-btn.sdf-secondary.sdf-btn:hover, .sdf-secondary .sdf-btn.sdf-secondary.sdf-btn:focus {
     background-color: #000;
@@ -3320,7 +3354,7 @@ h4 .sdf-badge.sdf-badge-left {
     color: #000;
   }
   .sdf-secondary .sdf-input:focus {
-    border-color: rgba(0, 0, 0, 0);
+    border-color: transparent;
   }
   .sdf-secondary .sdf-input.sdf-input-outline-2p:focus, .sdf-secondary .sdf-input.sdf-input-outline-3p:focus, .sdf-secondary .sdf-input.sdf-input-outline-4p:focus {
     outline-color: rgba(0, 0, 0, 0.5);
@@ -3333,7 +3367,7 @@ h4 .sdf-badge.sdf-badge-left {
   }
 
   .sdf-warning .sdf-btn.sdf-warning {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: transparent;
   }
   .sdf-warning .sdf-btn.sdf-warning.sdf-hover, .sdf-warning .sdf-btn.sdf-warning.sdf-btn:hover, .sdf-warning .sdf-btn.sdf-warning.sdf-btn:focus {
     background-color: #000;
@@ -3348,7 +3382,7 @@ h4 .sdf-badge.sdf-badge-left {
     color: #000;
   }
   .sdf-warning .sdf-input:focus {
-    border-color: rgba(0, 0, 0, 0);
+    border-color: transparent;
   }
   .sdf-warning .sdf-input.sdf-input-outline-2p:focus, .sdf-warning .sdf-input.sdf-input-outline-3p:focus, .sdf-warning .sdf-input.sdf-input-outline-4p:focus {
     outline-color: rgba(0, 0, 0, 0.5);
@@ -3361,7 +3395,7 @@ h4 .sdf-badge.sdf-badge-left {
   }
 
   .sdf-info .sdf-btn.sdf-info {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: transparent;
   }
   .sdf-info .sdf-btn.sdf-info.sdf-hover, .sdf-info .sdf-btn.sdf-info.sdf-btn:hover, .sdf-info .sdf-btn.sdf-info.sdf-btn:focus {
     background-color: #000;
@@ -3376,7 +3410,7 @@ h4 .sdf-badge.sdf-badge-left {
     color: #000;
   }
   .sdf-info .sdf-input:focus {
-    border-color: rgba(0, 0, 0, 0);
+    border-color: transparent;
   }
   .sdf-info .sdf-input.sdf-input-outline-2p:focus, .sdf-info .sdf-input.sdf-input-outline-3p:focus, .sdf-info .sdf-input.sdf-input-outline-4p:focus {
     outline-color: rgba(0, 0, 0, 0.5);
@@ -3389,7 +3423,7 @@ h4 .sdf-badge.sdf-badge-left {
   }
 
   .sdf-success .sdf-btn.sdf-success {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: transparent;
   }
   .sdf-success .sdf-btn.sdf-success.sdf-hover, .sdf-success .sdf-btn.sdf-success.sdf-btn:hover, .sdf-success .sdf-btn.sdf-success.sdf-btn:focus {
     background-color: #000;
@@ -3404,7 +3438,7 @@ h4 .sdf-badge.sdf-badge-left {
     color: #000;
   }
   .sdf-success .sdf-input:focus {
-    border-color: rgba(0, 0, 0, 0);
+    border-color: transparent;
   }
   .sdf-success .sdf-input.sdf-input-outline-2p:focus, .sdf-success .sdf-input.sdf-input-outline-3p:focus, .sdf-success .sdf-input.sdf-input-outline-4p:focus {
     outline-color: rgba(0, 0, 0, 0.5);
@@ -3417,7 +3451,7 @@ h4 .sdf-badge.sdf-badge-left {
   }
 
   .sdf-danger .sdf-btn.sdf-danger {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: transparent;
   }
   .sdf-danger .sdf-btn.sdf-danger.sdf-hover, .sdf-danger .sdf-btn.sdf-danger.sdf-btn:hover, .sdf-danger .sdf-btn.sdf-danger.sdf-btn:focus {
     background-color: #000;
@@ -3432,7 +3466,7 @@ h4 .sdf-badge.sdf-badge-left {
     color: #000;
   }
   .sdf-danger .sdf-input:focus {
-    border-color: rgba(0, 0, 0, 0);
+    border-color: transparent;
   }
   .sdf-danger .sdf-input.sdf-input-outline-2p:focus, .sdf-danger .sdf-input.sdf-input-outline-3p:focus, .sdf-danger .sdf-input.sdf-input-outline-4p:focus {
     outline-color: rgba(0, 0, 0, 0.5);
@@ -3445,7 +3479,7 @@ h4 .sdf-badge.sdf-badge-left {
   }
 
   .sdf-light .sdf-btn.sdf-light {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: transparent;
   }
   .sdf-light .sdf-btn.sdf-light.sdf-hover, .sdf-light .sdf-btn.sdf-light.sdf-btn:hover, .sdf-light .sdf-btn.sdf-light.sdf-btn:focus {
     background-color: #000;
@@ -3473,7 +3507,7 @@ h4 .sdf-badge.sdf-badge-left {
   }
 
   .sdf-dark .sdf-btn.sdf-dark {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: transparent;
   }
   .sdf-dark .sdf-btn.sdf-dark.sdf-hover, .sdf-dark .sdf-btn.sdf-dark.sdf-btn:hover, .sdf-dark .sdf-btn.sdf-dark.sdf-btn:focus {
     background-color: #000;

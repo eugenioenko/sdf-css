@@ -58,13 +58,13 @@
 
 .sdf-toast-top{
     will-change: bottom;
-    transition: bottom 550ms ease-in-out;
+    transition: bottom $transition-normal;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
 .sdf-toast-bottom{
     will-change: top;
-    transition: top 550ms ease-in-out;
+    transition: top $transition-normal;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
