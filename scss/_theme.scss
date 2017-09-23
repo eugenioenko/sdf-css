@@ -24,6 +24,10 @@
         .sdf-border{
             border: 1px solid rgba(color-get($color, contrast), $border-opacity);
         }
+        &.sdf-alert{
+            background-color: color-get($color, background);
+            color: color-get($color, contrast);
+        }
     }
     .sdf-#{$color}-inverse{
         background-color: color-get($color, contrast);
