@@ -1,8 +1,6 @@
 // namespace
 $sdf: "sdf";
-/**
- * Grid
- */
+//grid
 $grid-cols: 12;          // default cols count
 $grid-gutter: 32px;     // default spacing between cells/cols
 $grid-lg-width: 1152px;
@@ -19,6 +17,8 @@ $media-max-sm: 991px;
 $media-min-md: 992px;
 $media-max-md: 1199px;
 $media-min-lg: 1200px;
+
+$auto-min-width: 140px;
 
 $grid : (
    (
@@ -47,13 +47,12 @@ $grid : (
 // colors
 $color-multiplier: 10%;
 $font-color-multiplier: 0%;
-$input-border-opacity: 0.7;
 $color-types: "default", "primary", "secondary", "warning", "info", "success", "danger", "light", "dark";
 $colors: (
     default: (
         background: #fff,
-        contrast:   #6c6d6f,
-        font:       #3c3d3f
+        font:       #3c3d3f,
+        contrast:   #6c6d7f
     ),
     primary: (
         background: #1f8dd6,
@@ -106,9 +105,11 @@ $button-group-border-radius: $border-radius;
 $tab-group-border-radius: $border-radius;
 $input-border-radius: $border-radius;
 $list-menu-border-radius: $border-radius;
+// borders
+$border-opacity: 0.5;
 
 
-
+// buttons
 $button-sizes: "normal", "big", "small";
 $buttons: (
     normal-height: 36px,
@@ -124,6 +125,8 @@ $buttons: (
     big-font-size: 17px,
     big-min-width: 96px
 );
+$button-focus-boxshadow: 0 0 0 2px;
+$button-focus-opacity: 0.5;
 $button-font-weight: 400;
 //forms
 $forms-sizes: "normal", "big", "small";
@@ -138,9 +141,14 @@ $forms: (
     big-padding: 12px,
     big-font-size: 18px
 );
+$forms-border-opacity: 0.7;
 $forms-font-weight: 400;
 $forms-placeholder-font-weight: 300;
 $forms-placeholder-color-opacity: 0.7;
+$form-group-label-margin-bottom: 10px;
+$form-input-addon-padding: 0 10px;
+$form-input-addon-font-weight: 400;
+
 // breadcrumbs
 $breadcrumbs-separator: "/";
 $breadcrumbs-item-margin: 0.5rem;
@@ -171,18 +179,13 @@ $font-heading-h4-font-size: 1.333rem;
 $alert-width: 420px;
 $alert-border-radius: 4px;
 
-// forms
-$form-group-label-margin-bottom: 10px;
-$form-input-addon-padding: 0 10px;
-
 
 // transitions
 $transition-normal:  350ms ease-in-out;
 $transition-short: 250ms ease-in-out;
 $transition-long: 450ms ease-in-out;
 
-// borders
-$border-opacity: 0.4;
+
 
 // dropdowns
 $dropdown-margin: $grid-gutter / 4;

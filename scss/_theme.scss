@@ -11,6 +11,9 @@
         &.sdf-btn:focus{
             background-color: darken(saturate(color-get($color, background), $color-multiplier*3), $color-multiplier);
         }
+        &.sdf-btn:focus{
+            box-shadow: $button-focus-boxshadow rgba(color-get($color, background), 0.5)
+        }
         .sdf-list, .sdf-list-horizontal, &.sdf-list, &.sdf-list-horizontal{
             &>.sdf-list-item{
                 background-color: color-get($color, background);
@@ -88,7 +91,7 @@
         }
         // make theme modifier when input addon is inside color block
         .sdf-input-addon, .sdf-input{
-            border-color: rgba(color-get($color, contrast), $input-border-opacity);
+            border-color: rgba(color-get($color, contrast), $forms-border-opacity);
         }
         // glow color
         .sdf-glow{

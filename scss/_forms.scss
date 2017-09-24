@@ -13,7 +13,7 @@
     background-color: color-get(default, background);
     background-image: none;
     background-clip: padding-box;
-    border: 1px solid  rgba(color-get(default, contrast), $input-border-opacity);
+    border: 1px solid  rgba(color-get(default, contrast), $forms-border-opacity);
     border-radius: $input-border-radius;
     will-change: border-color, outline-color;
     transition: border-color 350ms ease-in-out, box-shadow 250ms ease-in-out;
@@ -59,14 +59,7 @@ textarea.sdf-input{
 // form group
 .sdf-form-group{
     margin-bottom: $grid-gutter/2;
-    &.sdf-auto{
-        @media (min-width: $media-min-xs){
-            flex: 1 1 140px;
-        }
-        @media (max-width: $media-max-df){
-            width: 100%;
-        }
-    }
+
     label{
         display: inline-block;
         font-weight: $forms-font-weight;
@@ -127,13 +120,16 @@ textarea.sdf-input{
     }
 }
 .sdf-input-addon{
-    border-left: 1px solid  rgba(color-get(default, contrast), $input-border-opacity);
-    border-top: 1px solid  rgba(color-get(default, contrast), $input-border-opacity);
-    border-bottom: 1px solid  rgba(color-get(default, contrast), $input-border-opacity);
+    border-left: 1px solid  rgba(color-get(default, contrast), $forms-border-opacity);
+    border-top: 1px solid  rgba(color-get(default, contrast), $forms-border-opacity);
+    border-bottom: 1px solid  rgba(color-get(default, contrast), $forms-border-opacity);
+    background-color: lighten(color-get(default, contrast), $color-multiplier*2);
+    color: color-get(default, background);
     height: map-get($buttons, normal-height);
     line-height: map-get($buttons, normal-height);
     box-sizing: border-box;
     padding: $form-input-addon-padding;
+    font-weight: $form-input-addon-font-weight;
     &.sdf-icon{
         text-align: center;
         min-width: map-get($buttons, normal-height);
@@ -148,17 +144,17 @@ textarea.sdf-input{
             z-index: 1;
         }
     }
-    &>*:first-child{
-        border-left: 1px solid  rgba(color-get(default, contrast), $input-border-opacity);
-        border-top: 1px solid  rgba(color-get(default, contrast), $input-border-opacity);
-        border-bottom: 1px solid  rgba(color-get(default, contrast), $input-border-opacity);
+    &>*:first-child:not(.sdf-input){
+        border-left: 1px solid  rgba(color-get(default, contrast), $forms-border-opacity);
+        border-top: 1px solid  rgba(color-get(default, contrast), $forms-border-opacity);
+        border-bottom: 1px solid  rgba(color-get(default, contrast), $forms-border-opacity);
         border-top-left-radius: $input-border-radius;
         border-bottom-left-radius: $input-border-radius;
     }
-    &>*:last-child{
-        border-right: 1px solid  rgba(color-get(default, contrast), $input-border-opacity);
-        border-top: 1px solid  rgba(color-get(default, contrast), $input-border-opacity);
-        border-bottom: 1px solid  rgba(color-get(default, contrast), $input-border-opacity);
+    &>*:last-child:not(.sdf-input){
+        border-right: 1px solid  rgba(color-get(default, contrast), $forms-border-opacity);
+        border-top: 1px solid  rgba(color-get(default, contrast), $forms-border-opacity);
+        border-bottom: 1px solid  rgba(color-get(default, contrast), $forms-border-opacity);
         border-top-right-radius: $input-border-radius;
         border-bottom-right-radius: $input-border-radius;
     }

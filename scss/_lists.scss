@@ -40,7 +40,7 @@
             border-bottom-right-radius: $list-menu-border-radius;
         }
     }
-   
+
 }
 
 .sdf-list-horizontal{
@@ -58,7 +58,7 @@
             white-space: nowrap;
         }
     }
-    
+
     &>.sdf-list-item{
         @include sdf-flex();
         @include sdf-horizontal-center();

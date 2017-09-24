@@ -105,21 +105,39 @@
 .sdf-col{
     @include make-col();
 }
+.sdf-df-auto{
+    flex: 1 1 $auto-min-width;
+}
+@media (max-width: $media-max-df){
+    .sdf-auto{
+        width: 100%;
+    }
+}
+@media (min-width: $media-min-xs){
+    .sdf-auto{
+        flex: 1 1 $auto-min-width;
+    }
+}
 
 @mixin  grid-media($type, $cols-count){
+    @if $type != null {
+        .sdf-#{$type}-auto{
+            flex: 1 1 $auto-min-width;
+        }
+    }
     @for $i from 1 through $cols-count {
-        @if $type != null {
-            .sdf-#{$type}-#{$i}{
-                width: #{percentage($i / $cols-count)};
-            }
-            .sdf-offset-#{$type}-#{$i}{
-                margin-left: #{percentage($i / $cols-count)};
-            }
-        } @else {
+        @if $type == null {
             .sdf-#{$i}{
                 width: #{percentage($i / $cols-count)};
             }
             .sdf-offset-#{$i}{
+                margin-left: #{percentage($i / $cols-count)};
+            }
+        } @else {
+            .sdf-#{$type}-#{$i}{
+                width: #{percentage($i / $cols-count)};
+            }
+            .sdf-offset-#{$type}-#{$i}{
                 margin-left: #{percentage($i / $cols-count)};
             }
         }
