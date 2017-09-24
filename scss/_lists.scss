@@ -35,9 +35,12 @@
             border-top-right-radius: $list-menu-border-radius;
         }
         &:last-child{
-            border-bottom: 1px solid transparent;
+            border-bottom: 0;
             border-bottom-left-radius: $list-menu-border-radius;
             border-bottom-right-radius: $list-menu-border-radius;
+        }
+        .sdf-addon{
+            border-radius: $list-addon-border-radius;
         }
     }
 
@@ -112,39 +115,12 @@
     padding: $grid-gutter;
 }
 
-// addons
-.sdf-list-addon{
-    box-sizing: border-box;
-    @include sdf-flex();
-    @include sdf-horizontal-center;
-    @include sdf-vertical-center;
-    &.sdf-icon{
-        @include sdf-flex();
-        @include sdf-horizontal-center;
-        @include sdf-vertical-center;
-        text-align: center;
-        min-width: map-get($buttons, normal-height);
-        height: map-get($buttons, normal-height);
-    }
-}
 .sdf-list-group{
     @include sdf-flex();
     @include sdf-flex-flow-row-nowrap();
-    @include sdf-vertical-baseline();
+    @include sdf-vertical-center();
 }
 .sdf-list-text{
     padding: 0 $grid-gutter/2;
 }
 
-// addon sizes
-.sdf-list-group{
-    @each $size in $button-sizes{
-        &.sdf-#{$size}{
-            &>.sdf-list-addon{
-                height: map-get($buttons, unquote("#{$size}-height"));
-                min-width: map-get($buttons, unquote("#{$size}-height"));
-                font-size: map-get($buttons, unquote("#{$size}-font-size"));
-            }
-        }
-    }
-}

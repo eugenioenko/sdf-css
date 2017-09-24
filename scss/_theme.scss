@@ -90,7 +90,7 @@
             }
         }
         // make theme modifier when input addon is inside color block
-        .sdf-input-addon, .sdf-input{
+        .sdf-addon, .sdf-input{
             border-color: rgba(color-get($color, contrast), $forms-border-opacity);
         }
         // glow color

@@ -119,22 +119,7 @@ textarea.sdf-input{
         margin-top: -1px;
     }
 }
-.sdf-input-addon{
-    border-left: 1px solid  rgba(color-get(default, contrast), $forms-border-opacity);
-    border-top: 1px solid  rgba(color-get(default, contrast), $forms-border-opacity);
-    border-bottom: 1px solid  rgba(color-get(default, contrast), $forms-border-opacity);
-    background-color: lighten(color-get(default, contrast), $color-multiplier*2);
-    color: color-get(default, background);
-    height: map-get($buttons, normal-height);
-    line-height: map-get($buttons, normal-height);
-    box-sizing: border-box;
-    padding: $form-input-addon-padding;
-    font-weight: $form-input-addon-font-weight;
-    &.sdf-icon{
-        text-align: center;
-        min-width: map-get($buttons, normal-height);
-    }
-}
+
 .sdf-input-group{
     @include sdf-flex();
     @include sdf-flex-flow-row-nowrap();
@@ -144,28 +129,44 @@ textarea.sdf-input{
             z-index: 1;
         }
     }
+    .sdf-addon{
+        border-left: 1px solid  rgba(color-get(default, contrast), $forms-border-opacity);
+        border-top: 1px solid  rgba(color-get(default, contrast), $forms-border-opacity);
+        border-bottom: 1px solid  rgba(color-get(default, contrast), $forms-border-opacity);
+        height: map-get($buttons, normal-height);
+
+    }
     &>*:first-child:not(.sdf-input){
         border-left: 1px solid  rgba(color-get(default, contrast), $forms-border-opacity);
         border-top: 1px solid  rgba(color-get(default, contrast), $forms-border-opacity);
         border-bottom: 1px solid  rgba(color-get(default, contrast), $forms-border-opacity);
-        border-top-left-radius: $input-border-radius;
-        border-bottom-left-radius: $input-border-radius;
     }
     &>*:last-child:not(.sdf-input){
         border-right: 1px solid  rgba(color-get(default, contrast), $forms-border-opacity);
         border-top: 1px solid  rgba(color-get(default, contrast), $forms-border-opacity);
         border-bottom: 1px solid  rgba(color-get(default, contrast), $forms-border-opacity);
+    }
+    &>*{
+        border-radius: 0;
+    }
+    &>*:first-child{
+        border-top-left-radius: $input-border-radius;
+        border-bottom-left-radius: $input-border-radius;
+    }
+    &>*:last-child{
         border-top-right-radius: $input-border-radius;
         border-bottom-right-radius: $input-border-radius;
     }
-    &>.sdf-input-addon:last-child{
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-    }
-    &>.sdf-input-addon:first-child{
+    /*
+    &>.sdf-addon:first-child{
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
     }
+    &>.sdf-addon:last-child{
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
     &>.sdf-input:not(:first-child){
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
@@ -174,11 +175,12 @@ textarea.sdf-input{
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
     }
-    &>.sdf-input+.sdf-input-addon:not(:first-child){
+    */
+    &>.sdf-input+.sdf-addon:not(:first-child){
         border-left: 0;
     }
 
-    &>.sdf-input-addon:not(:last-child){
+    &>.sdf-addon:not(:last-child){
         border-right: 0;
     }
 }
@@ -202,15 +204,10 @@ textarea.sdf-input{
     }
 }
 
-// addon sizes
+// input sizes
 .sdf-input-group{
     @each $size in $button-sizes{
         &.sdf-#{$size}{
-            &>.sdf-input-addon{
-                height: map-get($buttons, unquote("#{$size}-height"));
-                line-height: map-get($buttons, unquote("#{$size}-height"));
-                font-size: map-get($buttons, unquote("#{$size}-font-size"));
-            }
             &>textarea.sdf-input{
                 font-size: map-get($forms, unquote("#{$size}-font-size"));
             }
