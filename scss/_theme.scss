@@ -6,28 +6,11 @@
     .sdf-#{$color}{
         background-color: color-get($color, background);
         color: color-get($color, contrast);
-        &.sdf-hover,
-        &.sdf-btn:hover,
-        &.sdf-btn:focus{
+        &.sdf-hover{
             background-color: darken(saturate(color-get($color, background), $color-multiplier*3), $color-multiplier);
         }
-        &.sdf-btn:focus{
-            box-shadow: $button-focus-boxshadow rgba(color-get($color, background), 0.5)
-        }
-        .sdf-list, .sdf-list-horizontal, &.sdf-list, &.sdf-list-horizontal{
-            &>.sdf-list-item{
-                background-color: color-get($color, background);
-                color: color-get($color, contrast);
-                border-color: rgba(color-get($color, contrast), $border-opacity);
-                &:hover{
-                    background-color: darken(color-get($color, background), $color-multiplier*2);
-                }
-            }
-        }
-        .sdf-border{
-            border: 1px solid rgba(color-get($color, contrast), $border-opacity);
-        }
-        &.sdf-alert{
+        // all standard componentes
+        &.sdf-alert, &[sdf-menu], &.sdf-list>.sdf-list-item, &.sdf-list-horizontal>.sdf-list-item, &.sdf-tab-list{
             background-color: color-get($color, background);
             color: color-get($color, contrast);
         }
@@ -40,6 +23,89 @@
         color: color-get($color, font);
     }
 }
+// buttons
+.sdf-btn{ 
+    @each $color in $color-types{   
+        &.sdf-#{$color}{
+            &:hover,
+            &:focus{
+                background-color: darken(saturate(color-get($color, background), $color-multiplier*3), $color-multiplier);
+            }
+            &:focus{
+                box-shadow: $button-focus-boxshadow rgba(color-get($color, background), 0.5)
+            }
+        }   
+    }
+}
+// outline buttons
+.sdf-btn.sdf-btn-outline{
+    @each $color in $color-types{
+        &.sdf-#{$color}{
+            background-color: transparent;
+            border: 1px solid color-get($color, background);
+            color: color-get($color, background);
+            &:hover, &:active, &:focus{
+                background-color: color-get($color, background);
+                border: 1px solid color-get($color, background);
+                color: color-get($color, contrast);
+            }
+        }
+        &.sdf-#{$color}-inverse{
+            background-color: transparent;
+            border: 1px solid color-get($color, contrast);
+            color: color-get($color, contrast);
+        }
+    }
+}
+
+
+
+// lists
+.sdf-list, .sdf-list-horizontal{   
+    @each $color in $color-types{
+        &.sdf-#{$color}>.sdf-list-item{    
+            border-color: rgba(color-get($color, contrast), $border-opacity);
+            &:hover{
+                background-color: darken(color-get($color, background), $color-multiplier*2);
+            }
+        }
+    }
+}
+// tabs 
+@each $color in $color-types{
+    .sdf-#{$color} {
+        &.sdf-tab-view{
+            border-color: rgba(color-get($color, contrast), $border-opacity);
+        }
+        &.sdf-tab-list{
+            border-bottom: 1px solid rgba(color-get($color, contrast), $border-opacity);
+            background-color: color-get($color, background);
+            color: color-get($color, font);
+            .sdf-list-item{
+                border-top-left-radius: $tab-group-border-radius;
+                border-top-right-radius: $tab-group-border-radius;
+                background-color: color-get($color, background);
+                color: color-get($color, contrast);
+                border: 1px solid transparent;
+                border-bottom: none;
+                &.active{
+                    border-color: rgba(color-get($color, contrast), $border-opacity);
+                }
+            }
+        }
+    }
+}
+
+// alerts and menus
+
+.sdf-border{
+    @each $color in $color-types{
+        &.sdf-#{$color}{
+            border: 1px solid rgba(color-get($color, contrast), $border-opacity);
+        }
+    }
+}
+
 
 @each $color in $color-types{
     .sdf-#{$color}{
@@ -101,25 +167,4 @@
 }
 
 
-// outline buttons
-.sdf-btn{
-    &.sdf-btn-outline{
-        @each $color in $color-types{
-            &.sdf-#{$color}{
-                background-color: transparent;
-                border: 1px solid color-get($color, background);
-                color: color-get($color, background);
-                &:hover, &:active, &:focus{
-                    background-color: color-get($color, background);
-                    border: 1px solid color-get($color, background);
-                    color: color-get($color, contrast);
-                }
-            }
-            &.sdf-#{$color}-inverse{
-                background-color: transparent;
-                border: 1px solid color-get($color, contrast);
-                color: color-get($color, contrast);
-            }
-        }
-    }
-}
+

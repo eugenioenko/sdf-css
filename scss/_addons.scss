@@ -7,11 +7,16 @@
     padding: $form-input-addon-padding;
     font-weight: $form-input-addon-font-weight;
     flex: none;
-    //background-color: lighten(color-get(default, contrast), $color-multiplier*2);
-    //color: color-get(default, background);
+    border-radius: $border-radius;
     &.sdf-icon{
         min-width: map-get($buttons, normal-height);
         height: map-get($buttons, normal-height);
+        &.sdf-round{
+            border-radius: 50%;
+        }
+        &.sdf-square{
+            border-radius: 0;
+        }
     }
 }
 // addon sizes

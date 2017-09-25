@@ -103,6 +103,7 @@ $border-radius: 4px;
 $button-border-radius: $border-radius;
 $button-group-border-radius: $border-radius;
 $tab-group-border-radius: $border-radius;
+$tab-view-border-radius: $border-radius;
 $input-border-radius: $border-radius;
 $list-menu-border-radius: $border-radius;
 $list-addon-border-radius: $border-radius;
@@ -195,3 +196,7 @@ $dropdown-z-index: 100;
 
 // side menus
 $sidemenu-width: 260px;
+
+// tabs
+$tab-item-padding: $grid-gutter/4 $grid-gutter/2;
+$tab-view-min-height: 100px;

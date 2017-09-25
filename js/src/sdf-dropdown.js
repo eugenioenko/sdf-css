@@ -13,7 +13,7 @@
     var sdfDropdown = function(){
         this.dropdowns = {};
         this.selector = '[sdf-dropdown-menu]';
-        this.init();
+        this.initialize();
     };
 
     sdfDropdown.prototype.hide = function(id){
@@ -70,7 +70,7 @@
             that.hide(id);
         };
     };
-    sdfDropdown.prototype.init = function(){
+    sdfDropdown.prototype.initialize = function(){
         var elements = document.querySelectorAll(this.selector);
         for (var i = elements.length - 1; i >= 0; i--) {
             var element = elements[i];

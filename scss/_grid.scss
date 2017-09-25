@@ -30,7 +30,7 @@
     // generating fixed grid sizes
     @each $breakpoint in $grid{
         @if map-get($breakpoint, width) != null {
-            @media (min-width: map-get($breakpoint, width)){
+            @media (min-width: map-get($breakpoint, media)){
                 width: map-get($breakpoint, width);
             }
         }

@@ -1193,7 +1193,7 @@
 			<h2 class="sdf-text-center"><span class="sdf-badge sdf-badge-left sdf-info">9</span>Lists</h2>
 		</div>
 		<div class="sdf-cell sdf-12 sdf-sm-4 sdf-pad sdf-primary">
-			<ul class="sdf-list sdf-border ">
+			<ul class="sdf-list sdf-border sdf-primary">
 				<li class="sdf-list-item">First Quit</li>
 				<li class="sdf-list-item">Second</li>
 				<li class="sdf-list-item">Third</li>
@@ -1202,7 +1202,7 @@
 		</div>
 
 		<div class="sdf-cell sdf-12 sdf-sm-4 sdf-pad sdf-success">
-			<ul class="sdf-list sdf-border sdf-square">
+			<ul class="sdf-list sdf-border sdf-success sdf-square">
 				<li class="sdf-list-item">
 					<div class="sdf-list-group">
 						<div class="sdf-addon"><b>1</b></div>
@@ -1231,7 +1231,7 @@
 		</div>
 
 		<div class="sdf-cell sdf-12 sdf-sm-4 sdf-pad sdf-light">
-			<ul class="sdf-list sdf-text-center sdf-square">
+			<ul class="sdf-list sdf-text-center sdf-light sdf-square">
 				<li class="sdf-list-item">First</li>
 				<li class="sdf-list-item">Second</li>
 				<li class="sdf-list-item">Third</li>
@@ -1383,7 +1383,7 @@
 		<div class="sdf-cell sdf-12 sdf-sm-4 sdf-pad">
 			<div class="sdf-dropdown">
 				<button class="sdf-btn sdf-primary" sdf-dropdown-toggle="sdf-dropdown-menu-1">Dropdown Down</button>
-				<ul class="sdf-list sdf-border " sdf-dropdown-menu="top-left" id="sdf-dropdown-menu-1">
+				<ul class="sdf-list sdf-border" sdf-dropdown-menu="top-left" id="sdf-dropdown-menu-1">
 					<li class="sdf-list-item">First Quit</li>
 					<li class="sdf-list-item">Second</li>
 					<li class="sdf-list-item">Third</li>
@@ -1394,7 +1394,7 @@
 		<div class="sdf-cell sdf-12 sdf-sm-4 sdf-pad">
 			<div class="sdf-dropdown">
 				<button class="sdf-btn sdf-dark" sdf-dropdown-toggle="sdf-dropdown-menu-2">Dropdown Up</button>
-				<ul class="sdf-list sdf-border sdf-dark " sdf-dropdown-menu="bottom-left" id="sdf-dropdown-menu-2">
+				<ul class="sdf-list sdf-border sdf-dark" sdf-dropdown-menu="bottom-left" id="sdf-dropdown-menu-2">
 					<li class="sdf-list-item">
 						<div class="sdf-list-group">
 							<div class="sdf-addon"><b>1</b></div>
@@ -1497,7 +1497,7 @@
 			});
 		});
 		</script>
-		<div class="sdf-cell sdf-12">
+		<div class="sdf-cell sdf-12 sdf-pad">
 <pre  class="code sdf-light html"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="undefined">
    // bottom toast
    sdf.toast.show("Hello, World! I'm a toast from the bottom");
@@ -1536,7 +1536,7 @@
 	</div>
 
 	<div class="sdf-wrapper sdf-default sdf-pad-vertical-big">
-		<div class="sdf-pad sdf-default sdf-shadow" sdf-menu="right" id="sdf-menu-0" aria-hidden="true">
+		<div class="sdf-pad sdf-default sdf-shadow" sdf-menu="right-full" id="sdf-menu-0" aria-hidden="true">
 			<ul class="sdf-list sdf-default sdf-square">
 				<li class="sdf-list-item">First Item</li>
 				<li class="sdf-list-item">Second Item</li>
@@ -1606,6 +1606,97 @@
 			</div>
 		</div>
 	</div>
+
+	<div class="sdf-grid-fixed sdf-gutter">
+		<div class="sdf-cell sdf-12">
+			<h2 class="sdf-text-center"><span class="sdf-badge sdf-badge-left sdf-info">12</span>Tabs</h2>
+		</div>
+		<div class="sdf-cell sdf-12 sdf-pad">
+			<div class="sdf-tab-list">
+				<div class="sdf-list-item active" sdf-tab-toggle="">Item 1</div>
+				<div class="sdf-list-item" sdf-tab-toggle="">Item 2</div>
+				<div class="sdf-list-item" sdf-tab-toggle="">Item 3</div>
+				<div class="sdf-list-item" sdf-tab-toggle="">Item 4</div>
+			</div>
+			<div class="sdf-tab-view">
+			</div>
+		</div>
+		<div class="sdf-cell sdf-12 sdf-pad sdf-primary">
+			<ul class="sdf-tab-list sdf-primary" sdf-tab-menu>
+				<li class="sdf-list-item" sdf-tab-toggle="sdf-example-tab-1" aria-expanded="false">
+					<div class="sdf-list-group">
+						<div class="sdf-addon sdf-dark sdf-round sdf-icon fa fa-gears"></div>
+						<div class="sdf-list-text">Item</div>
+					</div>
+				</li>
+				<li class="sdf-list-item active" sdf-tab-toggle="sdf-example-tab-2" aria-expanded="true">
+					<div class="sdf-list-group">
+						<div class="sdf-addon sdf-secondary sdf-round sdf-icon fa fa-user"></div>
+						<div class="sdf-list-text">Item</div>
+					</div>
+				</li>
+				<li class="sdf-list-item" sdf-tab-toggle="sdf-example-tab-3">
+					<div class="sdf-list-group">
+						<div class="sdf-addon sdf-success sdf-round sdf-icon fa fa-table"></div>
+						<div class="sdf-list-text">Item<span class="sdf-badge sdf-success">3</span></div>
+					</div>
+				</li>
+				<li class="sdf-list-item" sdf-tab-toggle="sdf-example-tab-4">
+					<div class="sdf-list-group">
+						<div class="sdf-addon sdf-danger sdf-round sdf-icon fa fa-lock"></div>
+						<div class="sdf-list-text">Item</div>
+					</div>
+				</li>
+			</ul>
+			<div class="sdf-tab-view sdf-primary sdf-pad">
+				<div class="sdf-tab" id="sdf-example-tab-1">
+					1
+				</div>
+				<div class="sdf-tab" id="sdf-example-tab-2">
+					2
+				</div>
+				<div class="sdf-tab" id="sdf-example-tab-3">
+					3
+				</div>
+				<div class="sdf-tab" id="sdf-example-tab-4">
+					4
+				</div>
+			</div>
+		</div>
+		<div class="sdf-cell sdf-12 sdf-pad sdf-dark">
+			<ul class="sdf-tab-list sdf-dark" sdf-tab-menu>
+				<li class="sdf-list-item">
+					<div class="sdf-list-group">
+						<div class="sdf-addon sdf-dark sdf-round sdf-icon fa fa-gears"></div>
+						<div class="sdf-list-text">Item</div>
+					</div>
+				</li>
+				<li class="sdf-list-item active">
+					<div class="sdf-list-group">
+						<div class="sdf-addon sdf-secondary sdf-round sdf-icon fa fa-user"></div>
+						<div class="sdf-list-text">Item</div>
+					</div>
+				</li>
+				<li class="sdf-list-item">
+					<div class="sdf-list-group">
+						<div class="sdf-addon sdf-success sdf-round sdf-icon fa fa-table"></div>
+						<div class="sdf-list-text">Item<span class="sdf-badge sdf-success">3</span></div>
+					</div>
+				</li>
+				<li class="sdf-list-item">
+					<div class="sdf-list-group">
+						<div class="sdf-addon sdf-danger sdf-round sdf-icon fa fa-lock"></div>
+						<div class="sdf-list-text">Item</div>
+					</div>
+				</li>
+			</ul>
+			<div class="sdf-tab-view sdf-dark sdf-pad">
+				lalala
+			</div>
+		</div>
+
+	</div>
+
 	<div style="padding-top: 200px;"></div>
 
 </body>

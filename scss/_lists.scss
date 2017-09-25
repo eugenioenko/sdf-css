@@ -26,6 +26,7 @@
         font-weight: 400;
         will-change: background-color, color;
         transition: color $transition-normal, background-color $transition-normal;
+        text-decoration: none;
         &:hover{
             background-color: color-get(default, contrast);
             color: color-get(default, background);
@@ -76,6 +77,7 @@
         font-weight: 400;
         will-change: background-color, color;
         transition: color $transition-normal, background-color $transition-normal;
+        text-decoration: none;
         &:hover{
             background-color: color-get(default, contrast);
             color: color-get(default, background);
@@ -121,6 +123,6 @@
     @include sdf-vertical-center();
 }
 .sdf-list-text{
-    padding: 0 $grid-gutter/2;
+    padding: 0 $grid-gutter/4;
 }
 
