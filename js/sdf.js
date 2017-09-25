@@ -8,7 +8,7 @@
  * @since   Version 1.0.0
  */
 
-var sdf = (function(){
+var sdf = (function(){ 
 
     'use strict';
 
@@ -30,7 +30,7 @@ var sdf = (function(){
         components.push(component);
     }
 
-    function init(){
+    function initialize(){
         if(typeof window.sdf === "undefined"){
             throw new Error("sdf controller not initialized");
         }
@@ -52,44 +52,14 @@ var sdf = (function(){
         addWidget: addWidget,
         addGadget: addGadget,
         addComponent: addComponent,
-        gadgets: gadgets,
-        elements: elements,
-        init: init
+        initialize: initialize
     };
 
 })();
 
 window.addEventListener('load', function() {
-    sdf.init();
+    sdf.initialize();
 });
-
-
-
-/*
-(function(){
-    var sdfButton = function(element){
-        this.element = element;
-        this.initialize();
-    };
-
-    sdfButton.prototype.clickEvent_ = function(){
-    };
-
-    sdfButton.prototype.initialize = function(){
-        this.clickEvent = this.clickEvent_.bind(this);
-        this.element.addEventListener('click', this.clickEvent);
-
-    };
-
-
-    sdf.addWidget({
-        constructor: sdfButton,
-        selector: 'button'
-    });
-
-})();
-*/
-
 /**
  * SDF Query
  * Simple utility for selecting and modifying DOM elements used by SDF CSS Framework
@@ -782,7 +752,7 @@ window.addEventListener('load', function() {
                 (function(element){
                     return function(){
                         element.style.display = 'none';
-                        popup.element.setAttribute('sdf-transitioning', 'false');
+                        element.setAttribute('sdf-transitioning', 'false');
                     };
                 })(popup.element), 500);
             if(popup.toggle){
@@ -811,7 +781,7 @@ window.addEventListener('load', function() {
             setTimeout(
                 (function(element){
                     return function(){
-                        popup.element.setAttribute('sdf-transitioning', 'false');
+                        element.setAttribute('sdf-transitioning', 'false');
                         element.setAttribute('aria-hidden', 'false');
                     };
                 })(popup.element), 10);

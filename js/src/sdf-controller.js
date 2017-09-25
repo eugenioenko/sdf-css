@@ -30,7 +30,7 @@ var sdf = (function(){
         components.push(component);
     }
 
-    function init(){
+    function initialize(){
         if(typeof window.sdf === "undefined"){
             throw new Error("sdf controller not initialized");
         }
@@ -52,38 +52,11 @@ var sdf = (function(){
         addWidget: addWidget,
         addGadget: addGadget,
         addComponent: addComponent,
-        init: init
+        initialize: initialize
     };
 
 })();
 
 window.addEventListener('load', function() {
-    sdf.init();
+    sdf.initialize();
 });
-
-
-
-/*
-(function(){
-    var sdfButton = function(element){
-        this.element = element;
-        this.initialize();
-    };
-
-    sdfButton.prototype.clickEvent_ = function(){
-    };
-
-    sdfButton.prototype.initialize = function(){
-        this.clickEvent = this.clickEvent_.bind(this);
-        this.element.addEventListener('click', this.clickEvent);
-
-    };
-
-
-    sdf.addWidget({
-        constructor: sdfButton,
-        selector: 'button'
-    });
-
-})();
-*/

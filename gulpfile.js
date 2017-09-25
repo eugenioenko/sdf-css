@@ -38,4 +38,4 @@ gulp.task('compress', function () {
     .pipe(gulp.dest('js/dist'));
 });
 
-gulp.watch('js/src/*.js', ['lint', 'combine']);
+gulp.watch('js/src/*.js', ['lint', 'combine', 'compress']);
