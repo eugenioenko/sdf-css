@@ -1400,6 +1400,7 @@ img.sdf-responsive {
 .sdf-addon.sdf-icon {
   min-width: 36px;
   height: 36px;
+  padding: 0;
 }
 .sdf-addon.sdf-icon.sdf-round {
   border-radius: 50%;

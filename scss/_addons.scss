@@ -11,6 +11,7 @@
     &.sdf-icon{
         min-width: map-get($buttons, normal-height);
         height: map-get($buttons, normal-height);
+        padding: 0;
         &.sdf-round{
             border-radius: 50%;
         }
