@@ -6,7 +6,7 @@
     text-align: center;
     padding: $form-input-addon-padding;
     font-weight: $form-input-addon-font-weight;
-    flex: 1 0 auto;
+    flex: none;
     //background-color: lighten(color-get(default, contrast), $color-multiplier*2);
     //color: color-get(default, background);
     &.sdf-icon{

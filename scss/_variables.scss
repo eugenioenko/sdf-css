@@ -106,6 +106,7 @@ $tab-group-border-radius: $border-radius;
 $input-border-radius: $border-radius;
 $list-menu-border-radius: $border-radius;
 $list-addon-border-radius: $border-radius;
+
 // borders
 $border-opacity: 0.5;
 
@@ -178,7 +179,7 @@ $font-heading-h4-font-size: 1.333rem;
 
 // alerts
 $alert-width: 420px;
-$alert-border-radius: 4px;
+$alert-border-radius: $border-radius;
 
 
 // transitions

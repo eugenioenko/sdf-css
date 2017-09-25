@@ -58,6 +58,7 @@ textarea.sdf-input{
 
 // form group
 .sdf-form-group{
+    display: block;
     margin-bottom: $grid-gutter/2;
 
     label{

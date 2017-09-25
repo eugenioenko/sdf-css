@@ -8,13 +8,13 @@
 	<title>Sdf CSS Framework</title>
 	<style>
 		.demo-cell{
-			border: 1px solid #ccc;
+			outline: 1px solid #fff;
 			font-weight: 400;
 			padding-top: 16px;
 			padding-bottom: 16px;
 		}
 		.demo-cell-dark{
-			border: 1px solid #000;
+			outline: 1px solid #000;
 		}
 		section.sdf-cell{
 			margin-top: 30px;
@@ -725,7 +725,10 @@
 			</div>
 			<div class="sdf-form-group sdf-cell sdf-12">
 				<label>Label</label>
-				<input type="text" class="sdf-input">
+				<div class="sdf-input-group">
+					<span class="sdf-addon sdf-primary sdf-icon">@</span>
+					<input type="text" class="sdf-input" placeholder="username">
+				</div>
 			</div>
 			<div class="sdf-form-group sdf-cell sdf-12">
 				<input type="submit" class="sdf-btn sdf-light" value="Submit">

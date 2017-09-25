@@ -1394,7 +1394,7 @@ img.sdf-responsive {
   text-align: center;
   padding: 0 10px;
   font-weight: 400;
-  flex: 1 0 auto;
+  flex: none;
 }
 .sdf-addon.sdf-icon {
   min-width: 36px;
@@ -1510,6 +1510,7 @@ textarea.sdf-input.sdf-small {
 }
 
 .sdf-form-group {
+  display: block;
   margin-bottom: 16px;
 }
 .sdf-form-group label {
