@@ -2,7 +2,7 @@
 * Buttons
 */
 .sdf-btn{
-    background: 0 0;
+    background-image: $button-background-image;
     background-color: color-get(default, contrast);
     border: none;
     border-radius: $button-border-radius;

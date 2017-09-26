@@ -1,7 +1,6 @@
 /**
  * Badges
  */
-
 .sdf-badge{
     color: color-get(default, background);
     background-color: color-get(default, contrast);
@@ -14,6 +13,7 @@
     white-space: nowrap;
     border-radius: $badge-border-radius;
     font-style: normal;
+    font-family: $font-family;
     &.sdf-badge-left{
         margin-left: 0;
         margin-right: $badge-margin;

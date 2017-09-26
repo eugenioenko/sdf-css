@@ -131,6 +131,7 @@ textarea.sdf-input{
         }
     }
     .sdf-addon{
+        background-image: $button-background-image;
         border-left: 1px solid  rgba(color-get(default, contrast), $forms-border-opacity);
         border-top: 1px solid  rgba(color-get(default, contrast), $forms-border-opacity);
         border-bottom: 1px solid  rgba(color-get(default, contrast), $forms-border-opacity);

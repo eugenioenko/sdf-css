@@ -67,7 +67,7 @@
             border-color: rgba(color-get($color, contrast), $border-opacity);
             &:hover{
                 background-color: darken(color-get($color, background), $color-multiplier*2);
-            }
+            } 
         }
     }
 }
@@ -82,12 +82,8 @@
             background-color: color-get($color, background);
             color: color-get($color, font);
             .sdf-list-item{
-                border-top-left-radius: $tab-group-border-radius;
-                border-top-right-radius: $tab-group-border-radius;
                 background-color: color-get($color, background);
                 color: color-get($color, contrast);
-                border: 1px solid transparent;
-                border-bottom: none;
                 &[aria-expanded="true"]{
                     border-color: rgba(color-get($color, contrast), $border-opacity);
                 }
@@ -157,7 +153,7 @@
         }
         // make theme modifier when input addon is inside color block
         .sdf-addon, .sdf-input{
-            border-color: rgba(color-get($color, contrast), $forms-border-opacity);
+            border-color: rgba(color-get($color, contrast), $forms-border-opacity)!important;
         }
         // glow color
         .sdf-glow{

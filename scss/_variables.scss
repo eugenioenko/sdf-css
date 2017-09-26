@@ -98,7 +98,7 @@ $colors: (
 
 
 
-// buttons
+// border radius
 $border-radius: 4px;
 $button-border-radius: $border-radius;
 $button-group-border-radius: $border-radius;
@@ -131,6 +131,7 @@ $buttons: (
 $button-focus-boxshadow: 0 0 0 2px;
 $button-focus-opacity: 0.5;
 $button-font-weight: 400;
+$button-background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.2));
 //forms
 $forms-sizes: "normal", "big", "small";
 $forms: (
