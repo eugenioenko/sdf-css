@@ -24,8 +24,8 @@
     }
 }
 // buttons
-.sdf-btn{ 
-    @each $color in $color-types{   
+.sdf-btn{
+    @each $color in $color-types{
         &.sdf-#{$color}{
             &:hover,
             &:focus{
@@ -34,7 +34,7 @@
             &:focus{
                 box-shadow: $button-focus-boxshadow rgba(color-get($color, background), 0.5)
             }
-        }   
+        }
     }
 }
 // outline buttons
@@ -61,9 +61,9 @@
 
 
 // lists
-.sdf-list, .sdf-list-horizontal{   
+.sdf-list, .sdf-list-horizontal{
     @each $color in $color-types{
-        &.sdf-#{$color}>.sdf-list-item{    
+        &.sdf-#{$color}>.sdf-list-item{
             border-color: rgba(color-get($color, contrast), $border-opacity);
             &:hover{
                 background-color: darken(color-get($color, background), $color-multiplier*2);
@@ -71,7 +71,7 @@
         }
     }
 }
-// tabs 
+// tabs
 @each $color in $color-types{
     .sdf-#{$color} {
         &.sdf-tab-view{
@@ -88,7 +88,7 @@
                 color: color-get($color, contrast);
                 border: 1px solid transparent;
                 border-bottom: none;
-                &.active{
+                &[aria-expanded="true"]{
                     border-color: rgba(color-get($color, contrast), $border-opacity);
                 }
             }

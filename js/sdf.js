@@ -1006,25 +1006,69 @@ window.addEventListener('load', function() {
  (function(){
     'use strict';
 
-    var sdfTab = function(toggle, tabview){
-        this.tabview = tabview;
+    var sdfTab = function(id, toggle, tabview, parent){
         this.toggle = toggle;
+        this.tabview = tabview;
+        this.parent = parent;
+
+        toggle.setAttribute('aria-haspopup', 'true');
+        var expanded = toggle.getAttribute('aria-expanded');
+        if(!expanded){
+            expanded = 'false';
+            toggle.setAttribute('aria-expanded', 'false');
+        }
+        if(expanded == 'false'){
+            tabview.setAttribute('aria-hidden', 'true');
+        } else {
+            tabview.setAttribute('aria-hidden', 'false');
+            this.parent.active = id;
+        }
+       toggle.addEventListener('click', (function(tabMenu, id){
+            return function(){
+                tabMenu.show(id);
+            };
+        })(this.parent, id));
 
     };
-    var sdfTabMenu = function(){
-        
-    }
-    var sdfTabs = function(){
-        this.tabmenus = {};
+
+    var sdfTabMenu = function(element, index){
+        this.element = element;
+        this.id = element.getAttribute('id');
         this.tabs = {};
+        this.active = {};
+        if(!this.id){
+            this.id = "sdf-tab-menu-" + index;
+            this.element.setAttribute('id', this.id);
+        }
+        var toggles = this.element.querySelectorAll('[sdf-tab-toggle]');
+        for(var i = 0; i < toggles.length; ++i) {
+            var toggle = toggles[i];
+            var tabId = toggle.getAttribute('sdf-tab-toggle');
+            var tabview = document.getElementById(tabId);
+            if(tabview){
+                this.tabs[tabId] = new sdfTab(tabId, toggle, tabview, this);
+            }else{
+                this.tabs[this.id] = false;
+            }
+        }
+    };
+    sdfTabMenu.prototype.show = function(id){
+        this.tabs[this.active].tabview.setAttribute('aria-hidden', 'true');
+        this.tabs[this.active].toggle.setAttribute('aria-expanded', 'false');
+        this.tabs[id].tabview.setAttribute('aria-hidden', 'false');
+        this.tabs[id].toggle.setAttribute('aria-expanded', 'true');
+        this.active = id;
+    };
+
+    var sdfTabs = function(){
+        this.tabMenus = {};
         this.initialize();
     };
 
 
     sdfTabs.prototype.show = function(id){
         var tab = this.tabs[id];
-        console.log(tab);
-        
+
         this.tabs[id].element.setAttribute('aria-hidden', 'false');
         this.tabs[id].toggle.setAttribute('aria-expanded', 'true');
 
@@ -1033,43 +1077,10 @@ window.addEventListener('load', function() {
     };
 
     sdfTabs.prototype.initialize = function(){
-        var tabmenus = document.querySelectorAll('[sdf-tab-menu]');
-        for (var i = tabmenus.length - 1; i >= 0; i--) {
-            var tabmenu = tabmenus[i];
-            var tabmenuId = tabmenu.getAttribute('id');
-            if(!tabmenuId){
-                tabmenuId = "sdf-tab-menu-" + i;
-                tabmenu.setAttribute('id', tabmenuId);
-            }
-            this.tabmenus[tabmenuId] = {};
-            this.tabmenus[tabmenuId].elements = [];
-            var tabs = tabmenu.querySelectorAll('[sdf-tab-toggle]');
-            for (var j = 0;  j < tabs.length; ++j) {
-                var tab = tabs[j];
-                var tabId = tab.getAttribute('sdf-tab-toggle');
-                var tabview = document.getElementById(tabId);
-                if(tabview){
-                    tab.setAttribute('aria-haspopup', 'true');
-                    var expanded = tab.getAttribute('aria-expanded');
-                    if(!expanded){
-                        expanded = 'false';
-                        tab.setAttribute('aria-expanded', 'false');
-                    } 
-                    if(expanded == 'false'){
-                        tabview.setAttribute('aria-hidden', 'true');
-                    } else {
-                        tabview.setAttribute('aria-hidden', 'false');
-                        this.tabmenus[tabmenuId].active = tabview;
-                    }
-                    this.tabmenus[tabmenuId].elements.push(tabview)
-                    this.tabs[tabId] = {
-                        element: tabview,
-                        toggle: tab,
-                        parent: this.tabmenus[tabmenuId]
-                    };
-                    
-                }
-            }
+        var tabMenus = document.querySelectorAll('[sdf-tab-menu]');
+        for (var i = tabMenus.length - 1; i >= 0; i--) {
+            var tabMenu = new sdfTabMenu(tabMenus[i], i);
+            this.tabMenus[tabMenu.id] = tabMenu;
         }
     };
 

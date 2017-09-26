@@ -13,6 +13,7 @@
     text-align: center;
     white-space: nowrap;
     border-radius: $badge-border-radius;
+    font-style: normal;
     &.sdf-badge-left{
         margin-left: 0;
         margin-right: $badge-margin;
@@ -27,3 +28,12 @@ h1 .sdf-badge.sdf-badge-left{ margin-right: $font-heading-h1-font-size / 3; }
 h2 .sdf-badge.sdf-badge-left{ margin-right: $font-heading-h2-font-size / 3; }
 h3 .sdf-badge.sdf-badge-left{ margin-right: $font-heading-h3-font-size / 3; }
 h4 .sdf-badge.sdf-badge-left{ margin-right: $font-heading-h4-font-size / 3; }
+
+.sdf-icon{
+    position: relative;
+    .sdf-badge{
+        position: absolute;
+        top: -4px;
+        right: -7px;
+    }
+}

@@ -1612,86 +1612,119 @@
 			<h2 class="sdf-text-center"><span class="sdf-badge sdf-badge-left sdf-info">12</span>Tabs</h2>
 		</div>
 		<div class="sdf-cell sdf-12 sdf-pad">
-			<div class="sdf-tab-list">
-				<div class="sdf-list-item active" sdf-tab-toggle="">Item 1</div>
-				<div class="sdf-list-item" sdf-tab-toggle="">Item 2</div>
-				<div class="sdf-list-item" sdf-tab-toggle="">Item 3</div>
-				<div class="sdf-list-item" sdf-tab-toggle="">Item 4</div>
+			<div class="sdf-tab-list" sdf-tab-menu>
+				<div class="sdf-list-item active" sdf-tab-toggle="sdf-example-tab-a1" aria-expanded="true">Item 1</div>
+				<div class="sdf-list-item" sdf-tab-toggle="sdf-example-tab-a2">Item 2</div>
+				<div class="sdf-list-item" sdf-tab-toggle="sdf-example-tab-a3">Item 3</div>
+				<div class="sdf-list-item" sdf-tab-toggle="sdf-example-tab-a4">Item 4</div>
 			</div>
 			<div class="sdf-tab-view">
+				<div class="sdf-tab sdf-pad" id="sdf-example-tab-a1">
+					<p class="sdf-paragraph">
+						Sem a ullamcorper a natoque ultricies duis id porttitor nisl scelerisque varius dis vestibulum venenatis donec nibh metus.
+					</p>
+				</div>
+				<div class="sdf-tab sdf-pad" id="sdf-example-tab-a2">
+					<p class="sdf-paragraph">
+						Sem a ullamcorper a natoque ultricies duis id porttitor nisl scelerisque varius dis vestibulum venenatis donec nibh metus.
+					</p>
+					<p class="sdf-paragraph">
+						Sem a ullamcorper a natoque ultricies duis id porttitor nisl scelerisque varius dis vestibulum venenatis donec nibh metus.
+					</p>
+				</div>
+				<div class="sdf-tab sdf-pad" id="sdf-example-tab-a3">
+
+				</div>
+				<div class="sdf-tab sdf-pad" id="sdf-example-tab-a4">
+
+				</div>
 			</div>
 		</div>
-		<div class="sdf-cell sdf-12 sdf-pad sdf-primary">
-			<ul class="sdf-tab-list sdf-primary" sdf-tab-menu>
-				<li class="sdf-list-item" sdf-tab-toggle="sdf-example-tab-1" aria-expanded="false">
+		<div class="sdf-cell sdf-12 sdf-margin-vertical sdf-pad sdf-secondary">
+			<ul class="sdf-tab-list sdf-secondary sdf-horizontal-center" sdf-tab-menu>
+				<li class="sdf-list-item" sdf-tab-toggle="sdf-example-tab-b1" >
 					<div class="sdf-list-group">
 						<div class="sdf-addon sdf-dark sdf-round sdf-icon fa fa-gears"></div>
-						<div class="sdf-list-text">Item</div>
+						<div class="sdf-list-text">
+							<i class="sdf-badge sdf-badge-left sdf-light">7</i>Item
+						</div>
 					</div>
 				</li>
-				<li class="sdf-list-item active" sdf-tab-toggle="sdf-example-tab-2" aria-expanded="true">
+				<li class="sdf-list-item" sdf-tab-toggle="sdf-example-tab-b2" aria-expanded="true">
 					<div class="sdf-list-group">
-						<div class="sdf-addon sdf-secondary sdf-round sdf-icon fa fa-user"></div>
+						<div class="sdf-addon sdf-primary sdf-round sdf-icon fa fa-user"><i class="sdf-badge sdf-danger">10</i></div>
 						<div class="sdf-list-text">Item</div>
 					</div>
 				</li>
-				<li class="sdf-list-item" sdf-tab-toggle="sdf-example-tab-3">
+				<li class="sdf-list-item" sdf-tab-toggle="sdf-example-tab-b3">
 					<div class="sdf-list-group">
 						<div class="sdf-addon sdf-success sdf-round sdf-icon fa fa-table"></div>
-						<div class="sdf-list-text">Item<span class="sdf-badge sdf-success">3</span></div>
+						<div class="sdf-list-text">Item<i class="sdf-badge sdf-success">3</i></div>
 					</div>
 				</li>
-				<li class="sdf-list-item" sdf-tab-toggle="sdf-example-tab-4">
+				<li class="sdf-list-item" sdf-tab-toggle="sdf-example-tab-b4">
 					<div class="sdf-list-group">
 						<div class="sdf-addon sdf-danger sdf-round sdf-icon fa fa-lock"></div>
 						<div class="sdf-list-text">Item</div>
 					</div>
 				</li>
 			</ul>
-			<div class="sdf-tab-view sdf-primary sdf-pad">
-				<div class="sdf-tab" id="sdf-example-tab-1">
+			<div class="sdf-tab-view sdf-secondary sdf-pad">
+				<div class="sdf-tab" id="sdf-example-tab-b1">
 					1
 				</div>
-				<div class="sdf-tab" id="sdf-example-tab-2">
+				<div class="sdf-tab" id="sdf-example-tab-b2">
 					2
 				</div>
-				<div class="sdf-tab" id="sdf-example-tab-3">
+				<div class="sdf-tab" id="sdf-example-tab-b3">
 					3
 				</div>
-				<div class="sdf-tab" id="sdf-example-tab-4">
+				<div class="sdf-tab" id="sdf-example-tab-b4">
 					4
 				</div>
 			</div>
 		</div>
-		<div class="sdf-cell sdf-12 sdf-pad sdf-dark">
-			<ul class="sdf-tab-list sdf-dark" sdf-tab-menu>
-				<li class="sdf-list-item">
+
+		<div class="sdf-cell sdf-12 sdf-margin-vertical sdf-pad sdf-dark">
+			<ul class="sdf-tab-list sdf-dark sdf-horizontal-right" sdf-tab-menu>
+				<li class="sdf-list-item" sdf-tab-toggle="sdf-example-tab-c1" >
 					<div class="sdf-list-group">
-						<div class="sdf-addon sdf-dark sdf-round sdf-icon fa fa-gears"></div>
+						<div class="sdf-addon fa fa-gears"></div>
 						<div class="sdf-list-text">Item</div>
 					</div>
 				</li>
-				<li class="sdf-list-item active">
+				<li class="sdf-list-item active" sdf-tab-toggle="sdf-example-tab-c2" aria-expanded="true">
 					<div class="sdf-list-group">
-						<div class="sdf-addon sdf-secondary sdf-round sdf-icon fa fa-user"></div>
+						<div class="sdf-addon fa fa-user"></div>
 						<div class="sdf-list-text">Item</div>
 					</div>
 				</li>
-				<li class="sdf-list-item">
+				<li class="sdf-list-item" sdf-tab-toggle="sdf-example-tab-c3">
 					<div class="sdf-list-group">
-						<div class="sdf-addon sdf-success sdf-round sdf-icon fa fa-table"></div>
-						<div class="sdf-list-text">Item<span class="sdf-badge sdf-success">3</span></div>
+						<div class="sdf-addon fa fa-table"></div>
+						<div class="sdf-list-text">Item</div>
 					</div>
 				</li>
-				<li class="sdf-list-item">
+				<li class="sdf-list-item" sdf-tab-toggle="sdf-example-tab-c4">
 					<div class="sdf-list-group">
-						<div class="sdf-addon sdf-danger sdf-round sdf-icon fa fa-lock"></div>
+						<div class="sdf-addon fa fa-lock"></div>
 						<div class="sdf-list-text">Item</div>
 					</div>
 				</li>
 			</ul>
 			<div class="sdf-tab-view sdf-dark sdf-pad">
-				lalala
+				<div class="sdf-tab" id="sdf-example-tab-c1">
+					1
+				</div>
+				<div class="sdf-tab" id="sdf-example-tab-c2">
+					2
+				</div>
+				<div class="sdf-tab" id="sdf-example-tab-c3">
+					3
+				</div>
+				<div class="sdf-tab" id="sdf-example-tab-c4">
+					4
+				</div>
 			</div>
 		</div>
 
