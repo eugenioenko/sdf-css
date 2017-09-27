@@ -1,14 +1,12 @@
 /**
  * Forms
  */
-
-// input, select, textarea
 .sdf-input{
     display: block;
     width: 100%;
     font-family: $font-family;
-    padding: 0  map-get($forms, normal-padding);
-    font-size: map-get($forms, normal-font-size);
+    padding: 0  size-get(normal, padding);
+    font-size: size-get(normal, font-size);
     color: color-get(default, font);
     background-color: color-get(default, background);
     background-image: none;
@@ -32,46 +30,56 @@
 }
 input.sdf-input,
 select.sdf-input{
-    line-height: map-get($forms, normal-height) - 2px;
-    height: map-get($forms, normal-height);
-    @each $size in $forms-sizes{
-        &.sdf-#{$size}{
-            line-height: (map-get($forms, unquote("#{$size}-height")) - 2px);
-            padding: 0 map-get($forms, unquote("#{$size}-padding"));
-            font-size: map-get($forms, unquote("#{$size}-font-size"));
-            height: map-get($forms, unquote("#{$size}-height"));
-        }
-    }
-}
-textarea.sdf-input{
-    line-height: 1.2;
-    padding: map-get($forms, normal-padding) map-get($forms, normal-padding);
-    min-height: map-get($forms, normal-height) * 2;
-    overflow-y: auto;
-    @each $size in $forms-sizes{
-        &.sdf-#{$size}{
-            padding: map-get($forms, unquote("#{$size}-padding")) map-get($forms, unquote("#{$size}-padding"));
-            font-size: map-get($forms, unquote("#{$size}-font-size"));
-        }
-    }
+    line-height: size-get(normal, height) - 2px;
+    height: size-get(normal, height);
+
 }
 
+textarea.sdf-input{
+    line-height: 1.2;
+    padding: size-get(normal, padding);
+    min-height: size-get(normal, height) * 2;
+    overflow-y: auto;
+    @each $size in $size-types{
+        &.sdf-#{$size}{
+            padding: size-get($size, padding);
+            font-size: size-get($size, font-size);
+        }
+    }
+}
 // form group
 .sdf-form-group{
     display: block;
-    margin-bottom: $grid-gutter/2;
+    margin-bottom: size-get(normal, height) / 2;
 
     label{
         display: inline-block;
         font-weight: $forms-font-weight;
+        font-size: size-get(normal, font-size);
     }
+
     label + .sdf-input,
     label + .sdf-input-group,
+    label + .sdf-form-group,
     label + .sdf-fieldset{
-        margin-top: map-get($forms, normal-padding);
-        @each $size in $forms-sizes{
+        margin-top: size-get(normal, padding);
+        @each $size in $size-types{
             &.sdf-#{$size}{
-                margin-top: map-get($forms, unquote("#{$size}-padding"));
+                margin-top: size-get($size, font-size) / 2;
+            }
+        }
+    }
+    @each $size in $size-types{
+        &.sdf-#{$size}{
+            margin-bottom: size-get($size, height) / 2;
+            label{
+                font-size: size-get($size, font-size);
+            }
+            label + .sdf-input,
+            label + .sdf-input-group,
+            label + .sdf-form-group,
+            label + .sdf-fieldset{
+                 margin-top: size-get($size, font-size) / 2;
             }
         }
     }
@@ -135,8 +143,7 @@ textarea.sdf-input{
         border-left: 1px solid  rgba(color-get(default, contrast), $forms-border-opacity);
         border-top: 1px solid  rgba(color-get(default, contrast), $forms-border-opacity);
         border-bottom: 1px solid  rgba(color-get(default, contrast), $forms-border-opacity);
-        height: map-get($buttons, normal-height);
-
+        height: size-get(normal, height);
     }
     &>*:first-child:not(.sdf-input){
         border-left: 1px solid  rgba(color-get(default, contrast), $forms-border-opacity);
@@ -188,22 +195,17 @@ textarea.sdf-input{
 }
 
 // input sizes
-.sdf-input-group{
-    @each $size in $button-sizes{
-        &.sdf-#{$size}{
-            &>textarea.sdf-input{
-                font-size: map-get($forms, unquote("#{$size}-font-size"));
-            }
-            &>input.sdf-input,
-            &>select.sdf-input{
-                height: map-get($forms, unquote("#{$size}-height"));
-                line-height: (map-get($forms, unquote("#{$size}-height")) - 2px);
-                padding: 0 map-get($forms, unquote("#{$size}-padding"));
-                font-size: map-get($forms, unquote("#{$size}-font-size"));
-            }
-        }
+@each $size in $size-types{
+    input.sdf-input.sdf-#{$size}, select.sdf-input.sdf-#{$size},
+    .sdf-form-group.sdf-#{$size}>input.sdf-input, .sdf-form-group.sdf-#{$size}>select.sdf-input,
+    .sdf-input-group.sdf-#{$size}>input.sdf-input, .sdf-input-group.sdf-#{$size}>select.sdf-input{
+        height: size-get($size, height);
+        line-height: size-get($size, height) - 2px;
+        padding: 0 size-get($size, padding);
+        font-size: size-get($size, font-size);
     }
 }
+
 
 .sdf-form-horizontal{
     .sdf-form-group{

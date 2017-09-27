@@ -1,6 +1,9 @@
 @function color-get($theme, $type){
     @return map-get(map-get($colors, $theme), $type);
 }
+@function size-get($size, $attr){
+    @return map-get(map-get($sizes, $size), $attr);
+}
 @mixin input-placeholder($color){
     &::-webkit-input-placeholder {
         color:  rgba($color, $forms-placeholder-color-opacity);

@@ -24,7 +24,7 @@
     }
 }
 // buttons
-.sdf-btn{
+.sdf-button{
     @each $color in $color-types{
         &.sdf-#{$color}{
             &:hover,
@@ -38,7 +38,7 @@
     }
 }
 // outline buttons
-.sdf-btn.sdf-btn-outline{
+.sdf-button.sdf-outline{
     @each $color in $color-types{
         &.sdf-#{$color}{
             background-color: transparent;
@@ -67,7 +67,7 @@
             border-color: rgba(color-get($color, contrast), $border-opacity);
             &:hover{
                 background-color: darken(color-get($color, background), $color-multiplier*2);
-            } 
+            }
         }
     }
 }
@@ -106,14 +106,14 @@
 @each $color in $color-types{
     .sdf-#{$color}{
         //make theme modifier when button is the same as block theme
-        .sdf-btn.sdf-#{$color}{
+        .sdf-button.sdf-#{$color}{
             background-color: darken(color-get($color, background), $color-multiplier);
-            &.sdf-hover, &.sdf-btn:hover, &.sdf-btn:focus{
+            &.sdf-hover, &.sdf-button:hover, &.sdf-button:focus{
                 background-color: color-get($color, contrast);
                 color: color-get($color, background);
             }
         }
-        .sdf-btn.sdf-btn-outline.sdf-#{$color}{
+        .sdf-button.sdf-outline.sdf-#{$color}{
             border: 1px solid color-get($color, contrast);
             color: color-get($color, contrast);
         }

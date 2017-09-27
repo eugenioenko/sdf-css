@@ -6,11 +6,13 @@
     text-align: center;
     padding: $form-input-addon-padding;
     font-weight: $form-input-addon-font-weight;
+    font-size: size-get(normal, font-size);
     flex: none;
     border-radius: $border-radius;
+    box-sizing: border-box;
     &.sdf-icon{
-        min-width: map-get($buttons, normal-height);
-        height: map-get($buttons, normal-height);
+        height: size-get(normal, height);
+        min-width: size-get(normal, height);
         padding: 0;
         &.sdf-round{
             border-radius: 50%;
@@ -22,12 +24,12 @@
 }
 // addon sizes
 .sdf-list-group, .sdf-input-group{
-    @each $size in $button-sizes{
+    @each $size in $size-types{
         &.sdf-#{$size}{
             &>.sdf-addon{
-                height: map-get($buttons, unquote("#{$size}-height"));
-                min-width: map-get($buttons, unquote("#{$size}-height"));
-                font-size: map-get($buttons, unquote("#{$size}-font-size"));
+                height: size-get($size, height);
+                min-width: size-get($size, height);
+                font-size: size-get($size, font-size);
             }
         }
     }

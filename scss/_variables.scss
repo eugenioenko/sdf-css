@@ -112,39 +112,46 @@ $list-addon-border-radius: $border-radius;
 $border-opacity: 0.5;
 
 
-// buttons
-$button-sizes: "normal", "big", "small";
-$buttons: (
-    normal-height: 36px,
-    normal-padding: 18px,
-    normal-font-size: 14px,
-    normal-min-width: 64px,
-    small-height: 26px,
-    small-padding: 13px,
-    small-font-size: 13px,
-    small-min-width: 52px,
-    big-height: 48px,
-    big-padding: 24px,
-    big-font-size: 17px,
-    big-min-width: 96px
+// sizes of buttons and inputs
+$size-types: "tiny", "small", "normal", "big", "huge";
+$base-size: 8px;
+$sizes: (
+    tiny: (
+        height: 6 + 2 * $base-size,
+        padding: 2 * $base-size/2,
+        font-size: 2 + $base-size,
+        min-width: 4 * 2 * $base-size
+    ),
+    small: (
+        height: 3 + 3 * $base-size,
+        padding: 2 * $base-size/2,
+        font-size: 3 + 3 + $base-size,
+        min-width: 5 * 2 * $base-size
+    ),
+    normal: (
+        height: 4 + 4 * $base-size,
+        padding: 3 * $base-size/2,
+        font-size: 4 + 4 + $base-size,
+        min-width: 4 * 2 * $base-size
+    ),
+    big: (
+        height: 5 + 5 * $base-size,
+        padding: 3 * $base-size/2,
+        font-size: 5 + 5 + $base-size,
+        min-width: 5 * 2 * $base-size
+    ),
+    huge: (
+        height: 6 + 6 * $base-size,
+        padding: 4 * $base-size/2,
+        font-size: 6 + 6 + $base-size,
+        min-width: 6 * 2 * $base-size
+    )
 );
 $button-focus-boxshadow: 0 0 0 2px;
 $button-focus-opacity: 0.5;
 $button-font-weight: 400;
 $button-background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.2));
 //forms
-$forms-sizes: "normal", "big", "small";
-$forms: (
-    normal-height: 36px,
-    normal-padding: 10px,
-    normal-font-size: 16px,
-    small-height: 26px,
-    small-padding: 8px,
-    small-font-size: 15px,
-    big-height: 48px,
-    big-padding: 12px,
-    big-font-size: 18px
-);
 $forms-border-opacity: 0.7;
 $forms-font-weight: 400;
 $forms-placeholder-font-weight: 300;
