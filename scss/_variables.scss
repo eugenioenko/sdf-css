@@ -96,10 +96,10 @@ $colors: (
     )
 );
 
-
+$body-background-color: #fff;
 
 // border radius
-$border-radius: 4px;
+$border-radius: 1rem / 4;
 $button-border-radius: $border-radius;
 $button-group-border-radius: $border-radius;
 $tab-group-border-radius: $border-radius;
@@ -112,39 +112,56 @@ $list-addon-border-radius: $border-radius;
 $border-opacity: 0.5;
 
 
+// typography
+$font-family: "Roboto", Helvetica, Arial, sans-serif;
+$font-color: #3c3d3f;
+$font-size: 16px;
+$font-paragraph-size: 1.125rem;
+$font-weight: 300;
+$font-line-height: 1.2;
+$font-size-small: 75%;
+$font-paragraph-margin: 0 0 0.75rem 0;
+$font-paragraph-max-width: 40rem;
+$font-heading-margin: 0 0 0.5rem 0;
+$font-heading-weight: inherit;
+$font-heading-h1-font-size: 3.157rem;
+$font-heading-h2-font-size: 2.369rem;
+$font-heading-h3-font-size: 1.777rem;
+$font-heading-h4-font-size: 1.333rem;
+
 // sizes of buttons and inputs
 $size-types: "tiny", "small", "normal", "big", "huge";
-$base-size: 8px;
+$base-size: 1rem / 2;
 $sizes: (
     tiny: (
-        height: 6 + 2 * $base-size,
-        padding: 2 * $base-size/2,
-        font-size: 2 + $base-size,
-        min-width: 4 * 2 * $base-size
+        height: 1.25 * 2.25 * $base-size,
+        padding: 1.25 * $base-size,
+        font-size: 1.25 * $base-size,
+        min-width: 1.25 * 2 * $base-size
     ),
     small: (
-        height: 3 + 3 * $base-size,
-        padding: 2 * $base-size/2,
-        font-size: 3 + 3 + $base-size,
-        min-width: 5 * 2 * $base-size
+        height: 1.5 * 2.25 * $base-size,
+        padding: 1.5 * $base-size,
+        font-size: 1.5 * $base-size,
+        min-width: 1.5 * 2 * $base-size
     ),
     normal: (
-        height: 4 + 4 * $base-size,
-        padding: 3 * $base-size/2,
-        font-size: 4 + 4 + $base-size,
-        min-width: 4 * 2 * $base-size
+        height: 2 * 2.25 * $base-size,
+        padding: 2 * $base-size,
+        font-size: 2 * $base-size,
+        min-width: 2 * 2 * $base-size
     ),
     big: (
-        height: 5 + 5 * $base-size,
-        padding: 3 * $base-size/2,
-        font-size: 5 + 5 + $base-size,
-        min-width: 5 * 2 * $base-size
+        height: 2.5 * 2.25 * $base-size,
+        padding: 2.5 * $base-size,
+        font-size: 2.5 * $base-size,
+        min-width: 2.5 * 2 * $base-size
     ),
     huge: (
-        height: 6 + 6 * $base-size,
-        padding: 4 * $base-size/2,
-        font-size: 6 + 6 + $base-size,
-        min-width: 6 * 2 * $base-size
+        height: 3 * 2.25 * $base-size,
+        padding: 3 * $base-size,
+        font-size: 3 * $base-size,
+        min-width: 3 * 2 * $base-size
     )
 );
 $button-focus-boxshadow: 0 0 0 2px;
@@ -169,22 +186,7 @@ $badge-font-size: 100%;
 $badge-font-weight: 700;
 $badge-margin: 4px;
 $badge-padding: 0 4px;
-// typography
-$font-family: "Roboto", Helvetica, Arial, sans-serif;
-$font-color: #3c3d3f;
-$font-size: 16px;
-$font-paragraph-size: 1.125rem;
-$font-weight: 300;
-$font-line-height: 1.2;
-$font-size-small: 75%;
-$font-paragraph-margin: 0 0 0.75rem 0;
-$font-paragraph-max-width: 40rem;
-$font-heading-margin: 1.414rem 0 0.5rem 0;
-$font-heading-weight: inherit;
-$font-heading-h1-font-size: 3.157rem;
-$font-heading-h2-font-size: 2.369rem;
-$font-heading-h3-font-size: 1.777rem;
-$font-heading-h4-font-size: 1.333rem;
+
 
 // alerts
 $alert-width: 420px;

@@ -7,8 +7,10 @@ html{
 }
 body{
     color: $font-color;
+    background-color: $body-background-color;
     font-family: $font-family;
     font-weight: $font-weight;
+    font-size: 1rem;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -21,6 +23,9 @@ body{
 h1, h2, h3, h4 {
     margin: $font-heading-margin;
     font-weight: $font-heading-weight;
+}
+p{
+    margin-top: 0;
 }
 h1, .sdf-heading-1{ font-size: $font-heading-h1-font-size; }
 h2, .sdf-heading-2{ font-size: $font-heading-h2-font-size; }

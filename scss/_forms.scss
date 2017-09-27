@@ -30,7 +30,7 @@
 }
 input.sdf-input,
 select.sdf-input{
-    line-height: size-get(normal, height) - 2px;
+    line-height: size-get(normal, height);
     height: size-get(normal, height);
 
 }
@@ -200,7 +200,7 @@ textarea.sdf-input{
     .sdf-form-group.sdf-#{$size}>input.sdf-input, .sdf-form-group.sdf-#{$size}>select.sdf-input,
     .sdf-input-group.sdf-#{$size}>input.sdf-input, .sdf-input-group.sdf-#{$size}>select.sdf-input{
         height: size-get($size, height);
-        line-height: size-get($size, height) - 2px;
+        line-height: size-get($size, height);
         padding: 0 size-get($size, padding);
         font-size: size-get($size, font-size);
     }

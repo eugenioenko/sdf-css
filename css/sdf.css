@@ -18,11 +18,6 @@ section {
   display: block;
 }
 
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
-
 figcaption,
 figure,
 main {
@@ -215,6 +210,11 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   line-height: 1.2;
+  box-sizing: border-box;
+}
+
+*, :before, :after {
+  box-sizing: inherit;
 }
 
 body {
@@ -895,8 +895,10 @@ html {
 
 body {
   color: #3c3d3f;
+  background-color: #fff;
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-weight: 300;
+  font-size: 1rem;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -908,8 +910,12 @@ body {
 }
 
 h1, h2, h3, h4 {
-  margin: 1.414rem 0 0.5rem 0;
+  margin: 0 0 0.5rem 0;
   font-weight: inherit;
+}
+
+p {
+  margin-top: 0;
 }
 
 h1, .sdf-heading-1 {
@@ -939,15 +945,15 @@ small {
   background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.2));
   background-color: #fff;
   border: none;
-  border-radius: 4px;
+  border-radius: 0.25rem;
   color: #3c3d3f;
   position: relative;
   margin: 0;
-  height: 36px;
-  line-height: 36px;
-  min-width: 64px;
-  padding: 0 12px;
-  font-size: 16px;
+  height: 2.25rem;
+  line-height: 2.25rem;
+  min-width: 2rem;
+  padding: 0 1rem;
+  font-size: 1rem;
   display: inline-block;
   font-family: "Roboto", Helvetica, Arial, sans-serif;
   font-weight: 400;
@@ -987,39 +993,39 @@ small {
 }
 
 .sdf-button.sdf-tiny {
-  height: 22px;
-  line-height: 22px;
-  min-width: 64px;
-  padding: 0 8px;
-  font-size: 10px;
+  height: 1.40625rem;
+  line-height: 1.40625rem;
+  min-width: 1.25rem;
+  padding: 0 0.625rem;
+  font-size: 0.625rem;
 }
 .sdf-button.sdf-small {
-  height: 27px;
-  line-height: 27px;
-  min-width: 80px;
-  padding: 0 8px;
-  font-size: 14px;
+  height: 1.6875rem;
+  line-height: 1.6875rem;
+  min-width: 1.5rem;
+  padding: 0 0.75rem;
+  font-size: 0.75rem;
 }
 .sdf-button.sdf-normal {
-  height: 36px;
-  line-height: 36px;
-  min-width: 64px;
-  padding: 0 12px;
-  font-size: 16px;
+  height: 2.25rem;
+  line-height: 2.25rem;
+  min-width: 2rem;
+  padding: 0 1rem;
+  font-size: 1rem;
 }
 .sdf-button.sdf-big {
-  height: 45px;
-  line-height: 45px;
-  min-width: 80px;
-  padding: 0 12px;
-  font-size: 18px;
+  height: 2.8125rem;
+  line-height: 2.8125rem;
+  min-width: 2.5rem;
+  padding: 0 1.25rem;
+  font-size: 1.25rem;
 }
 .sdf-button.sdf-huge {
-  height: 54px;
-  line-height: 54px;
-  min-width: 96px;
-  padding: 0 16px;
-  font-size: 20px;
+  height: 3.375rem;
+  line-height: 3.375rem;
+  min-width: 3rem;
+  padding: 0 1.5rem;
+  font-size: 1.5rem;
 }
 
 .sdf-btn-group {
@@ -1040,12 +1046,12 @@ small {
   margin-right: 1px;
 }
 .sdf-btn-group > .sdf-button:first-child {
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
 }
 .sdf-btn-group > .sdf-button:last-child {
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
 }
 
 .sdf-addon {
@@ -1062,14 +1068,14 @@ small {
   text-align: center;
   padding: 0 10px;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1rem;
   flex: none;
-  border-radius: 4px;
+  border-radius: 0.25rem;
   box-sizing: border-box;
 }
 .sdf-addon.sdf-icon {
-  height: 36px;
-  min-width: 36px;
+  height: 2.25rem;
+  min-width: 2.25rem;
   padding: 0;
 }
 .sdf-addon.sdf-icon.sdf-round {
@@ -1080,29 +1086,29 @@ small {
 }
 
 .sdf-list-group.sdf-tiny > .sdf-addon, .sdf-input-group.sdf-tiny > .sdf-addon {
-  height: 22px;
-  min-width: 22px;
-  font-size: 10px;
+  height: 1.40625rem;
+  min-width: 1.40625rem;
+  font-size: 0.625rem;
 }
 .sdf-list-group.sdf-small > .sdf-addon, .sdf-input-group.sdf-small > .sdf-addon {
-  height: 27px;
-  min-width: 27px;
-  font-size: 14px;
+  height: 1.6875rem;
+  min-width: 1.6875rem;
+  font-size: 0.75rem;
 }
 .sdf-list-group.sdf-normal > .sdf-addon, .sdf-input-group.sdf-normal > .sdf-addon {
-  height: 36px;
-  min-width: 36px;
-  font-size: 16px;
+  height: 2.25rem;
+  min-width: 2.25rem;
+  font-size: 1rem;
 }
 .sdf-list-group.sdf-big > .sdf-addon, .sdf-input-group.sdf-big > .sdf-addon {
-  height: 45px;
-  min-width: 45px;
-  font-size: 18px;
+  height: 2.8125rem;
+  min-width: 2.8125rem;
+  font-size: 1.25rem;
 }
 .sdf-list-group.sdf-huge > .sdf-addon, .sdf-input-group.sdf-huge > .sdf-addon {
-  height: 54px;
-  min-width: 54px;
-  font-size: 20px;
+  height: 3.375rem;
+  min-width: 3.375rem;
+  font-size: 1.5rem;
 }
 
 /**
@@ -1112,14 +1118,14 @@ small {
   display: block;
   width: 100%;
   font-family: "Roboto", Helvetica, Arial, sans-serif;
-  padding: 0 12px;
-  font-size: 16px;
+  padding: 0 1rem;
+  font-size: 1rem;
   color: #3c3d3f;
   background-color: #fff;
   background-image: none;
   background-clip: padding-box;
   border: 1px solid rgba(108, 109, 127, 0.7);
-  border-radius: 4px;
+  border-radius: 0.25rem;
   will-change: border-color, outline-color;
   transition: border-color 350ms ease-in-out, box-shadow 250ms ease-in-out;
   overflow: hidden;
@@ -1153,141 +1159,141 @@ small {
 
 input.sdf-input,
 select.sdf-input {
-  line-height: 34px;
-  height: 36px;
+  line-height: 2.25rem;
+  height: 2.25rem;
 }
 
 textarea.sdf-input {
   line-height: 1.2;
-  padding: 12px;
-  min-height: 72px;
+  padding: 1rem;
+  min-height: 4.5rem;
   overflow-y: auto;
 }
 textarea.sdf-input.sdf-tiny {
-  padding: 8px;
-  font-size: 10px;
+  padding: 0.625rem;
+  font-size: 0.625rem;
 }
 textarea.sdf-input.sdf-small {
-  padding: 8px;
-  font-size: 14px;
+  padding: 0.75rem;
+  font-size: 0.75rem;
 }
 textarea.sdf-input.sdf-normal {
-  padding: 12px;
-  font-size: 16px;
+  padding: 1rem;
+  font-size: 1rem;
 }
 textarea.sdf-input.sdf-big {
-  padding: 12px;
-  font-size: 18px;
+  padding: 1.25rem;
+  font-size: 1.25rem;
 }
 textarea.sdf-input.sdf-huge {
-  padding: 16px;
-  font-size: 20px;
+  padding: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .sdf-form-group {
   display: block;
-  margin-bottom: 18px;
+  margin-bottom: 1.125rem;
 }
 .sdf-form-group label {
   display: inline-block;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1rem;
 }
 .sdf-form-group label + .sdf-input,
 .sdf-form-group label + .sdf-input-group,
 .sdf-form-group label + .sdf-form-group,
 .sdf-form-group label + .sdf-fieldset {
-  margin-top: 12px;
+  margin-top: 1rem;
 }
 .sdf-form-group label + .sdf-input.sdf-tiny,
 .sdf-form-group label + .sdf-input-group.sdf-tiny,
 .sdf-form-group label + .sdf-form-group.sdf-tiny,
 .sdf-form-group label + .sdf-fieldset.sdf-tiny {
-  margin-top: 5px;
+  margin-top: 0.3125rem;
 }
 .sdf-form-group label + .sdf-input.sdf-small,
 .sdf-form-group label + .sdf-input-group.sdf-small,
 .sdf-form-group label + .sdf-form-group.sdf-small,
 .sdf-form-group label + .sdf-fieldset.sdf-small {
-  margin-top: 7px;
+  margin-top: 0.375rem;
 }
 .sdf-form-group label + .sdf-input.sdf-normal,
 .sdf-form-group label + .sdf-input-group.sdf-normal,
 .sdf-form-group label + .sdf-form-group.sdf-normal,
 .sdf-form-group label + .sdf-fieldset.sdf-normal {
-  margin-top: 8px;
+  margin-top: 0.5rem;
 }
 .sdf-form-group label + .sdf-input.sdf-big,
 .sdf-form-group label + .sdf-input-group.sdf-big,
 .sdf-form-group label + .sdf-form-group.sdf-big,
 .sdf-form-group label + .sdf-fieldset.sdf-big {
-  margin-top: 9px;
+  margin-top: 0.625rem;
 }
 .sdf-form-group label + .sdf-input.sdf-huge,
 .sdf-form-group label + .sdf-input-group.sdf-huge,
 .sdf-form-group label + .sdf-form-group.sdf-huge,
 .sdf-form-group label + .sdf-fieldset.sdf-huge {
-  margin-top: 10px;
+  margin-top: 0.75rem;
 }
 .sdf-form-group.sdf-tiny {
-  margin-bottom: 11px;
+  margin-bottom: 0.703125rem;
 }
 .sdf-form-group.sdf-tiny label {
-  font-size: 10px;
+  font-size: 0.625rem;
 }
 .sdf-form-group.sdf-tiny label + .sdf-input,
 .sdf-form-group.sdf-tiny label + .sdf-input-group,
 .sdf-form-group.sdf-tiny label + .sdf-form-group,
 .sdf-form-group.sdf-tiny label + .sdf-fieldset {
-  margin-top: 5px;
+  margin-top: 0.3125rem;
 }
 .sdf-form-group.sdf-small {
-  margin-bottom: 13.5px;
+  margin-bottom: 0.84375rem;
 }
 .sdf-form-group.sdf-small label {
-  font-size: 14px;
+  font-size: 0.75rem;
 }
 .sdf-form-group.sdf-small label + .sdf-input,
 .sdf-form-group.sdf-small label + .sdf-input-group,
 .sdf-form-group.sdf-small label + .sdf-form-group,
 .sdf-form-group.sdf-small label + .sdf-fieldset {
-  margin-top: 7px;
+  margin-top: 0.375rem;
 }
 .sdf-form-group.sdf-normal {
-  margin-bottom: 18px;
+  margin-bottom: 1.125rem;
 }
 .sdf-form-group.sdf-normal label {
-  font-size: 16px;
+  font-size: 1rem;
 }
 .sdf-form-group.sdf-normal label + .sdf-input,
 .sdf-form-group.sdf-normal label + .sdf-input-group,
 .sdf-form-group.sdf-normal label + .sdf-form-group,
 .sdf-form-group.sdf-normal label + .sdf-fieldset {
-  margin-top: 8px;
+  margin-top: 0.5rem;
 }
 .sdf-form-group.sdf-big {
-  margin-bottom: 22.5px;
+  margin-bottom: 1.40625rem;
 }
 .sdf-form-group.sdf-big label {
-  font-size: 18px;
+  font-size: 1.25rem;
 }
 .sdf-form-group.sdf-big label + .sdf-input,
 .sdf-form-group.sdf-big label + .sdf-input-group,
 .sdf-form-group.sdf-big label + .sdf-form-group,
 .sdf-form-group.sdf-big label + .sdf-fieldset {
-  margin-top: 9px;
+  margin-top: 0.625rem;
 }
 .sdf-form-group.sdf-huge {
-  margin-bottom: 27px;
+  margin-bottom: 1.6875rem;
 }
 .sdf-form-group.sdf-huge label {
-  font-size: 20px;
+  font-size: 1.5rem;
 }
 .sdf-form-group.sdf-huge label + .sdf-input,
 .sdf-form-group.sdf-huge label + .sdf-input-group,
 .sdf-form-group.sdf-huge label + .sdf-form-group,
 .sdf-form-group.sdf-huge label + .sdf-fieldset {
-  margin-top: 10px;
+  margin-top: 0.75rem;
 }
 
 .sdf-form {
@@ -1318,7 +1324,7 @@ textarea.sdf-input.sdf-huge {
   flex-flow: column wrap;
   margin: 0;
   padding: 0;
-  border-radius: 4px;
+  border-radius: 0.25rem;
 }
 .sdf-fieldset > * {
   border-radius: 0;
@@ -1327,12 +1333,12 @@ textarea.sdf-input.sdf-huge {
   z-index: 1;
 }
 .sdf-fieldset > *:first-child {
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
 }
 .sdf-fieldset > *:last-child {
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
 }
 .sdf-fieldset > *:not(:first-child) {
   margin-top: -1px;
@@ -1357,7 +1363,7 @@ textarea.sdf-input.sdf-huge {
   border-left: 1px solid rgba(108, 109, 127, 0.7);
   border-top: 1px solid rgba(108, 109, 127, 0.7);
   border-bottom: 1px solid rgba(108, 109, 127, 0.7);
-  height: 36px;
+  height: 2.25rem;
 }
 .sdf-input-group > *:first-child:not(.sdf-input) {
   border-left: 1px solid rgba(108, 109, 127, 0.7);
@@ -1373,12 +1379,12 @@ textarea.sdf-input.sdf-huge {
   border-radius: 0;
 }
 .sdf-input-group > *:first-child {
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
 }
 .sdf-input-group > *:last-child {
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
 }
 .sdf-input-group > .sdf-input + .sdf-addon:not(:first-child) {
   border-left: 0;
@@ -1402,46 +1408,46 @@ textarea.sdf-input.sdf-huge {
 input.sdf-input.sdf-tiny, select.sdf-input.sdf-tiny,
 .sdf-form-group.sdf-tiny > input.sdf-input, .sdf-form-group.sdf-tiny > select.sdf-input,
 .sdf-input-group.sdf-tiny > input.sdf-input, .sdf-input-group.sdf-tiny > select.sdf-input {
-  height: 22px;
-  line-height: 20px;
-  padding: 0 8px;
-  font-size: 10px;
+  height: 1.40625rem;
+  line-height: 1.40625rem;
+  padding: 0 0.625rem;
+  font-size: 0.625rem;
 }
 
 input.sdf-input.sdf-small, select.sdf-input.sdf-small,
 .sdf-form-group.sdf-small > input.sdf-input, .sdf-form-group.sdf-small > select.sdf-input,
 .sdf-input-group.sdf-small > input.sdf-input, .sdf-input-group.sdf-small > select.sdf-input {
-  height: 27px;
-  line-height: 25px;
-  padding: 0 8px;
-  font-size: 14px;
+  height: 1.6875rem;
+  line-height: 1.6875rem;
+  padding: 0 0.75rem;
+  font-size: 0.75rem;
 }
 
 input.sdf-input.sdf-normal, select.sdf-input.sdf-normal,
 .sdf-form-group.sdf-normal > input.sdf-input, .sdf-form-group.sdf-normal > select.sdf-input,
 .sdf-input-group.sdf-normal > input.sdf-input, .sdf-input-group.sdf-normal > select.sdf-input {
-  height: 36px;
-  line-height: 34px;
-  padding: 0 12px;
-  font-size: 16px;
+  height: 2.25rem;
+  line-height: 2.25rem;
+  padding: 0 1rem;
+  font-size: 1rem;
 }
 
 input.sdf-input.sdf-big, select.sdf-input.sdf-big,
 .sdf-form-group.sdf-big > input.sdf-input, .sdf-form-group.sdf-big > select.sdf-input,
 .sdf-input-group.sdf-big > input.sdf-input, .sdf-input-group.sdf-big > select.sdf-input {
-  height: 45px;
-  line-height: 43px;
-  padding: 0 12px;
-  font-size: 18px;
+  height: 2.8125rem;
+  line-height: 2.8125rem;
+  padding: 0 1.25rem;
+  font-size: 1.25rem;
 }
 
 input.sdf-input.sdf-huge, select.sdf-input.sdf-huge,
 .sdf-form-group.sdf-huge > input.sdf-input, .sdf-form-group.sdf-huge > select.sdf-input,
 .sdf-input-group.sdf-huge > input.sdf-input, .sdf-input-group.sdf-huge > select.sdf-input {
-  height: 54px;
-  line-height: 52px;
-  padding: 0 16px;
-  font-size: 20px;
+  height: 3.375rem;
+  line-height: 3.375rem;
+  padding: 0 1.5rem;
+  font-size: 1.5rem;
 }
 
 .sdf-form-horizontal .sdf-form-group {
@@ -1554,7 +1560,7 @@ input.sdf-input.sdf-huge, select.sdf-input.sdf-huge,
   margin: 0;
   padding: 0;
   list-style-type: none;
-  border-radius: 4px;
+  border-radius: 0.25rem;
 }
 .sdf-list.sdf-single-line > .sdf-list-item {
   overflow: hidden;
@@ -1578,16 +1584,16 @@ input.sdf-input.sdf-huge, select.sdf-input.sdf-huge,
   color: #fff;
 }
 .sdf-list > .sdf-list-item:first-child {
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
 }
 .sdf-list > .sdf-list-item:last-child {
   border-bottom: 0;
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
 }
 .sdf-list > .sdf-list-item .sdf-addon {
-  border-radius: 4px;
+  border-radius: 0.25rem;
 }
 
 .sdf-list-horizontal {
@@ -1603,7 +1609,7 @@ input.sdf-input.sdf-huge, select.sdf-input.sdf-huge,
   margin: 0;
   padding: 0;
   list-style-type: none;
-  border-radius: 4px;
+  border-radius: 0.25rem;
 }
 .sdf-list-horizontal.sdf-single-line > .sdf-list-item {
   overflow: hidden;
@@ -1637,13 +1643,13 @@ input.sdf-input.sdf-huge, select.sdf-input.sdf-huge,
   color: #fff;
 }
 .sdf-list-horizontal > .sdf-list-item:first-child {
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
 }
 .sdf-list-horizontal > .sdf-list-item:last-child {
   border-right: 1px solid transparent;
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
 }
 
 .sdf-list-horizontal.sdf-no-division > .sdf-list-item, .sdf-list.sdf-no-division > .sdf-list-item {
@@ -1694,8 +1700,8 @@ input.sdf-input.sdf-huge, select.sdf-input.sdf-huge,
   border-left: 1px solid rgba(108, 109, 127, 0.5);
   border-right: 1px solid rgba(108, 109, 127, 0.5);
   border-bottom: 1px solid rgba(108, 109, 127, 0.5);
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
 }
 
 .sdf-tab-list {
@@ -1726,8 +1732,8 @@ input.sdf-input.sdf-huge, select.sdf-input.sdf-huge,
   cursor: pointer;
   position: relative;
   padding: 8px 16px;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
   background-color: inherit;
   color: inherit;
   border: 1px solid transparent;
@@ -1770,7 +1776,7 @@ input.sdf-input.sdf-huge, select.sdf-input.sdf-huge,
   font-weight: 700;
   text-align: center;
   white-space: nowrap;
-  border-radius: 4px;
+  border-radius: 0.25rem;
   font-style: normal;
   font-family: "Roboto", Helvetica, Arial, sans-serif;
 }
@@ -1882,7 +1888,7 @@ h4 .sdf-badge.sdf-badge-left {
   overflow: hidden;
   width: 100%;
   position: absolute;
-  border-radius: 4px;
+  border-radius: 0.25rem;
   box-sizing: border-box;
   max-width: 420px;
   left: 50%;
