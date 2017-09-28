@@ -1,18 +1,6 @@
 /**
  * SDF grid
  */
-
-@mixin clearfix() {
-    &:before,
-    &:after {
-        content: " ";
-        display: table;
-    }
-    &:after {
-        clear: both;
-    }
-}
-
 @mixin make-grid(){
     @include sdf-flex();
     @include sdf-flex-flow-row-wrap();
@@ -23,54 +11,45 @@
 .sdf-grid{
     @include make-grid();
     margin: 0;
-}
-.sdf-grid-fixed{
-    @include make-grid();
-    margin: 0 auto;
-    // generating fixed grid sizes
-    @each $breakpoint in $grid{
-        @if map-get($breakpoint, width) != null {
-            @media (min-width: map-get($breakpoint, media)){
-                width: map-get($breakpoint, width);
+    &.sdf-fixed{
+        margin: 0 auto;
+        // generating fixed grid sizes
+        @each $breakpoint in $grid{
+            @if map-get($breakpoint, width) != null {
+                @media (min-width: map-get($breakpoint, media)){
+                    width: map-get($breakpoint, width);
+                }
             }
         }
     }
 }
-.sdf-grid, .sdf-grid-fixed{
-    &.sdf-gutter>.sdf-cell{
-        padding-left: $grid-gutter/2;
-        padding-right: $grid-gutter/2;
-    }
-    &.sdf-gutter-small>.sdf-cell{
-        padding-left: $grid-gutter/4;
-        padding-right: $grid-gutter/4;
-    }
-    &.sdf-gutter-big>.sdf-cell{
-        padding-left: $grid-gutter;
-        padding-right: $grid-gutter;
-    }
 
-}
 .sdf-cell{
-    box-sizing: border-box;
     position: relative;
+    padding-left: $grid-gutter/2;
+    padding-right: $grid-gutter/2;
 }
-.sdf-clearfix{
-    @include clearfix();
+.sdf-cell>.sdf-grid, .sdf-col>.sdf-grid{
+    margin-left: -$grid-gutter/2;
+    margin-right: -$grid-gutter/2;
+}
+.sdf-cell.sdf-grid{
+    padding-left: 0;
+    padding-right: 0;
+    @include sdf-content-start();
 }
 
 @mixin container(){
     display: block;
     padding-left:  ($grid-gutter / 2);
     padding-right: ($grid-gutter / 2);
-    box-sizing: border-box;
-    @include clearfix();
+    @include sdf-clearfix();
 }
 
 @mixin make-row() {
     margin-left:  ($grid-gutter / -2);
     margin-right: ($grid-gutter / -2);
-    @include clearfix();
+    @include sdf-clearfix();
 }
 
 @mixin make-col(){
@@ -80,7 +59,6 @@
     min-height: 1px;
     padding-left:  ($grid-gutter / 2);
     padding-right: ($grid-gutter / 2);
-    box-sizing: border-box;
 }
 
 .sdf-container{

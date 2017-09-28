@@ -69,20 +69,6 @@ textarea.sdf-input{
             }
         }
     }
-    @each $size in $size-types{
-        &.sdf-#{$size}{
-            margin-bottom: size-get($size, height) / 2;
-            label{
-                font-size: size-get($size, font-size);
-            }
-            label + .sdf-input,
-            label + .sdf-input-group,
-            label + .sdf-form-group,
-            label + .sdf-fieldset{
-                 margin-top: size-get($size, font-size) / 2;
-            }
-        }
-    }
 }
 .sdf-form{
     margin-bottom: 0;
@@ -93,7 +79,7 @@ textarea.sdf-input{
         margin-top: 0;
     }
 }
-.sdf-form.sdf-gutter{
+.sdf-form.sdf-grid{
     padding-left: $grid-gutter/4;
     padding-right: $grid-gutter/4;
     &>.sdf-form-group.sdf-cell{
@@ -194,17 +180,7 @@ textarea.sdf-input{
     }
 }
 
-// input sizes
-@each $size in $size-types{
-    input.sdf-input.sdf-#{$size}, select.sdf-input.sdf-#{$size},
-    .sdf-form-group.sdf-#{$size}>input.sdf-input, .sdf-form-group.sdf-#{$size}>select.sdf-input,
-    .sdf-input-group.sdf-#{$size}>input.sdf-input, .sdf-input-group.sdf-#{$size}>select.sdf-input{
-        height: size-get($size, height);
-        line-height: size-get($size, height);
-        padding: 0 size-get($size, padding);
-        font-size: size-get($size, font-size);
-    }
-}
+
 
 
 .sdf-form-horizontal{

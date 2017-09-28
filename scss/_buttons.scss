@@ -56,21 +56,6 @@
 }
 
 
-// button sizes
-.sdf-button{
-    @each $size in $size-types{
-        &.sdf-#{$size}{
-            height: size-get($size, height);
-            line-height: size-get($size, height);
-            min-width: size-get($size, min-width);
-            padding: 0 size-get($size, padding);
-            font-size: size-get($size, font-size);
-        }
-    }
-}
-
-
-
 .sdf-btn-group{
     @include sdf-flex();
     @include sdf-flex-flow-row-wrap();

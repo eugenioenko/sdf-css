@@ -14,6 +14,11 @@
 .sdf-float-left{
     float: left;
 }
+
+.sdf-clearfix{
+    @include sdf-clearfix();
+}
+
 // responsive image
 img.sdf-responsive{
     display: block;
@@ -32,41 +37,44 @@ img.sdf-responsive{
 }
 
 // padding spacing
-.sdf-pad{
+.sdf-padding{
     padding: $grid-gutter/2;
 }
-.sdf-pad-small{
+.sdf-padding-small{
     padding: $grid-gutter/4;
 }
-.sdf-pad-big{
+.sdf-padding-big{
     padding: $grid-gutter;
 }
-.sdf-pad-horizontal{
+.sdf-h-padding{
     padding-left: $grid-gutter/2;
     padding-right: $grid-gutter/2;
 }
-.sdf-pad-horizontal-small{
+.sdf-h-padding-small{
     padding-left: $grid-gutter/4;
     padding-right: $grid-gutter/4;
 }
-.sdf-pad-horizontal-big{
+.sdf-h-padding-big{
     padding-left: $grid-gutter;
     padding-right: $grid-gutter;
 }
-.sdf-pad-vertical{
+.sdf-v-padding{
     padding-top: $grid-gutter/2;
     padding-bottom: $grid-gutter/2;
 }
-.sdf-pad-vertical-small{
+.sdf-v-padding-small{
     padding-top: $grid-gutter/4;
     padding-bottom: $grid-gutter/4;
 }
-.sdf-pad-vertical-big{
+.sdf-v-padding-big{
     padding-top: $grid-gutter;
     padding-bottom: $grid-gutter;
 }
 
 // margin spacing
+.sdf-no-margin{
+    margin: 0;
+}
 .sdf-margin{
     margin: $grid-gutter/2;
 }
@@ -76,27 +84,27 @@ img.sdf-responsive{
 .sdf-margin-big{
     margin: $grid-gutter;
 }
-.sdf-margin-horizontal{
+.sdf-h-margin{
     margin-left: $grid-gutter/2;
     margin-right: $grid-gutter/2;
 }
-.sdf-margin-horizontal-small{
+.sdf-h-margin-small{
     margin-left: $grid-gutter/4;
     margin-right: $grid-gutter/4;
 }
-.sdf-margin-horizontal-big{
+.sdf-h-margin-big{
     margin-left: $grid-gutter;
     margin-right: $grid-gutter;
 }
-.sdf-margin-vertical{
+.sdf-v-margin{
     margin-top: $grid-gutter/2;
     margin-bottom: $grid-gutter/2;
 }
-.sdf-margin-vertical-small{
+.sdf-v-margin-small{
     margin-top: $grid-gutter/4;
     margin-bottom: $grid-gutter/4;
 }
-.sdf-margin-vertical-big{
+.sdf-v-margin-big{
     margin-top: $grid-gutter;
     margin-bottom: $grid-gutter;
 }
@@ -120,42 +128,42 @@ img.sdf-responsive{
     display: -ms-flexbox;
     display: flex;
 }
-.sdf-vertical-stretch{
+.sdf-v-align-stretch{
     -webkit-align-items: stretch;
     -ms-flex-align: stretch;
     align-items: stretch;
 }
-.sdf-vertical-center{
+.sdf-v-align-center{
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
 }
-.sdf-vertical-top{
+.sdf-v-align-top{
     -webkit-align-items: flex-start;
     -ms-flex-align: flex-start;
     align-items: flex-start;
 }
-.sdf-vertical-bottom{
+.sdf-v-align-bottom{
     -webkit-align-items: flex-end;
     -ms-flex-align: flex-end;
     align-items: flex-end;
 }
-.sdf-horizontal-stretch{
+.sdf-h-align-stretch{
     -webkit-justify-content: stretch;
     -ms-flex-pack: stretch;
     justify-content: stretch;
 }
-.sdf-horizontal-center{
+.sdf-h-align-center{
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
 }
-.sdf-horizontal-left{
+.sdf-h-align-left{
     -webkit-justify-content: flex-start;
     -ms-flex-pack: flex-start;
     justify-content: flex-start;
 }
-.sdf-horizontal-right{
+.sdf-h-align-right{
     -webkit-justify-content: flex-end;
     -ms-flex-pack: flex-end;
     justify-content: flex-end;

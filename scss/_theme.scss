@@ -129,21 +129,21 @@
                     border-color: complement(color-get($color, background));
                 }
             }
-            &.sdf-input-outline-2x:focus{
+            &.sdf-focus-outline-2x:focus{
                 @if $color == dark or $color == light or $color == default {
                     box-shadow: 0 0 0 1px rgba(color-get(primary, background), 0.5);
                 } @else {
                     box-shadow: 0 0 0 1px rgba(complement(color-get($color, background)), 0.5)
                 }
             }
-            &.sdf-input-outline-3x:focus{
+            &.sdf-focus-outline-3x:focus{
                 @if $color == dark or $color == light or $color == default {
                     box-shadow: 0 0 0 2px rgba(color-get(primary, background), 0.5);
                 } @else {
                     box-shadow: 0 0 0 2px rgba(complement(color-get($color, background)), 0.5)
                 }
             }
-            &.sdf-input-outline-4x:focus{
+            &.sdf-focus-outline-4x:focus{
                 @if $color == dark or $color == light or $color == default {
                     box-shadow: 0 0 0 3px rgba(color-get(primary, background), 0.5);
                 } @else {
@@ -152,8 +152,11 @@
             }
         }
         // make theme modifier when input addon is inside color block
-        .sdf-addon, .sdf-input{
+        .sdf-addon{
             border-color: rgba(color-get($color, contrast), $forms-border-opacity)!important;
+        }
+        .sdf-input{
+            border-color: rgba(color-get($color, contrast), $forms-border-opacity);
         }
         // glow color
         .sdf-glow{

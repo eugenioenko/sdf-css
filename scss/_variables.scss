@@ -2,7 +2,7 @@
 $sdf: "sdf";
 //grid
 $grid-cols: 12;          // default cols count
-$grid-gutter: 32px;     // default spacing between cells/cols
+$grid-gutter: 2rem;     // default spacing between cells/cols
 $grid-lg-width: 1152px;
 $grid-md-width: 948px;
 $grid-sm-width: 756px;
@@ -119,7 +119,7 @@ $font-size: 16px;
 $font-paragraph-size: 1.125rem;
 $font-weight: 300;
 $font-line-height: 1.2;
-$font-size-small: 75%;
+$font-size-small: 0.75%;
 $font-paragraph-margin: 0 0 0.75rem 0;
 $font-paragraph-max-width: 40rem;
 $font-heading-margin: 0 0 0.5rem 0;
@@ -136,13 +136,13 @@ $sizes: (
     tiny: (
         height: 1.25 * 2.25 * $base-size,
         padding: 1.25 * $base-size,
-        font-size: 1.25 * $base-size,
+        font-size: 1.8 * $base-size,
         min-width: 1.25 * 2 * $base-size
     ),
     small: (
         height: 1.5 * 2.25 * $base-size,
         padding: 1.5 * $base-size,
-        font-size: 1.5 * $base-size,
+        font-size: 1.9 * $base-size,
         min-width: 1.5 * 2 * $base-size
     ),
     normal: (

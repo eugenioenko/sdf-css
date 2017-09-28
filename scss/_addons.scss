@@ -22,15 +22,3 @@
         }
     }
 }
-// addon sizes
-.sdf-list-group, .sdf-input-group{
-    @each $size in $size-types{
-        &.sdf-#{$size}{
-            &>.sdf-addon{
-                height: size-get($size, height);
-                min-width: size-get($size, height);
-                font-size: size-get($size, font-size);
-            }
-        }
-    }
-}
