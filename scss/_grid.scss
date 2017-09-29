@@ -38,6 +38,10 @@
     padding-right: 0;
     @include sdf-content-start();
 }
+.sdf-grid.sdf-no-gutter>.sdf-cell{
+    padding-left: 0;
+    padding-right: 0;
+}
 
 @mixin container(){
     display: block;

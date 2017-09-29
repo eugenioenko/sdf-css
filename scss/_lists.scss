@@ -17,11 +17,13 @@
     }
 
     &>.sdf-list-item{
-        background-color: color-get(default, background);
-        color: color-get(default, font);
+        background-color: inherit;
+        color: inherit;
         padding: ($grid-gutter / 2);
         display: block;
-        border-bottom: 1px solid rgba(color-get(default, contrast), $border-opacity);
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: inherit; //rgba(color-get(default, contrast), $border-opacity);
         cursor: pointer;
         font-weight: 400;
         will-change: background-color, color;
@@ -69,10 +71,12 @@
         @include sdf-vertical-center();
         flex: 1 1 auto;
         text-align: center;
-        background-color: color-get(default, background);
-        color: color-get(default, font);
+        background-color: inherit;
+        color: inherit;
         padding: ($grid-gutter / 2);
-        border-right: 1px solid rgba(color-get(default, contrast), $border-opacity);
+        border-right-width: 1px;
+        border-right-style: solid;
+        border-right-color: inherit; //rgba(color-get(default, contrast), $border-opacity);
         cursor: pointer;
         font-weight: 400;
         will-change: background-color, color;

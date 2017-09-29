@@ -67,7 +67,7 @@ window.addEventListener('load', function() {
  * @author  eugenioenko
  * @license http://opensource.org/licenses/MIT  MIT License
  * @link    https://github.com/eugenioenko/sdf-css
- * @since   Version 1.0.0
+ * @version 0.8.6
  */
 
 (function(){
@@ -79,17 +79,20 @@ window.addEventListener('load', function() {
  * lets you modify their attributes, classes, values, styles and  add event handlers.
  *
  * @param  {string|object} selector A string which is gonna be used to query elements or a Node element
- * @param {number|optional}        length If set to a number, will limit the result of the query
+ * if selector starts with '#' getElementsById will be used limiting the result to 1
+ * @param {number|optional}        limit If set to a number, will limit the results of the query
  * to the amount. If set to one, element will be selected by using querySelector instead of querySelectorAll.
  * @example
  * // adds an event handler for a button of id #button_id
- * sdf.$('#button_id', true).on('click', function(){});
+ * sdf.$('#button_id').on('click', function(){});
  * @example
  * // sets the attribute data-item to all the li of a page
  * sdf.$('li').attr('data-item', 'value');
  * @example
  * // removes class .active from all h2 of the page
  * sdf.$('h2.active').removeClass('active');
+ * // removes class .active from 3 of h2 of the page
+ * sdf.$('h2.active', 3).removeClass('active');
  * @example
  * // Iterates over all the ul of a page and appends an li and prepends li
  * sdf.$('ul').append('<li>appended</li>').prepend('<li>prepended</li>');
@@ -101,7 +104,7 @@ window.addEventListener('load', function() {
  * @return {object} Which contains the methods for dom manipulation.
  *
  */
-    function sdfQuery(selector, length){
+    function sdfQuery(selector, limit){
 
         var emptyNodeList = function(nodeList){
             return nodeList.length == 0;
@@ -135,27 +138,49 @@ window.addEventListener('load', function() {
             return classes;
         };
 
-        length = (typeof length === "undefined") ? -1 : length;
+        limit = (typeof limit === "undefined") ? -1 : limit;
         var elements =  [];
+        var element = {};
+        var method = '';
         if (arguments.length) {
             if (typeof selector === "string"){
-                if(length == 1){
-                    elements.push(document.querySelector(selector));
+                selector = selector.trim();
+                if(selector.charAt(0) == '#'){
+                    method = 'getElementById';
+                    element = document.getElementById(selector.substring(1));
+                    if(element){
+                        elements.push(element);
+                    }
+                } else if(limit == 1){
+                    method = "querySelector";
+                    element = document.querySelector(selector);
+                    if(element){
+                        elements.push(element);
+                    }
                 } else {
-                    elements = document.querySelectorAll(selector);
-                    if(length != -1){
-                        elements.length = length;
+                    method = "querySelectorAll";
+                    var nodes = document.querySelectorAll(selector);
+                    if(limit == -1){
+                        limit = nodes.length;
+                    } else {
+                        limit = limit > nodes.length ? nodes.length : limit;
+                    }
+                    for(var i = 0; i < limit; ++i){
+                        elements.push(nodes[i]);
                     }
                 }
             } else if(typeof selector === "object" && selector instanceof Node){
+                method = "element";
                 elements.push(selector);
                 selector = false;
             }else {
+                method = "error";
                 // selector is not a string nor a dom Node
                 console.error(selector + " is not a string, 'query' requires a string as selector");
                 selector = false;
             }
         } else {
+            method ="null";
             // null selector used for create
             selector = false;
         }
@@ -164,6 +189,7 @@ window.addEventListener('load', function() {
             selector: selector,
             nodes: elements,
             length: elements.length,
+            method: method,
 
         /**
          * Adds event listener to the selected elements
@@ -194,10 +220,14 @@ window.addEventListener('load', function() {
          * as this to the function set in the argument
          * @param  {function} method A function to execute for each node,
          *   "this" is gonna be set to the current iterated element
+         * @this Current iterated element
          * @example
-         * // Iterates over buttons with class active
+         * // Iterates over buttons with class active, gets the attribute data-state,
+         * does something and finally sets it to false
          * sdf.$('button.active').each(function(){
-         *   sdf.$(this).attr('data-active', false);
+         *   var state = sdf.$(this).attr('data-state');
+         *   // to do
+         *   sdf.$(this).attr('data-state', 'false');
          * });
          * @return {object}        Query object for nesting
          */
@@ -221,7 +251,9 @@ window.addEventListener('load', function() {
          * @param  {string} value Optional, the new innerHTML value
          * @example
          * // sets inner conent of body
-         * sdf.$('body', true).html('<h1>Hello, World!</h1>');
+         * sdf.$('body', 1).html('<h1>Hello, World!</h1>');
+         * // gets the html of the body
+         * var body = sdf.$('body', 1).html();
          * @return {object|string}        Query object for nesting or value if getter
          */
             html: function(value){
@@ -245,6 +277,11 @@ window.addEventListener('load', function() {
          * Sets the textContent of each elements in the list or
          * Gets the value of textContent of the first element if no arguments
          * @param  {string} value Optional, the new textContent value
+         * @example
+         * // gets the textContent of the element with id #element
+         * var text = sdf.$('#element').text();
+         * // sets the textContent of all the first 3 li of ul#list
+         * sdf.$('ul#list>li', 3).text('Hello, World!');
          * @return {mixed}        Query object for nesting or value if getter
          */
             text: function(value){
@@ -314,6 +351,7 @@ window.addEventListener('load', function() {
          * sdf.$('button').click(function(){
          *   var opacity = sdf.$(this).css('opacity');
          *   // to do
+         *   opacity -= 0.3;
          *   sdf.$(this).css('opacity', opacity);
          *   sdf.$(this).css({opacity: 1, color: 'red'});
          * });
@@ -326,7 +364,7 @@ window.addEventListener('load', function() {
                     return this;
                 }
                 if(emptyArguments(arguments)){
-                    console.error("'css' requires at least one argument as style {string}");
+                    console.error("'css' requires at least one argument as style getter {string} or {object} as setter");
                     return this;
                 }
                 if(arguments.length == 1){
@@ -362,6 +400,9 @@ window.addEventListener('load', function() {
         /**
          * Removes an attribute from each element in the list
          * @param  {string} attr Name of the attribute to be removed from the element
+         * @example
+         * // removes the attribute 'data-active' from all the div with data-active="false"
+         * sdf.$('div[data-active="false"]').removeAttr('data-active');
          * @return {object}        Query object for nesting
          */
             removeAttr: function(attrName){
@@ -382,6 +423,9 @@ window.addEventListener('load', function() {
          * Sets the value of each elements in the list or
          * Gets the value of value of the first element if no arguments
          * @param  {string} val Optional, the new value value
+         * @example
+         * // gets the value of the input with id #input_1
+         * var val = sdf.$('input#input_1').value();
          * @return {object}        Query object for nesting
          */
             value: function(val){
@@ -528,6 +572,9 @@ window.addEventListener('load', function() {
         /**
          * Removes classes from  elements in the list
          * @param  {string} classList List of classes separated by space
+         * @example
+         *  // removes the classes ".class-1, .class-2" from the first 10 elements with class .class-0
+         *  sdf.$('.class-0').removeclass('class-1 class-2');
          * @return {object}        Query object for nesting
          */
             removeClass: function(classList){
@@ -554,7 +601,7 @@ window.addEventListener('load', function() {
          * @return {object}        Query object for nesting
          * @example
          * // destroys the body
-         * sdf.$('body', true).remove();
+         * sdf.$('body', 1).remove();
          */
             remove: function(){
                 for (var i = 0; i < this.nodes.length; ++i) {
@@ -567,6 +614,7 @@ window.addEventListener('load', function() {
             }
         };
     }
+
 
     sdf.addComponent({
         constructor: sdfQuery,
@@ -1148,6 +1196,7 @@ window.addEventListener('load', function() {
             this.elements.navbar.setAttribute('sdf-state', 'content');
             this.elements.content.setAttribute('sdf-state', 'content');
             this.elements.menu.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = 'initial';
             this.open = false;
         }
     };
@@ -1157,6 +1206,7 @@ window.addEventListener('load', function() {
             this.elements.navbar.setAttribute('sdf-state', 'menu');
             this.elements.content.setAttribute('sdf-state', 'menu');
             this.elements.menu.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
             this.open = true;
         }
     };

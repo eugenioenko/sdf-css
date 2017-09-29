@@ -22,6 +22,7 @@
             this.elements.navbar.setAttribute('sdf-state', 'content');
             this.elements.content.setAttribute('sdf-state', 'content');
             this.elements.menu.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = 'initial';
             this.open = false;
         }
     };
@@ -31,6 +32,7 @@
             this.elements.navbar.setAttribute('sdf-state', 'menu');
             this.elements.content.setAttribute('sdf-state', 'menu');
             this.elements.menu.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
             this.open = true;
         }
     };

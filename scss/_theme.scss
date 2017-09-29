@@ -6,11 +6,12 @@
     .sdf-#{$color}{
         background-color: color-get($color, background);
         color: color-get($color, contrast);
+        border-color: rgba(color-get($color, contrast), $border-opacity);
         &.sdf-hover{
             background-color: darken(saturate(color-get($color, background), $color-multiplier*3), $color-multiplier);
         }
         // all standard componentes
-        &.sdf-alert, &[sdf-menu], &.sdf-list>.sdf-list-item, &.sdf-list-horizontal>.sdf-list-item, &.sdf-tab-list{
+        &.sdf-alert, &[sdf-menu] {// &.sdf-list>.sdf-list-item, &.sdf-list-horizontal>.sdf-list-item, &.sdf-tab-list{
             background-color: color-get($color, background);
             color: color-get($color, contrast);
         }
@@ -64,7 +65,7 @@
 .sdf-list, .sdf-list-horizontal{
     @each $color in $color-types{
         &.sdf-#{$color}>.sdf-list-item{
-            border-color: rgba(color-get($color, contrast), $border-opacity);
+            //border-color: rgba(color-get($color, contrast), $border-opacity);
             &:hover{
                 background-color: darken(color-get($color, background), $color-multiplier*2);
             }

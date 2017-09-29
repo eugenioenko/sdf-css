@@ -40,6 +40,9 @@ img.sdf-responsive{
 .sdf-padding{
     padding: $grid-gutter/2;
 }
+.sdf-no-padding {
+    padding: 0;
+}
 .sdf-padding-small{
     padding: $grid-gutter/4;
 }
