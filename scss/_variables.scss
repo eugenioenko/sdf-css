@@ -52,47 +52,56 @@ $colors: (
     default: (
         background: #fff,
         font:       #3c3d3f,
-        contrast:   #6c6d7f
+        contrast:   #6c6d7f,
+        type:       "light"
     ),
     primary: (
         background: #1f8dd6,
         contrast:   #fff,
-        font:       darken(#1f8dd6, $font-color-multiplier)
+        font:       darken(#1f8dd6, $font-color-multiplier),
+        type:       "dark"
     ),
     secondary: (
         background:  #8058a5,
         contrast:    #ffffff,
-        font:       darken( #8058a5, $font-color-multiplier)
+        font:       darken( #8058a5, $font-color-multiplier),
+        type:       "dark"
     ),
     warning: (
         background: #fad232,
         contrast:   #fff,
-        font:       darken(#fad232, $font-color-multiplier)
+        font:       darken(#fad232, $font-color-multiplier),
+        type:       "dark"
     ),
     info: (
         background: #61a7bf,
         contrast:   #ffffff,
-        font:       darken(#61a7bf, $font-color-multiplier)
+        font:       darken(#61a7bf, $font-color-multiplier),
+        type:       "dark"
     ),
     success: (
         background: #5eb95e,
         contrast:   #fff,
-        font:       darken(#5eb95e, $font-color-multiplier)
+        font:       darken(#5eb95e, $font-color-multiplier),
+        type:       "dark"
     ),
     danger: (
         background: #dd514c,
         contrast:   #fff,
-        font:       darken(#dd514c, $font-color-multiplier)
+        font:       darken(#dd514c, $font-color-multiplier),
+        type:       "dark"
     ),
     light: (
         background: #f3f3f3,
         contrast:   #545454,
-        font:       #545454
+        font:       #545454,
+        type:       "light"
     ),
     dark: (
         background: #343E40,
         contrast:   #fff,
-        font:       #343E40
+        font:       #343E40,
+        type:       "dark"
     )
 );
 
