@@ -2018,6 +2018,7 @@ h4 .sdf-badge.sdf-badge-left {
   border-collapse: collapse;
   color: inherit;
   border-color: inherit;
+  width: 100%;
 }
 .sdf-table td, .sdf-table th {
   padding: 0.5rem 1rem;
@@ -2031,6 +2032,9 @@ h4 .sdf-badge.sdf-badge-left {
 }
 .sdf-table tr:last-child {
   border-bottom: 0;
+}
+.sdf-table.sdf-striped tr:nth-child(even) {
+  background-color: rgba(108, 109, 127, 0.15);
 }
 
 /**
@@ -3247,6 +3251,34 @@ select.sdf-input.sdf-huge,
 }
 .sdf-border.sdf-dark {
   border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.sdf-table.sdf-striped.sdf-default tr:nth-child(even) {
+  background-color: rgba(108, 109, 127, 0.15);
+}
+.sdf-table.sdf-striped.sdf-primary tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.sdf-table.sdf-striped.sdf-secondary tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.sdf-table.sdf-striped.sdf-warning tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.sdf-table.sdf-striped.sdf-info tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.sdf-table.sdf-striped.sdf-success tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.sdf-table.sdf-striped.sdf-danger tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.sdf-table.sdf-striped.sdf-light tr:nth-child(even) {
+  background-color: rgba(84, 84, 84, 0.15);
+}
+.sdf-table.sdf-striped.sdf-dark tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
 .sdf-default .sdf-button.sdf-default {

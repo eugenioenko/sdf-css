@@ -1003,7 +1003,7 @@ window.addEventListener('load', function() {
     };
     sdfCollapse.prototype.checkTweenLite = function(){
         if(typeof TweenLite == "undefined"){
-            console.error("sdfCollapse requies TweenLite.js, please add it to your source. otherwise collapse functionality will stay disabled");
+            console.warn("sdfCollapse requies TweenLite.js, please add it to your source. otherwise collapse functionality will stay disabled");
             return false;
         }
         return true;

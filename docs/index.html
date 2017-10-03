@@ -708,7 +708,9 @@
 			<h3 class="sdf-text-center"><span class="sdf-badge sdf-badge-left sdf-info">7.1</span>Form Colors and Sizes</h3>
 		</div>
 		<form class="sdf-form sdf-big sdf-cell sdf-12 sdf-sm-4 sdf-v-padding sdf-primary">
-			<h4>Big form</h4>
+			<div class="sdf-form-group">
+				<div class="sdf-heading-4">Big form</div>
+			</div>
 			<div class="sdf-form-group">
 				<label>Label</label>
 				<input type="text" class="sdf-input">
@@ -723,8 +725,8 @@
 		</form>
 
 		<form class="sdf-form sdf-small sdf-grid sdf-v-padding sdf-cell sdf-12 sdf-sm-4 sdf-secondary">
-			<div class="sdf-cell sdf-12">
-				<h4>Small form</h4>
+			<div class="sdf-form-group sdf-cell sdf-12">
+				<div class="sdf-heading-4">Small form</div>
 			</div>
 			<div class="sdf-form-group sdf-cell sdf-12 sdf-xs-6">
 				<label>Label</label>
@@ -759,8 +761,8 @@
 		</form>
 		<div class="sdf-cell sdf-12 sdf-sm-4 sdf-dark">
 			<form class="sdf-form sdf-tiny sdf-grid sdf-v-padding">
-				<div class="sdf-cell sdf-12">
-					<h4>Tiny form</h4>
+				<div class="sdf-form-group sdf-cell sdf-12">
+					<div class="sdf-heading-4">Tiny form</div>
 				</div>
 				<div class="sdf-form-group sdf-cell sdf-12 sdf-xs-6">
 					<label>Label</label>
@@ -1692,10 +1694,10 @@
 		</div>
 		<div class="sdf-cell sdf-12 sdf-v-margin">
 			<div class="sdf-grid sdf-h-align-center">
-				<div class="sdf-cell sdf-12 sdf-xs-6 sdf-sm-4 sdf-v-padding sdf-text-center">
+				<div class="sdf-cell sdf-12 sdf-xs-6 sdf-sm-4 sdf-v-padding sdf-v-margin sdf-text-center">
 					<button class="sdf-button sdf-dark" sdf-collapse-toggle="sdf-collapse-example">Toggle Collapse</button>
 				</div>
-				<div class="sdf-cell sdf-12 sdf-collapse sdf-v-margin sdf-light" id="sdf-collapse-example">
+				<div class="sdf-cell sdf-12 sdf-collapse  sdf-light" id="sdf-collapse-example">
 					<div class="sdf-padding">
 						<p class="sdf-paragraph">
 							Sem a ullamcorper a natoque ultricies duis id porttitor nisl scelerisque varius dis vestibulum venenatis donec nibh metus.
@@ -1835,7 +1837,61 @@
 
 	</div>
 
-	<div style="padding-top: 200px;"></div>
+	<div class="sdf-grid sdf-fixed sdf-v-margin-big">
+		<div class="sdf-cell sdf-12 sdf-pad-horizontal sdf-v-margin">
+			<h2 class="sdf-text-center"><span class="sdf-badge sdf-badge-left sdf-info">14</span>Tables</h2>
+		</div>
+		<div class="sdf-cell sdf-12 sdf-sm-4 sdf-light">
+			<table class="sdf-table">
+				<tr><th>#</th><th>Name</th><th>State</th></tr>
+				<tr><td>1</td><td>Elizabeth Key</td><td>False</td></tr>
+				<tr><td>2</td><td>Bryan Horton</td><td>False</td></tr>
+				<tr><td>3</td><td>Jermaine Silva</td><td>False</td></tr>
+				<tr><td>4</td><td>Ayanna Lester</td><td>False</td></tr>
+				<tr><td>5</td><td>Sam Blackburn</td><td>False</td></tr>
+				<tr><td>6</td><td>Roselyn Hopkins</td><td>False</td></tr>
+				<tr><td>7</td><td>Dayanara Herman</td><td>False</td></tr>
+				<tr><td>8</td><td>Wilson Hayden</td><td>False</td></tr>
+				<tr><td>9</td><td>Landon Rosario</td><td>False</td></tr>
+				<tr><td>10</td><td>Garrett Jones</td><td>False</td></tr>
+				<tr><td>11</td><td>Rishi Montgomery</td><td>False</td></tr>
+				<tr><td>12</td><td>Kamari Dawson</td><td>False</td></tr>
+			</table>
+		</div>
+		<div class="sdf-cell sdf-12 sdf-sm-4 sdf-secondary">
+			<table class="sdf-table sdf-striped">
+				<tr><th>#</th><th>Name</th><th>State</th></tr>
+				<tr><td>1</td><td>Elizabeth Key</td><td>False</td></tr>
+				<tr><td>2</td><td>Bryan Horton</td><td>False</td></tr>
+				<tr><td>3</td><td>Jermaine Silva</td><td>False</td></tr>
+				<tr><td>4</td><td>Ayanna Lester</td><td>False</td></tr>
+				<tr><td>5</td><td>Sam Blackburn</td><td>False</td></tr>
+				<tr><td>6</td><td>Roselyn Hopkins</td><td>False</td></tr>
+				<tr><td>7</td><td>Dayanara Herman</td><td>False</td></tr>
+				<tr><td>8</td><td>Wilson Hayden</td><td>False</td></tr>
+				<tr><td>9</td><td>Landon Rosario</td><td>False</td></tr>
+				<tr><td>10</td><td>Garrett Jones</td><td>False</td></tr>
+				<tr><td>11</td><td>Rishi Montgomery</td><td>False</td></tr>
+				<tr><td>12</td><td>Kamari Dawson</td><td>False</td></tr>
+			</table>
+		</div>
+		<div class="sdf-cell sdf-12 sdf-sm-4 sdf-dark">
+			<table class="sdf-table sdf-striped">
+				<tr><th>#</th><th>Name</th><th>State</th></tr>
+				<tr><td>1</td><td>Elizabeth Key</td><td>False</td></tr>
+				<tr><td>2</td><td>Bryan Horton</td><td>False</td></tr>
+				<tr><td>3</td><td>Jermaine Silva</td><td>False</td></tr>
+				<tr><td>4</td><td>Ayanna Lester</td><td>False</td></tr>
+				<tr><td>5</td><td>Sam Blackburn</td><td>False</td></tr>
+				<tr><td>6</td><td>Roselyn Hopkins</td><td>False</td></tr>
+				<tr><td>7</td><td>Dayanara Herman</td><td>False</td></tr>
+				<tr><td>8</td><td>Wilson Hayden</td><td>False</td></tr>
+				<tr><td>9</td><td>Landon Rosario</td><td>False</td></tr>
+				<tr><td>10</td><td>Garrett Jones</td><td>False</td></tr>
+				<tr><td>11</td><td>Rishi Montgomery</td><td>False</td></tr>
+				<tr><td>12</td><td>Kamari Dawson</td><td>False</td></tr>
+			</table>
+		</div>
 	</div>
 	</div>
 </body>

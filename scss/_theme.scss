@@ -59,8 +59,6 @@
     }
 }
 
-
-
 // lists
 .sdf-list, .sdf-list-horizontal{
     @each $color in $color-types{
@@ -104,6 +102,16 @@
     }
 }
 
+// tables
+.sdf-table.sdf-striped{
+    @each $color in $color-types{
+        &.sdf-#{$color}{
+            tr:nth-child(even){
+                background-color: rgba(color-get($color, contrast), $table-stripes-opacity);
+            }
+        }
+    }
+}
 
 @each $color in $color-types{
     .sdf-#{$color}{
