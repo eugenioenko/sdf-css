@@ -1,15 +1,10 @@
 /**
  * SDF grid
  */
-@mixin make-grid(){
+.sdf-grid{
     @include sdf-flex();
     @include sdf-flex-flow-row-wrap();
     @include sdf-vertical-stretch();
-    box-sizing: border-box;
-}
-
-.sdf-grid{
-    @include make-grid();
     margin: 0;
     &.sdf-fixed{
         margin: 0 auto;
@@ -29,63 +24,57 @@
     padding-left: $grid-gutter/2;
     padding-right: $grid-gutter/2;
 }
-.sdf-cell>.sdf-grid, .sdf-col>.sdf-grid{
-    margin-left: -$grid-gutter/2;
-    margin-right: -$grid-gutter/2;
+.sdf-cell, .sdf-col{
+    &>.sdf-grid{
+        margin-left: -$grid-gutter/2;
+        margin-right: -$grid-gutter/2;    
+    }
+    &.sdf-grid{
+        padding-left: 0;
+        padding-right: 0;
+        @include sdf-content-start();    
+    }
 }
-.sdf-cell.sdf-grid{
-    padding-left: 0;
-    padding-right: 0;
-    @include sdf-content-start();
-}
+
 .sdf-grid.sdf-no-gutter>.sdf-cell{
     padding-left: 0;
     padding-right: 0;
+    &>.sdf-grid{
+        margin-left: 0;
+        margin-right: 0;   
+    }
 }
 
-@mixin container(){
+.sdf-container{
+    width: 100%;
     display: block;
     padding-left:  ($grid-gutter / 2);
     padding-right: ($grid-gutter / 2);
     @include sdf-clearfix();
+    &.sdf-fixed{
+        margin-left: auto;
+        margin-right: auto;
+        @each $breakpoint in $grid{
+            @if map-get($breakpoint, width) != null {
+                @media (min-width: map-get($breakpoint, width)){
+                    width: map-get($breakpoint, width);
+                }
+            }
+        }
+    }
 }
-
-@mixin make-row() {
+.sdf-row{
     margin-left:  ($grid-gutter / -2);
     margin-right: ($grid-gutter / -2);
     @include sdf-clearfix();
 }
-
-@mixin make-col(){
+.sdf-col{
     float: left;
     display: block;
     position: relative;
     min-height: 1px;
     padding-left:  ($grid-gutter / 2);
     padding-right: ($grid-gutter / 2);
-}
-
-.sdf-container{
-    width: 100%;
-    @include container();
-}
-.sdf-container-fixed{
-    @include container();
-    margin-left: auto;
-    margin-right: auto;
-    @each $breakpoint in $grid{
-        @if map-get($breakpoint, width) != null {
-            @media (min-width: map-get($breakpoint, width)){
-                width: map-get($breakpoint, width);
-            }
-        }
-    }
-}
-.sdf-row{
-    @include make-row();
-}
-.sdf-col{
-    @include make-col();
 }
 .sdf-df-auto{
     flex: 1 1 $auto-min-width;
