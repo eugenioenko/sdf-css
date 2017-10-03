@@ -1831,6 +1831,24 @@ h4 .sdf-badge.sdf-badge-left {
 }
 
 /**
+ * Dropdowns
+ */
+.sdf-collapse {
+  display: none;
+  overflow-y: hidden;
+}
+.sdf-collapse[aria-hidden="true"] {
+  display: none;
+}
+.sdf-collapse[aria-hidden="false"] {
+  display: block;
+}
+
+[sdf-collapse-toggle] {
+  cursor: pointer;
+}
+
+/**
  * Side Menu
  */
 .sdf-layout-wrapper {

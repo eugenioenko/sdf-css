@@ -37,7 +37,7 @@
     sdfDropdown.prototype.hideAll = function(){
         for(var id in this.dropdowns){
             if(
-                this.dropdowns.hasOwnProperty(id) && 
+                this.dropdowns.hasOwnProperty(id) &&
                 this.dropdowns[id].open == true
             ){
                 this.hide(id);
@@ -85,7 +85,13 @@
             element.setAttribute('sdf-transitioning', 'false');
             var toggle = document.querySelector('[sdf-dropdown-toggle="' + id + '"]');
             if(toggle){
+                var toggleId = toggle.getAttribute('id');
+                if(!toggleId){
+                    toggleId = "sdf-dropdown-toggle-" + i;
+                    toggle.setAttribute('id', toggleId);
+                }
                 toggle.setAttribute('aria-expanded', 'false');
+                element.setAttribute('aria-labelledby', toggleId);
             }
             // sets position of dropdown to top-left if no option set
             var position = element.getAttribute('sdf-dropdown-menu');

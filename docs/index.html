@@ -5,8 +5,10 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="../css/sdf.css">
 	<script src="../js/sdf.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenLite.min.js"></script>
 	<title>Sdf CSS Framework</title>
 	<style>
+
 		.demo-cell{
 			outline: 1px solid #fff;
 			font-weight: 400;
@@ -141,7 +143,7 @@
 	<div class="sdf-grid sdf-fixed sdf-no-gutter">
 		<div class="sdf-cell sdf-12 sdf-sm-6 sdf-v-margin-big ">
 			<h2 class="sdf-text-center">Flexbox Grid</h2>
-			<div>
+			<div class="sdf-collapse">
 				<div class="sdf-grid sdf-12">
 					<div class="sdf-cell demo-cell sdf-text-center sdf-2"><div class="sdf-padding-small sdf-primary">sdf-2</div></div>
 					<div class="sdf-cell demo-cell sdf-text-center sdf-2"><div class="sdf-padding-small sdf-primary">sdf-2</div></div>
@@ -1682,6 +1684,32 @@
 				<p class="sdf-paragraph sdf-block-center">
 					<button class="sdf-button sdf-info" sdf-menu-toggle="sdf-menu-3">Bottom Menu</button>
 				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="sdf-grid sdf-fixed sdf-v-padding-big">
+		<div class="sdf-cell sdf-12 sdf-v-padding">
+			<h2 class="sdf-text-center"><span class="sdf-badge sdf-badge-left sdf-info">12</span>Collapse</h2>
+		</div>
+		<div class="sdf-cell sdf-12 sdf-v-margin">
+			<div class="sdf-grid sdf-h-align-center">
+				<div class="sdf-cell sdf-12 sdf-xs-6 sdf-sm-4 sdf-v-padding sdf-text-center">
+					<button class="sdf-button sdf-dark" sdf-collapse-toggle="sdf-collapse-example">Toggle Collapse</button>
+				</div>
+				<div class="sdf-cell sdf-12 sdf-collapse sdf-v-margin sdf-light" id="sdf-collapse-example">
+					<div class="sdf-padding">
+						<p class="sdf-paragraph">
+							Sem a ullamcorper a natoque ultricies duis id porttitor nisl scelerisque varius dis vestibulum venenatis donec nibh metus.
+						</p>
+						<p class="sdf-paragraph">
+							Sem a ullamcorper a natoque ultricies duis id porttitor nisl scelerisque varius dis vestibulum venenatis donec nibh metus.
+						</p>
+						<p class="sdf-paragraph">
+							Sem a ullamcorper a natoque ultricies duis id porttitor nisl scelerisque varius dis vestibulum venenatis donec nibh metus.
+						</p>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

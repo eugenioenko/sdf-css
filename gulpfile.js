@@ -24,6 +24,7 @@ gulp.task('combine', function() {
       './js/src/sdf-query.js',
       './js/src/sdf-toasts.js',
       './js/src/sdf-dropdown.js',
+      './js/src/sdf-collapse.js',
       './js/src/sdf-menu.js',
       './js/src/sdf-tabs.js',
       './js/src/sdf-layout-menu.js',
