@@ -16,7 +16,7 @@ By having separated the cell/col width class modifier it's possible to have both
 Flexbox grid consiste of two components: sdf-grid and sdf-cell.
 The grid component doesn't have to be wrapped in another element.
 If the grid component is nested inisde a cell, only then it will have a negative horizontal margin. All the cells will stay aligned and no extra wrapper for grid is required.
-It is also possible to have cells which are grids for easier nesting and to avoid using an extra dom element.
+It is also possible to have cells which are grids for easier nesting and to avoid using an extra dom element by having both classes in the same element.
 
 #### Gutter
 By default the grid has 2rem (32px) gutter between each cell which means that each cell has a horizontal padding of 1rem.
@@ -27,3 +27,7 @@ If a cell is also a grid it will have no margin and no padding. This way when ce
 * grid > cell
 * grid > cell > grid > cell ... etc
 * grid > cell-grid > cell
+
+Cells can be only children of grids and other cells with the class grid (cell-grids)
+Grids can be children of cells.
+Grids can't be children of grids nor cell-grids.
