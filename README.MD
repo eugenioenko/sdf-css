@@ -1,5 +1,8 @@
-# SDF CSS Framework
-(in progress)
+# SDF CSS Framework (in progress)
+
+## Latest demo here
+[Demo and examples](https://eugenioenko.github.io/sdf-css/docs/)
+
 
 ## Design Principle
 The idea of this framework is to create the minimal set of class names which should style contextually the maximum amount of elements.
@@ -11,6 +14,18 @@ The framework implements a set of theme color modifiers which regardless of thei
 SDF CSS grid is a combination of flexbox and clearfix bock.
 By having separated the cell/col width class modifier it's possible to have both grid systems coexist in the same space without adding extra weight to the stylesheet files.
 
+### Flexbox grid
+Flexbox grid consiste of two components: sdf-grid and sdf-cell.
+The grid component doesn't have to be wrapped in another element.
+If the grid component is nested inisde a cell, only then it will have a negative horizontal margin. This way all the cells will stay aligned and no extra wrapper for grid is required.
+It is also possible to have cells which are grids for easier nesting and to avoid using an extra dom element.
 
+#### Gutter
+By default the grid has 2rem (32px) gutter between each cell which means that each cell has a horizontal padding of 1rem.
+If a grid is nested inside a cell, it will have a negative horizontal margin of 1rem, this way when a cell is added to the nested grid, the alignment stays consistent.
+If a cell is also a grid, it will have no margin and no padding, this way when cells are added which will have horizontal padding, the alignment will stay consistent.
 
-[## Demo and examples](https://eugenioenko.github.io/sdf-css/docs/)
+#### Possible combinations of grid nesting
+* grid > cell
+* grid > cell > grid > cell ... etc
+* grid > cell-grid > cell
