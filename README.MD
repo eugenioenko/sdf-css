@@ -1,7 +1,5 @@
 # SDF CSS Framework (in progress)
-
-## Latest demo here
-[Demo and examples](https://eugenioenko.github.io/sdf-css/docs/)
+>[Latest demo and examples](https://eugenioenko.github.io/sdf-css/docs/)
 
 
 ## Design Principle
