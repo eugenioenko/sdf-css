@@ -14,6 +14,7 @@
 }
 
 .sdf-layout-menu{
+    background-color: color-get(default, background);
     position: fixed;
     width: $sidemenu-width;
     right: 0;
@@ -24,6 +25,7 @@
     box-sizing: border-box;
 }
 .sdf-layout-content{
+    background-color: color-get(default, background);
     margin-top: 50px;
     min-height: calc(100% - 50px);
     box-sizing: border-box;
@@ -39,6 +41,7 @@
 }
 
 .sdf-layout-navbar{
+    background-color: color-get(default, background);
     position: fixed;
     top: 0;
     left: 0;

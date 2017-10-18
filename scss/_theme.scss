@@ -7,11 +7,11 @@
         background-color: color-get($color, background);
         color: color-get($color, contrast);
         border-color: rgba(color-get($color, contrast), $border-opacity);
-        &.sdf-hover{
+        &.sdf-hover:hover{
             background-color: darken(saturate(color-get($color, background), $color-multiplier*3), $color-multiplier);
         }
         // all standard componentes
-        &.sdf-alert, &[sdf-menu] {// &.sdf-list>.sdf-list-item, &.sdf-list-horizontal>.sdf-list-item, &.sdf-tab-list{
+        &.sdf-alert, &[sdf-menu] {
             background-color: color-get($color, background);
             color: color-get($color, contrast);
         }
@@ -21,7 +21,11 @@
         color: color-get($color, background);
     }
     .sdf-#{$color}-font{
-        color: color-get($color, font);
+        @if color-get($color, type) == "normal" {
+            color: darken(color-get($color, contrast), $font-color-multiplier);
+        } @else {
+            color: darken(color-get($color, background), $font-color-multiplier);
+        }
     }
 }
 // buttons
@@ -62,8 +66,8 @@
 // lists
 .sdf-list, .sdf-list-horizontal{
     @each $color in $color-types{
+        &.sdf-#{$color}>li,
         &.sdf-#{$color}>.sdf-list-item{
-            //border-color: rgba(color-get($color, contrast), $border-opacity);
             &:hover{
                 background-color: mix(color-get($color, background), color-get($color, contrast), 80%);
                 color: color-get($color, contrast);

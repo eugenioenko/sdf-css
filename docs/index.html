@@ -36,14 +36,14 @@
 	}
 
 	.hljs-keyword,.hljs-selector-tag,.hljs-built_in,.hljs-name,.hljs-tag {
-	    color: #a31515
+	    color: #dd524d
 	}
 	.hljs-tag {
 	    color: #545454;
 	}
 
 	.hljs-string,.hljs-title,.hljs-section,.hljs-attribute,.hljs-literal,.hljs-template-tag,.hljs-template-variable,.hljs-type,.hljs-addition {
-	    color: #19479a
+	    color: #156193
 	}
 
 	.hljs-deletion,.hljs-selector-attr,.hljs-selector-pseudo,.hljs-meta {
@@ -55,7 +55,7 @@
 	}
 
 	.hljs-attr {
-	    color: #127740
+	    color: #3d8d3d
 	}
 
 	.hljs-symbol,.hljs-bullet,.hljs-link {
@@ -95,39 +95,19 @@
 	<div class="sdf-layout-wrapper">
 		<div class="sdf-layout-menu sdf-dark sdf-v-padding">
 			<ul class="sdf-list sdf-dark">
-				<li class="sdf-list-item">
-					<a href="#grid" class="sdf-list-group sdf-v-align-baseline">
-						<div class="sdf-addon sdf-icon sdf-primary sdf-square"><i class="fa fa-table"></i></div>
-						<div class="sdf-list-text">Grid</div>
-					</a>
-				</li>
-				<li class="sdf-list-item">
-					<a href="#colors" class="sdf-list-group">
-						<div class="sdf-addon sdf-primary sdf-icon sdf-round sdf-secondary"><i class="fa fa-circle-thin"></i></div>
-						<div class="sdf-list-text">Colors</div>
-					</a>
-				</li>
-				<li class="sdf-list-item">
-					<a href="#buttons" class="sdf-list-group">
-						<div class="sdf-addon sdf-light sdf-icon sdf-secondary"></div>
-						<div class="sdf-list-text">Buttons</div>
-					</a>
-				</li>
-				<li class="sdf-list-item">
-					<a href="#typography" class="sdf-list-group">
-						<div class="sdf-addon sdf-success sdf-icon sdf-secondary">T</div>
-						<div class="sdf-list-text">Typography</div>
-					</a>
-				</li>
-				<li class="sdf-list-item">Breadcrumbs</li>
-				<li class="sdf-list-item">Forms</li>
-				<li class="sdf-list-item">Cards</li>
-				<li class="sdf-list-item">Tables</li>
-				<li class="sdf-list-item">Lists</li>
-				<li class="sdf-list-item">Dropdowns</li>
-				<li class="sdf-list-item">Toasts</li>
-				<li class="sdf-list-item">Panel Menus</li>
-				<li class="sdf-list-item">Collapse</li>
+				<li><a href="#grid">Grid</a></li>
+				<li><a href="#colors">Colors</a></li>
+				<li><a href="#buttons">Buttons</a></li>
+				<li><a href="#typography">Typography</a></li>
+				<li>Breadcrumbs</li>
+				<li>Forms</li>
+				<li>Cards</li>
+				<li>Tables</li>
+				<li>Lists</li>
+				<li>Dropdowns</li>
+				<li>Toasts</li>
+				<li>Panel Menus</li>
+				<li>Collapse</li>
 			</ul>
 		</div>
 		<div class="sdf-layout-navbar sdf-primary sdf-v-padding-small sdf-h-padding sdf-box-shadow">
@@ -140,7 +120,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="sdf-layout-content sdf-default">
+		<div class="sdf-layout-content">
 
 
 
@@ -225,7 +205,7 @@
 	<div class="sdf-grid sdf-fixed">
 		<div class="sdf-cell sdf-12 sdf-v-margin-big">
 			<h2 class="sdf-text-center">Friendly Nesting</h2>
-			<h3 class="sdf-text-center">Combine grid and cells as you see fit</h3>
+			<h3 class="sdf-text-center">Combine and nest grids and cells</h3>
 		</div>
 
 		<div class="sdf-cell sdf-12 sdf-sm-4 sdf-padding sdf-primary">
@@ -282,7 +262,7 @@
 	<div class="sdf-grid sdf-fixed">
 		<div class="sdf-cell sdf-12 sdf-v-margin-big">
 			<h2 class="sdf-text-center">C-C-Combo Breaker!</h2>
-			<h3 class="sdf-text-center">Combine flexbox and clearfix as you see fit</h3>
+			<h3 class="sdf-text-center">Combine flexbox and clearfix grids</h3>
 		</div>
 	</div>
 	<div class="sdf-grid sdf-fixed">
@@ -487,24 +467,24 @@
 		</div>
 		<div class="sdf-cell sdf-12">
 			<div class="sdf-grid sdf-v-margin">
-				<div class="sdf-cell demo-cell sdf-6 sdf-xs-4 sdf-sm-3 sdf-lg-2 sdf-text-center sdf-default">default</div>
-				<div class="sdf-cell demo-cell sdf-6 sdf-xs-4 sdf-sm-3 sdf-lg-2 sdf-text-center sdf-primary">primary</div>
-				<div class="sdf-cell demo-cell sdf-6 sdf-xs-4 sdf-sm-3 sdf-lg-2 sdf-text-center sdf-secondary">secondary</div>
-				<div class="sdf-cell demo-cell sdf-6 sdf-xs-4 sdf-sm-3 sdf-lg-2 sdf-text-center sdf-info">info</div>
-				<div class="sdf-cell demo-cell sdf-6 sdf-xs-4 sdf-sm-3 sdf-lg-2 sdf-text-center sdf-success">success</div>
-				<div class="sdf-cell demo-cell sdf-6 sdf-xs-4 sdf-sm-3 sdf-lg-2 sdf-text-center sdf-warning">warning</div>
-				<div class="sdf-cell demo-cell sdf-6 sdf-xs-4 sdf-sm-3 sdf-lg-2 sdf-text-center sdf-danger">danger</div>
-				<div class="sdf-cell demo-cell sdf-6 sdf-xs-4 sdf-sm-3 sdf-lg-2 sdf-text-center sdf-dark">dark</div>
-				<div class="sdf-cell demo-cell sdf-6 sdf-xs-4 sdf-sm-3 sdf-lg-2 sdf-text-center sdf-light">light</div>
-				<div class="sdf-cell demo-cell sdf-6 sdf-xs-4 sdf-sm-3 sdf-lg-2 sdf-text-center sdf-default-inverse demo-cell-dark">default inverse</div>
-				<div class="sdf-cell demo-cell sdf-6 sdf-xs-4 sdf-sm-3 sdf-lg-2 sdf-text-center sdf-primary-inverse demo-cell-dark">primary inverse</div>
-				<div class="sdf-cell demo-cell sdf-6 sdf-xs-4 sdf-sm-3 sdf-lg-2 sdf-text-center sdf-secondary-inverse demo-cell-dark">secondary inverse</div>
-				<div class="sdf-cell demo-cell sdf-6 sdf-xs-4 sdf-sm-3 sdf-lg-2 sdf-text-center sdf-info-inverse demo-cell-dark">info inverse</div>
-				<div class="sdf-cell demo-cell sdf-6 sdf-xs-4 sdf-sm-3 sdf-lg-2 sdf-text-center sdf-success-inverse demo-cell-dark">success inverse</div>
-				<div class="sdf-cell demo-cell sdf-6 sdf-xs-4 sdf-sm-3 sdf-lg-2 sdf-text-center sdf-warning-inverse demo-cell-dark">warning inverse</div>
-				<div class="sdf-cell demo-cell sdf-6 sdf-xs-4 sdf-sm-3 sdf-lg-2 sdf-text-center sdf-danger-inverse demo-cell-dark">danger inverse</div>
-				<div class="sdf-cell demo-cell sdf-6 sdf-xs-4 sdf-sm-3 sdf-lg-2 sdf-text-center sdf-dark-inverse demo-cell-dark">dark inverse</div>
-				<div class="sdf-cell demo-cell sdf-6 sdf-xs-4 sdf-sm-3 sdf-lg-2 sdf-text-center sdf-light-inverse demo-cell-dark">light inverse</div>
+				<div class="sdf-cell sdf-hover demo-cell sdf-6 sdf-xs-4 sdf-sm-3 sdf-lg-2 sdf-text-center sdf-default">default</div>
+				<div class="sdf-cell sdf-hover demo-cell sdf-6 sdf-xs-4 sdf-sm-3 sdf-lg-2 sdf-text-center sdf-primary">primary</div>
+				<div class="sdf-cell sdf-hover demo-cell sdf-6 sdf-xs-4 sdf-sm-3 sdf-lg-2 sdf-text-center sdf-secondary">secondary</div>
+				<div class="sdf-cell sdf-hover demo-cell sdf-6 sdf-xs-4 sdf-sm-3 sdf-lg-2 sdf-text-center sdf-info">info</div>
+				<div class="sdf-cell sdf-hover demo-cell sdf-6 sdf-xs-4 sdf-sm-3 sdf-lg-2 sdf-text-center sdf-success">success</div>
+				<div class="sdf-cell sdf-hover demo-cell sdf-6 sdf-xs-4 sdf-sm-3 sdf-lg-2 sdf-text-center sdf-warning">warning</div>
+				<div class="sdf-cell sdf-hover demo-cell sdf-6 sdf-xs-4 sdf-sm-3 sdf-lg-2 sdf-text-center sdf-danger">danger</div>
+				<div class="sdf-cell sdf-hover demo-cell sdf-6 sdf-xs-4 sdf-sm-3 sdf-lg-2 sdf-text-center sdf-dark">dark</div>
+				<div class="sdf-cell sdf-hover demo-cell sdf-6 sdf-xs-4 sdf-sm-3 sdf-lg-2 sdf-text-center sdf-light">light</div>
+				<div class="sdf-cell sdf-hover demo-cell sdf-6 sdf-xs-4 sdf-sm-3 sdf-lg-2 sdf-text-center sdf-default-inverse sdf-hover demo-cell-dark">default inverse</div>
+				<div class="sdf-cell sdf-hover demo-cell sdf-6 sdf-xs-4 sdf-sm-3 sdf-lg-2 sdf-text-center sdf-primary-inverse sdf-hover demo-cell-dark">primary inverse</div>
+				<div class="sdf-cell sdf-hover demo-cell sdf-6 sdf-xs-4 sdf-sm-3 sdf-lg-2 sdf-text-center sdf-secondary-inverse sdf-hover demo-cell-dark">secondary inverse</div>
+				<div class="sdf-cell sdf-hover demo-cell sdf-6 sdf-xs-4 sdf-sm-3 sdf-lg-2 sdf-text-center sdf-info-inverse sdf-hover demo-cell-dark">info inverse</div>
+				<div class="sdf-cell sdf-hover demo-cell sdf-6 sdf-xs-4 sdf-sm-3 sdf-lg-2 sdf-text-center sdf-success-inverse sdf-hover demo-cell-dark">success inverse</div>
+				<div class="sdf-cell sdf-hover demo-cell sdf-6 sdf-xs-4 sdf-sm-3 sdf-lg-2 sdf-text-center sdf-warning-inverse sdf-hover demo-cell-dark">warning inverse</div>
+				<div class="sdf-cell sdf-hover demo-cell sdf-6 sdf-xs-4 sdf-sm-3 sdf-lg-2 sdf-text-center sdf-danger-inverse sdf-hover demo-cell-dark">danger inverse</div>
+				<div class="sdf-cell sdf-hover demo-cell sdf-6 sdf-xs-4 sdf-sm-3 sdf-lg-2 sdf-text-center sdf-dark-inverse sdf-hover demo-cell-dark">dark inverse</div>
+				<div class="sdf-cell sdf-hover demo-cell sdf-6 sdf-xs-4 sdf-sm-3 sdf-lg-2 sdf-text-center sdf-light-inverse sdf-hover demo-cell-dark">light inverse</div>
 			</div>
 		</div>
 	</div>
@@ -514,6 +494,10 @@
 		<div class="sdf-cell sdf-12 sdf-v-margin"><h3 class="sdf-text-center"><span class="sdf-badge sdf-badge-left sdf-info">2.1</span>Font Colors</h3></div>
 	</div>
 	<div class="sdf-grid sdf-fixed">
+		<div class="sdf-cell sdf-12 sdf-xs-6 sdf-md-4 sdf-v-padding sdf-default-font">
+			<h3 class="">Default</h3>
+			<p class="sdf-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem.</p>
+		</div>
 		<div class="sdf-cell sdf-12 sdf-xs-6 sdf-md-4 sdf-v-padding sdf-primary-font">
 			<h3 class="">Primary</h3>
 			<p class="sdf-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem.</p>
@@ -540,14 +524,6 @@
 		</div>
 		<div class="sdf-cell sdf-12 sdf-xs-6 sdf-md-4 sdf-v-padding sdf-dark-font">
 			<h3 class="">Dark</h3>
-			<p class="sdf-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem.</p>
-		</div>
-		<div class="sdf-cell sdf-12 sdf-xs-6 sdf-md-4 sdf-v-padding sdf-dark sdf-light-font">
-			<h3 class="">Light</h3>
-			<p class="sdf-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem.</p>
-		</div>
-		<div class="sdf-cell sdf-12 sdf-xs-6 sdf-md-4 sdf-v-padding sdf-default-font">
-			<h3 class="">Default</h3>
 			<p class="sdf-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem.</p>
 		</div>
 	</div>
@@ -741,7 +717,13 @@
 			<h2 class="sdf-text-center">h2 Lorem ipsum dolor sit amet</h2>
 			<h3 class="sdf-text-center">h3 Lorem ipsum dolor sit amet</h3>
 			<h4 class="sdf-text-center">h4 Lorem ipsum dolor sit amet</h4>
-			<p class="sdf-paragraph sdf-block-center"><br>Paragraph:<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. </p>
+		</div>
+		<div class="sdf-cell sdf-12 sdf-v-margin">
+			<p class="sdf-paragraph sdf-block-center">
+			Paragraphs with class <b>sdf-paragraph</b> are maximum 40rem in width which is aprox. 80 character in length per line. The line height is 160%, and the margin at the bottom is 0.75rem.
+			</p>
+			<p class="sdf-paragraph sdf-block-center">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. </p>
 			<p class="sdf-paragraph sdf-block-center">Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. </p>
 		</div>
 	</div>
@@ -1406,34 +1388,34 @@
 		</div>
 		<div class="sdf-cell sdf-12 sdf-sm-4 sdf-v-padding sdf-primary">
 			<ul class="sdf-list sdf-border sdf-primary">
-				<li class="sdf-list-item">First Quit</li>
-				<li class="sdf-list-item">Second</li>
-				<li class="sdf-list-item">Third</li>
-				<li class="sdf-list-item">Forth</li>
+				<li>First Quit</li>
+				<li>Second</li>
+				<li>Third</li>
+				<li>Forth</li>
 			</ul>
 		</div>
 
 		<div class="sdf-cell sdf-12 sdf-sm-4 sdf-v-padding sdf-success">
 			<ul class="sdf-list sdf-border sdf-success sdf-square">
-				<li class="sdf-list-item">
+				<li>
 					<div class="sdf-list-group">
 						<div class="sdf-addon"><b>1</b></div>
 						<div class="sdf-list-text">First Item</div>
 					</div>
 				</li>
-				<li class="sdf-list-item">
+				<li>
 					<div class="sdf-list-group">
 						<div class="sdf-addon"><b>2</b></div>
 						<div class="sdf-list-text">Second Item</div>
 					</div>
 				</li>
-				<li class="sdf-list-item">
+				<li>
 					<div class="sdf-list-group">
 						<div class="sdf-addon"><b>3</b></div>
 						<div class="sdf-list-text">Third Item</div>
 					</div>
 				</li>
-				<li class="sdf-list-item">
+				<li>
 					<div class="sdf-list-group">
 						<div class="sdf-addon"><b>4</b></div>
 						<div class="sdf-list-text">Forth Item</div>

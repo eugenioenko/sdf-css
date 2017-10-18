@@ -4,8 +4,8 @@
  html{
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
+    font-size: $font-size;
     line-height: $font-line-height;
-    box-sizing: border-box;
 }
 *, :before, :after{
 	box-sizing: inherit;
