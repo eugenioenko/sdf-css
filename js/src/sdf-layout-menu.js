@@ -22,7 +22,7 @@
             this.elements.navbar.setAttribute('sdf-state', 'content');
             this.elements.content.setAttribute('sdf-state', 'content');
             this.elements.menu.setAttribute('aria-hidden', 'true');
-            document.body.style.overflow = 'initial';
+            document.body.style.removeProperty('overflow');
             this.open = false;
         }
     };

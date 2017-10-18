@@ -42,9 +42,6 @@
             border-bottom-left-radius: $list-menu-border-radius;
             border-bottom-right-radius: $list-menu-border-radius;
         }
-        .sdf-addon{
-            border-radius: $list-addon-border-radius;
-        }
     }
 
 }
@@ -95,6 +92,12 @@
             border-top-right-radius: $list-menu-border-radius;
             border-bottom-right-radius: $list-menu-border-radius;
         }
+    }
+}
+.sdf-list-item{
+    &>a{
+        text-decoration: none;
+        color: inherit;
     }
 }
 .sdf-list-horizontal, .sdf-list{
