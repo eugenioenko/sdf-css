@@ -25,7 +25,7 @@ If a cell is also a grid it will have no margin and no padding. This way when ce
 
 #### Possible combinations of grid nesting
 * grid > cell
-* grid > cell > grid > cell ... etc
-* grid > cell-grid > cell
+* grid > cell > grid > cell > ... etc
+* grid > cell-grid > cell > ... etc
 
 Cells can be only children of grids and other cells with the class grid (cell-grids). Grids can be children of cells. Grids can't be children of grids nor cell-grids.
