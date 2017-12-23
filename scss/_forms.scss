@@ -30,7 +30,8 @@
 }
 input.sdf-input,
 select.sdf-input{
-    line-height: size-get(normal, height);
+    //line-height: size-get(normal, height);
+    line-height: 1;
     height: size-get(normal, height);
 
 }

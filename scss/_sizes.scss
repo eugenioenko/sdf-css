@@ -17,7 +17,7 @@
     @each $size in $size-types{
         &.sdf-#{$size}{
             height: size-get($size, height);
-            line-height: size-get($size, height);
+            //line-height: size-get($size, height);
             min-width: size-get($size, min-width);
             padding: 0 size-get($size, padding);
             font-size: size-get($size, font-size);
@@ -53,7 +53,7 @@
     .sdf-form.sdf-#{$size} input.sdf-input,
     .sdf-form.sdf-#{$size} select.sdf-input{
         height: size-get($size, height);
-        line-height: size-get($size, height);
+        //line-height: size-get($size, height);
         padding: 0 size-get($size, padding);
         font-size: size-get($size, font-size);
     }

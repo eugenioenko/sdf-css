@@ -10,7 +10,8 @@
     position: relative;
     margin: 0;
     height: size-get(normal, height);
-    line-height: size-get(normal, height);
+    //line-height: size-get(normal, height);
+    line-height: 1;
     min-width: size-get(normal, min-width);
     padding: 0 size-get(normal, padding);
     font-size: size-get(normal, font-size);
