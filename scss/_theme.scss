@@ -68,7 +68,7 @@
     @each $color in $color-types{
         &.sdf-#{$color}>li,
         &.sdf-#{$color}>.sdf-list-item{
-            &:hover{
+            &:hover, &.active{
                 background-color: mix(color-get($color, background), color-get($color, contrast), 80%);
                 color: color-get($color, contrast);
             }

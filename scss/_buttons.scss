@@ -29,7 +29,6 @@
     text-decoration: none;
     text-align: center;
     vertical-align: middle;
-    -webkit-appearance: button;
     &:hover, &:active, &:focus{
         background-color: color-get(default, contrast);
         color: color-get(default, background);
